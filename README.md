@@ -59,8 +59,8 @@ ganges-padma-hydrometerological-dataset/
 │   ├── Sediment_Weekly_fortnightly_monthly_*.xlsx # 3 suspended sediment concentration records
 │   └── Cross_Section_Cross_Section_*.xlsx         # 4 river morphological cross-section surveys
 ├── processed/                                     # Cleaned/derived analysis-ready datasets
-│   ├── ganges_padma_hydromet_dataset_2011_2025.csv # [PRIMARY/FINAL] Complete 31-col multi-variable panel (91,033 × 31)
-│   ├── ganges_padma_stage_only_subset_2011_2025.csv # [AUXILIARY/ABLATION] Univariate stage-only panel (91,033 × 16)
+│   ├── ganges_padma_hydromet_dataset_2011_2025.csv # [PRIMARY/FINAL] Complete 30-col multi-variable panel (91,033 × 30)
+│   ├── ganges_padma_stage_only_subset_2011_2025.csv # [AUXILIARY/ABLATION] Univariate stage-only panel (91,033 × 14)
 │   └── wide/                                      # Target-specific wide ML design matrices (Station & Location named)
 │       ├── wide_sw91_9r_goalundo_transit.csv      # Goalundo Transit (60 km upstream, Ganges/Jamuna confluence)
 │       ├── wide_sw91_9l_baruria_transit.csv       # Baruria Transit (56 km upstream of Padma Bridge)
@@ -83,7 +83,7 @@ ganges-padma-hydrometerological-dataset/
 
 | Variable / Field | Meaning | Type | Unit / Range | Allowed Values / Coding | Missing-Value Rule |
 |---|---|---|---|---|---|
-| `Station_Id` | BWDB hydrometric station code | Categorical | String | 17 codes (e.g., `SW93.5L`) | Mandatory key |
+| `Id` | Corridor station index mapped to official BWDB stations | Integer | [1–17] | 1 to 17 (order: Pankha SW88A to Sureswar SW95) | Mandatory primary key |
 | `Date` | Observation calendar date | Date | YYYY-MM-DD | 2011-01-01 to 2025-12-31 | Complete sequence |
 | `WL` | Daily average water level | Float | m MSL [0.00, 25.00] | Continuous numeric | Retained as NaN; flagged |
 | `WLD-1` .. `WLD-7`| 1 to 7 antecedent stage lags | Float | m MSL [0.00, 25.00] | Continuous numeric | Complete-case window rule |
@@ -115,14 +115,14 @@ pip install pandas numpy scikit-learn
 ```python
 import pandas as pd
 
-# Load the PRIMARY final dataset (31 variables, 91,033 station-days)
+# Load the PRIMARY final dataset (30 variables, 91,033 station-days)
 df_long = pd.read_csv("processed/ganges_padma_hydromet_dataset_2011_2025.csv", parse_dates=["Date"])
 
 # Filter to complete lag windows (90,760 verified station-days)
 df_clean = df_long[df_long["Window_Complete"] == True]
 
 print(f"Total valid observations: {len(df_clean):,}")
-print(df_clean[["Station_Id", "Date", "WL", "WLD-1", "Rain", "Period", "Risk_Class"]].head())
+print(df_clean[["Id", "Date", "WL", "WLD-1", "Rain", "Period", "Risk_Class"]].head())
 ```
 
 ### 5.3 Loading Wide Matrices & Target Modeling (Mawa / Padma Bridge)
