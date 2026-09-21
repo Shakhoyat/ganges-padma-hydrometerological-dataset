@@ -59,15 +59,15 @@ ganges-padma-hydrometerological-dataset/
 │   ├── sediment_raw.csv              # Suspended sediment concentration samples
 │   ├── wl_3hourly_raw.csv            # 3-hourly tidal water levels
 │   └── wl_daily_raw.csv              # Daily average river stage
-├── processed/                        # Cleaned/derived data
-│   ├── pointwise_hydromet_7day_long.csv # Primary 31-col multi-variable panel (91,033 × 31)
-│   ├── pointwise_wl_7day_long.csv    # Stage-only compatibility long panel (91,033 × 16)
-│   └── wide/                         # Target-specific wide ML design matrices
-│       ├── wide_SW91_9L.csv          # Baruria Transit (56 km upstream of Padma Bridge)
-│       ├── wide_SW91_9R.csv          # Goalundo Transit (60 km upstream)
-│       ├── wide_SW93_4L.csv          # Bhagyakul (5 km upstream)
-│       ├── wide_SW93_5L.csv          # Mawa (Padma Bridge north abutment)
-│       └── wide_SW95.csv             # Sureswar (31 km downstream)
+├── processed/                                     # Cleaned/derived analysis-ready datasets
+│   ├── ganges_padma_hydromet_dataset_2011_2025.csv # [PRIMARY/FINAL] Complete 31-col multi-variable panel (91,033 × 31)
+│   ├── ganges_padma_stage_only_subset_2011_2025.csv # [AUXILIARY/ABLATION] Univariate stage-only panel (91,033 × 16)
+│   └── wide/                                      # Target-specific wide ML design matrices (Station & Location named)
+│       ├── wide_sw91_9r_goalundo_transit.csv      # Goalundo Transit (60 km upstream, Ganges/Jamuna confluence)
+│       ├── wide_sw91_9l_baruria_transit.csv       # Baruria Transit (56 km upstream of Padma Bridge)
+│       ├── wide_sw93_4l_bhagyakul.csv             # Bhagyakul (5 km upstream)
+│       ├── wide_sw93_5l_mawa_padma_bridge.csv     # Mawa (Padma Bridge north abutment - primary forecast target)
+│       └── wide_sw95_sureswar.csv                 # Sureswar (31 km downstream)
 ├── metadata/                         # Data dictionary, labels, provenance
 │   ├── feature_dictionary.csv        # Complete variable definitions, types, and units
 │   ├── feature_sets.json             # 4-tier feature groups per target station
@@ -116,8 +116,8 @@ pip install pandas numpy scikit-learn
 ```python
 import pandas as pd
 
-# Load the primary multi-variable long panel
-df_long = pd.read_csv("processed/pointwise_hydromet_7day_long.csv", parse_dates=["Date"])
+# Load the PRIMARY final dataset (31 variables, 91,033 station-days)
+df_long = pd.read_csv("processed/ganges_padma_hydromet_dataset_2011_2025.csv", parse_dates=["Date"])
 
 # Filter to complete lag windows (90,760 verified station-days)
 df_clean = df_long[df_long["Window_Complete"] == True]
@@ -133,7 +133,7 @@ import pandas as pd
 import json
 
 # 1. Load wide feature matrix for Mawa (SW93.5L) at Padma Bridge
-df_mawa = pd.read_csv("processed/wide/wide_SW93_5L.csv", parse_dates=["Date"])
+df_mawa = pd.read_csv("processed/wide/wide_sw93_5l_mawa_padma_bridge.csv", parse_dates=["Date"])
 
 # 2. Load 4-tier feature set configuration
 with open("metadata/feature_sets.json", "r") as f:
