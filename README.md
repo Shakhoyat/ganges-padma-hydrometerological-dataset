@@ -48,17 +48,16 @@ The release provides **91,033 station-days** of observations, coupling daily ave
 
 ```text
 ganges-padma-hydrometerological-dataset/
-├── raw/                              # Original collected records/files (BWDB raw CSVs & GIS boundaries)
-│   ├── bgd_adm0.geojson              # Bangladesh national administrative boundary
-│   ├── bgd_adm1.geojson              # Divisional boundaries
-│   ├── cross_section_raw.csv         # River cross-section bathymetry
-│   ├── discharge_daily_raw.csv       # Daily tributary discharge observations
-│   ├── evaporation_daily_raw.csv     # Daily pan evaporation
-│   ├── groundwater_weekly_raw.csv    # Weekly groundwater monitoring levels
-│   ├── rainfall_daily_raw.csv        # Daily rain gauge observations
-│   ├── sediment_raw.csv              # Suspended sediment concentration samples
-│   ├── wl_3hourly_raw.csv            # 3-hourly tidal water levels
-│   └── wl_daily_raw.csv              # Daily average river stage
+├── raw/                                           # Original collected BWDB paid records (50 Excel workbooks, Invoice 2608295209)
+│   ├── Water_Level_Daily_High-Low_*.xlsx          # 17 daily water level stations (11 non-tidal + 6 tidal)
+│   ├── Water_Level_3_Hourly_*.xlsx                # 2 sub-daily tidal stations (Mawa SW93.5L, Sureswar SW95)
+│   ├── Water_Level_Annual_High-Low_*.xlsx         # 3 long-term annual extrema records
+│   ├── Rainfall_Daily_Rainfall_*.xlsx             # 11 co-located daily rainfall stations
+│   ├── Discharge_MDD_(Mean_Daily_Discharge)_*.xlsx # 5 major tributary inflow stations
+│   ├── Evaporation_Evaporation_*.xlsx             # 2 pan evaporation monitoring stations
+│   ├── Ground_Water_Ground_Water_Level_*.xlsx     # 3 weekly groundwater monitoring wells
+│   ├── Sediment_Weekly_fortnightly_monthly_*.xlsx # 3 suspended sediment concentration records
+│   └── Cross_Section_Cross_Section_*.xlsx         # 4 river morphological cross-section surveys
 ├── processed/                                     # Cleaned/derived analysis-ready datasets
 │   ├── ganges_padma_hydromet_dataset_2011_2025.csv # [PRIMARY/FINAL] Complete 31-col multi-variable panel (91,033 × 31)
 │   ├── ganges_padma_stage_only_subset_2011_2025.csv # [AUXILIARY/ABLATION] Univariate stage-only panel (91,033 × 16)
