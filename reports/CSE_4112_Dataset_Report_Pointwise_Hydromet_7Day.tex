@@ -13,7 +13,10 @@
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage{subcaption}
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
+\usepackage{colortbl}
+\usepackage{caption}
+\captionsetup[table]{font=small,labelfont=bf,labelsep=colon,skip=4pt}
 \usepackage{enumitem}
 \usepackage{mdframed}
 \usepackage{microtype}
@@ -32,6 +35,13 @@
 \definecolor{wine}{RGB}{136, 19, 55}
 \definecolor{boxbg}{RGB}{248, 250, 252}
 \definecolor{boxline}{RGB}{203, 213, 225}
+
+% Microsoft Word Table Grid styling definitions
+\definecolor{wordborder}{RGB}{180, 190, 200}
+\definecolor{wordheadbg}{RGB}{236, 241, 246}
+\definecolor{wordkeybg}{RGB}{248, 250, 252}
+\setlength{\arrayrulewidth}{0.5pt}
+\arrayrulecolor{wordborder}
 
 % Custom finding/takeaway box
 \newmdenv[
@@ -73,7 +83,7 @@
 
 % Table 0: Group Information (Strictly matching CSE 4112 Template Table 0)
 \begin{table}[htbp]\centering\small
-\begin{tabularx}{\linewidth}{|l|>{\raggedright\arraybackslash}p{6.0cm}|l|>{\raggedright\arraybackslash}X|}
+\begin{tabularx}{\linewidth}{|>{\columncolor{wordkeybg}}l|>{\raggedright\arraybackslash}p{6.0cm}|>{\columncolor{wordkeybg}}l|>{\raggedright\arraybackslash}X|}
 \hline
 \textbf{Group No.} & Group 01 & \textbf{Dataset Version} & v2.0 (September 2026) \\ \hline
 \textbf{Students} & Md. Shakhoyat Rahman Shujon (2107104)\newline Mohammad Moin Uddin Moin (2107111)\newline Md. Tariful Islam Jony (2107119)\newline Kamrul Islam (2107102)\newline Tanha Sayed Ahona (2107093) & \textbf{Repository} & \url{https://github.com/Shakhoyat/ganges-padma-hydrometerological-dataset} \\ \hline
@@ -97,25 +107,23 @@
 \begin{table}[htbp]\centering\small
 \caption{Dataset Article Metadata and Administration.}
 \label{tab:article_info}
-\begin{tabularx}{\linewidth}{l X}
-\toprule
-\textbf{Item} & \textbf{Description / Metadata} \\
-\midrule
-\textbf{Dataset/report title} & A 15-Year Multivariate Hydrometeorological and Water Level Dataset with 7-Day Lags along the Ganges--Padma River Corridor (2011--2025) \\
-\textbf{Group and students} & Group 01, CSE 4112, Batch 2k21: \newline
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{4.3cm}|X|}
+\hline
+\rowcolor{wordheadbg} \textbf{Item} & \textbf{Description / Metadata} \\ \hline
+\cellcolor{wordkeybg}Dataset/report title & Multi-Variable Hydrometeorological and Point-Wise Water Level Dataset with 7-Day Lags along the Ganges--Padma River Corridor (2011--2025) \\ \hline
+\cellcolor{wordkeybg}Group and students & Group 01, CSE 4112, Batch 2k21: \newline
 \textbf{Md. Shakhoyat Rahman Shujon} (Roll: 2107104), \newline
 \textbf{Mohammad Moin Uddin Moin} (Roll: 2107111), \newline
 \textbf{Md. Tariful Islam Jony} (Roll: 2107119), \newline
 \textbf{Kamrul Islam} (Roll: 2107102), \newline
-\textbf{Tanha Sayed Ahona} (Roll: 2107093) \\
-\textbf{Affiliation} & Department of Computer Science and Engineering, Khulna University of Engineering \& Technology (KUET), Khulna-9203, Bangladesh \\
-\textbf{Corresponding student} & Md. Shakhoyat Rahman Shujon (Roll: 2107104), Email: \texttt{shujon2107104@stud.kuet.ac.bd} \\
-\textbf{Keywords} & Hydrological forecasting; Ganges--Padma corridor; Padma Multipurpose Bridge; Multivariate hydrometeorology; PI-STGNN; 7-day lags; Persistence index \\
-\textbf{Dataset version} & v2.0 (Full Multivariate Benchmark Release); September 2026 \\
-\textbf{Repository / persistent ID} & \url{https://github.com/Shakhoyat/ganges-padma-hydrometerological-dataset} \\
-\textbf{License} & Creative Commons Attribution 4.0 International (CC BY 4.0) \\
-\textbf{Related article / source} & Bangladesh Water Development Board (BWDB) Hydroinformatics and Flood Forecasting Circle; Data in Brief Benchmark \\
-\bottomrule
+\textbf{Tanha Sayed Ahona} (Roll: 2107093) \\ \hline
+\cellcolor{wordkeybg}Affiliation & Department of Computer Science and Engineering, Khulna University of Engineering \& Technology (KUET), Khulna-9203, Bangladesh \\ \hline
+\cellcolor{wordkeybg}Corresponding student & Md. Shakhoyat Rahman Shujon (Roll: 2107104), Email: \texttt{shujon2107104@stud.kuet.ac.bd} \\ \hline
+\cellcolor{wordkeybg}Keywords & Hydrological forecasting; Ganges--Padma corridor; Padma Multipurpose Bridge; Multi-variable hydrometeorology; PI-STGNN; 7-day lags; Persistence index \\ \hline
+\cellcolor{wordkeybg}Dataset version & v2.0 (Full Multi-Variable Benchmark Release); September 2026 \\ \hline
+\cellcolor{wordkeybg}Repository / persistent ID & \url{https://github.com/Shakhoyat/ganges-padma-hydrometerological-dataset} \\ \hline
+\cellcolor{wordkeybg}License & Creative Commons Attribution 4.0 International (CC BY 4.0) \\ \hline
+\cellcolor{wordkeybg}Related article / source & Bangladesh Water Development Board (BWDB) Hydroinformatics and Flood Forecasting Circle; Data in Brief Benchmark \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -138,24 +146,22 @@ Benchmarking against a naive persistence baseline ($y_t = y_{t-1}$) reveals that
 \begin{table}[htbp]\centering\small
 \caption{Dataset Specifications and Technical Characteristics.}
 \label{tab:specs}
-\begin{tabularx}{\linewidth}{l X}
-\toprule
-\textbf{Item} & \textbf{Required Information} \\
-\midrule
-\textbf{Subject / domain} & Earth \& Planetary Sciences; Water Science \& Engineering; Machine Learning in Hydrology \\
-\textbf{Specific subject area} & Hydrodynamic stage forecasting, physics-informed neural networks, flood hazard classification, Ganges--Padma corridor \\
-\textbf{Type of data} & Tabular long panel (CSV), Wide ML design matrices (CSV), Feature metadata (JSON), Station register (CSV) \\
-\textbf{File formats} & CSV (UTF-8 plain text), JSON (metadata/feature mappings), PNG/PDF (high-resolution vector graphics) \\
-\textbf{Unit of observation} & One station-day: hydrometric stage, 7-day stage/rainfall lags, tributary discharge, and environmental covariates \\
-\textbf{Data collection / source} & Bangladesh Water Development Board (BWDB) official paid delivery, Invoice 2608295209 \\
-\textbf{Instrument / software} & ADCP current profilers, OTT automatic pressure transducers, Symons rain gauges, Class-A pans; Python 3.10+, PyTorch 2.1+, LightGBM \\
-\textbf{Data source location} & Ganges--Padma River Basin, Bangladesh (Lat: $23.22^\circ\text{N}$--$25.13^\circ\text{N}$, Lon: $88.10^\circ\text{E}$--$90.65^\circ\text{E}$, Elevation: 0--25 mMSL) \\
-\textbf{Collection period} & 2011-01-01 to 2025-12-31 (15 continuous years; 5,479 calendar days) \\
-\textbf{Dataset size} & 91,033 station-days (90,760 7-day complete cases) across 17 stations; 31 long attributes, wide matrices up to 245 features (~16 MB) \\
-\textbf{Target / labels} & Daily average stage ($WL$, mMSL), daily stage change ($\Delta = WL - WLD\text{-}1$), and 4-class flood risk (Normal, Warning, Danger, Severe) \\
-\textbf{Accessibility} & Directly accessible in local repository workspace; reproducible via \texttt{benchmarks/} and \texttt{build/} pipeline scripts \\
-\textbf{License / reuse terms} & Creative Commons Attribution 4.0 International (CC BY 4.0); open academic and operational reuse \\
-\bottomrule
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{4.3cm}|X|}
+\hline
+\rowcolor{wordheadbg} \textbf{Item} & \textbf{Required Information} \\ \hline
+\cellcolor{wordkeybg}Subject / domain & Earth \& Planetary Sciences; Water Science \& Engineering; Machine Learning in Hydrology \\ \hline
+\cellcolor{wordkeybg}Specific subject area & Hydrodynamic stage forecasting, physics-informed neural networks, flood hazard classification, Ganges--Padma corridor \\ \hline
+\cellcolor{wordkeybg}Type of data & Tabular long panel (CSV), Wide ML design matrices (CSV), Feature metadata (JSON), Station register (CSV) \\ \hline
+\cellcolor{wordkeybg}File formats & CSV (UTF-8 plain text), JSON (metadata/feature mappings), PNG/PDF (high-resolution vector graphics) \\ \hline
+\cellcolor{wordkeybg}Unit of observation & One station-day: hydrometric stage, 7-day stage/rainfall lags, tributary discharge, and environmental covariates \\ \hline
+\cellcolor{wordkeybg}Data collection / source & Bangladesh Water Development Board (BWDB) official paid delivery, Invoice 2608295209 \\ \hline
+\cellcolor{wordkeybg}Instrument / software & ADCP current profilers, OTT automatic pressure transducers, Symons rain gauges, Class-A pans; Python 3.10+, PyTorch 2.1+, LightGBM \\ \hline
+\cellcolor{wordkeybg}Data source location & Ganges--Padma River Basin, Bangladesh (Lat: $23.22^\circ\text{N}$--$25.13^\circ\text{N}$, Lon: $88.10^\circ\text{E}$--$90.65^\circ\text{E}$, Elevation: 0--25 mMSL) \\ \hline
+\cellcolor{wordkeybg}Collection period & 2011-01-01 to 2025-12-31 (15 continuous years; 5,479 calendar days) \\ \hline
+\cellcolor{wordkeybg}Dataset size & 91,033 station-days (90,760 7-day complete cases) across 17 stations; 31 long attributes, wide matrices up to 245 features (~16 MB) \\ \hline
+\cellcolor{wordkeybg}Target / labels & Daily average stage ($WL$, mMSL), daily stage change ($\Delta = WL - WLD\text{-}1$), and 4-class flood risk (Normal, Warning, Danger, Severe) \\ \hline
+\cellcolor{wordkeybg}Accessibility & Directly accessible in local repository workspace; reproducible via \texttt{benchmarks/} and \texttt{build/} pipeline scripts \\ \hline
+\cellcolor{wordkeybg}License / reuse terms & Creative Commons Attribution 4.0 International (CC BY 4.0); open academic and operational reuse \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -222,18 +228,18 @@ Raw BWDB workbooks are preserved unmodified in \texttt{raw/}. All processing ste
 \begin{table}[htbp]\centering\scriptsize
 \caption{Extraction Ledger Tracing Raw Workbook Inputs to Released Panel Records.}
 \label{tab:provenance}
-\begin{tabularx}{\linewidth}{l c c c X}
-\toprule
-\textbf{Raw Input File} & \textbf{Raw Rows} & \textbf{Valid Dates} & \textbf{Completeness} & \textbf{Target Destination / Role} \\
-\midrule
-\texttt{WL\_Daily\_Average.xlsx} & 5,479 & 5,479 & 100.0\% & Primary target stage matrix (\texttt{WL\_SW*.csv}) \\
-\texttt{Rainfall\_Daily.xlsx} & 5,479 & 5,479 & 100.0\% & 11 co-located rainfall lag predictors \\
-\texttt{Discharge\_Daily.xlsx} & 5,479 & 5,479 & 98.4\% & 5 major tributary inflow nodes \\
-\texttt{Evaporation\_Groundwater.xlsx} & 5,479 & 5,479 & 97.2\% & Environmental covariates (Evap, GW, Sed) \\
-\texttt{Tidal\_3Hourly.xlsx} & 8,035 & 8,035 & 100.0\% & Sub-daily tidal range validation at Mawa \\
-\bottomrule
+\begin{tabularx}{\linewidth}{|l|c|c|c|X|}
+\hline
+\rowcolor{wordheadbg} \textbf{Raw Input File} & \textbf{Raw Rows} & \textbf{Valid Dates} & \textbf{Completeness} & \textbf{Target Destination / Role} \\ \hline
+\texttt{WL\_Daily\_Average.xlsx} & 5,479 & 5,479 & 100.0\% & Primary target stage matrix (\texttt{WL\_SW*.csv}) \\ \hline
+\texttt{Rainfall\_Daily.xlsx} & 5,479 & 5,479 & 100.0\% & 11 co-located rainfall lag predictors \\ \hline
+\texttt{Discharge\_Daily.xlsx} & 5,479 & 5,479 & 98.4\% & 5 major tributary inflow nodes \\ \hline
+\texttt{Evaporation\_Groundwater.xlsx} & 5,479 & 5,479 & 97.2\% & Environmental covariates (Evap, GW, Sed) \\ \hline
+\texttt{Tidal\_3Hourly.xlsx} & 8,035 & 8,035 & 100.0\% & Sub-daily tidal range validation at Mawa \\ \hline
 \end{tabularx}
 \end{table}
+
+\clearpage
 
 % -----------------------------------------------------------------------------
 % SECTION 7: DATA DESCRIPTION AND DATA RECORDS
@@ -244,21 +250,19 @@ Raw BWDB workbooks are preserved unmodified in \texttt{raw/}. All processing ste
 \begin{table}[htbp]\centering\small
 \caption{Released Repository Directory Structure.}
 \label{tab:folder_structure}
-\begin{tabularx}{\linewidth}{l X l}
-\toprule
-\textbf{Folder / file} & \textbf{Contents} & \textbf{Raw / processed / metadata} \\
-\midrule
-\texttt{raw/} & Original 10 parsed raw BWDB station CSVs and GeoJSON GIS boundary files & Raw \\
-\texttt{processed/} & Primary 31-col multi-variable panel and stage panel (91,033 station-days) & Processed \\
-\texttt{processed/wide/} & 5 wide ML design matrices for target stations (177 to 245 features) & Processed \\
-\texttt{metadata/} & Station registry, feature dictionary, and 4-tier feature sets JSON & Metadata \\
-\texttt{benchmarks/} & Full reproducible benchmark pipeline and PI-STGNN suite & Code / Benchmarks \\
-\texttt{build/} & 10-step modular data extraction, cleaning, and model pipeline & Pipeline \\
-\texttt{figures/} & 20+ publication-grade vector PDF and 300~DPI PNG diagnostic plots & Visualizations \\
-\texttt{results/} & Benchmark predictions, residual diagnostics, and ablation CSVs & Results \\
-\texttt{reports/} & Complete compiled PDF report and LaTeX source document & Documentation \\
-\texttt{README.md} & Comprehensive operational guide, data dictionary, and benchmark instructions & Documentation \\
-\bottomrule
+\begin{tabularx}{\linewidth}{|l|X|l|}
+\hline
+\rowcolor{wordheadbg} \textbf{Folder / file} & \textbf{Contents} & \textbf{Raw / processed / metadata} \\ \hline
+\texttt{raw/} & Original 10 parsed raw BWDB station CSVs and GeoJSON GIS boundary files & Raw \\ \hline
+\texttt{processed/} & Primary 31-col multi-variable panel and stage panel (91,033 station-days) & Processed \\ \hline
+\texttt{processed/wide/} & 5 wide ML design matrices for target stations (177 to 245 features) & Processed \\ \hline
+\texttt{metadata/} & Station registry, feature dictionary, and 4-tier feature sets JSON & Metadata \\ \hline
+\texttt{benchmarks/} & Full reproducible benchmark pipeline and PI-STGNN suite & Code / Benchmarks \\ \hline
+\texttt{build/} & 10-step modular data extraction, cleaning, and model pipeline & Pipeline \\ \hline
+\texttt{figures/} & 20+ publication-grade vector PDF and 300~DPI PNG diagnostic plots & Visualizations \\ \hline
+\texttt{results/} & Benchmark predictions, residual diagnostics, and ablation CSVs & Results \\ \hline
+\texttt{reports/} & Complete compiled PDF report and LaTeX source document & Documentation \\ \hline
+\texttt{README.md} & Comprehensive operational guide, data dictionary, and benchmark instructions & Documentation \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -266,19 +270,17 @@ Raw BWDB workbooks are preserved unmodified in \texttt{raw/}. All processing ste
 \begin{table}[htbp]\centering\scriptsize
 \caption{Representative Data Dictionary of Key Variables (Full Dictionary in Appendix~A and \texttt{feature\_sets.json}).}
 \label{tab:dictionary}
-\begin{tabularx}{\linewidth}{l X l l l X}
-\toprule
-\textbf{Variable / field} & \textbf{Meaning} & \textbf{Type} & \textbf{Unit / range} & \textbf{Allowed values / coding} & \textbf{Missing-value rule} \\
-\midrule
-\texttt{WL} & Daily average water level & Float & m MSL [0.0--25.0] & Continuous numeric & Retained as NA; flagged \\
-\texttt{WLD-1..7} & 1-day to 7-day antecedent stage lags & Float & m MSL [0.0--25.0] & Continuous numeric & Complete-case window rule \\
-\texttt{Rain} & Daily accumulated rainfall & Float & mm [0.0--450.0] & Non-negative float & Set to 0.0 if gauge active \\
-\texttt{Rain\_D1..7} & 1-day to 7-day rainfall lag history & Float & mm [0.0--450.0] & Non-negative float & Complete-case window rule \\
-\texttt{Rainfall\_Level} & 4-tier precipitation intensity category & Ordinal & Class [0--3] & 0: None, 1: Light, 2: Mod, 3: Heavy & Class 0 (None) if missing \\
-\texttt{Discharge\_m3s} & Mean daily tributary discharge & Float & m$^3$/s [500--140k] & Non-negative float & Available at 5 nodes \\
-\texttt{Period} & Bridge construction epoch regime & Categorical & String & \textsc{Before}, \textsc{During}, \textsc{After} & Complete calendar mapping \\
-\texttt{Risk\_Class} & Localized flood hazard classification & Categorical & Class & Normal, Warning, Danger, Severe & Deterministic BWDB mapping \\
-\bottomrule
+\begin{tabularx}{\linewidth}{|l|>{\raggedright\arraybackslash}X|l|l|>{\raggedright\arraybackslash}p{2.6cm}|>{\raggedright\arraybackslash}X|}
+\hline
+\rowcolor{wordheadbg} \textbf{Variable / field} & \textbf{Meaning} & \textbf{Type} & \textbf{Unit / range} & \textbf{Allowed values / coding} & \textbf{Missing-value rule} \\ \hline
+\texttt{WL} & Daily average water level & Float & m MSL [0.0--25.0] & Continuous numeric & Retained as NA; flagged \\ \hline
+\texttt{WLD-1..7} & 1-day to 7-day antecedent stage lags & Float & m MSL [0.0--25.0] & Continuous numeric & Complete-case window rule \\ \hline
+\texttt{Rain} & Daily accumulated rainfall & Float & mm [0.0--450.0] & Non-negative float & Set to 0.0 if gauge active \\ \hline
+\texttt{Rain\_D1..7} & 1-day to 7-day rainfall lag history & Float & mm [0.0--450.0] & Non-negative float & Complete-case window rule \\ \hline
+\texttt{Rainfall\_Level} & 4-tier precipitation intensity category & Ordinal & Class [0--3] & 0: None, 1: Light, 2: Mod, 3: Heavy & Class 0 (None) if missing \\ \hline
+\texttt{Discharge\_m3s} & Mean daily tributary discharge & Float & m$^3$/s [500--140k] & Non-negative float & Available at 5 nodes \\ \hline
+\texttt{Period} & Bridge construction epoch regime & Categorical & String & \textsc{Before}, \textsc{During}, \textsc{After} & Complete calendar mapping \\ \hline
+\texttt{Risk\_Class} & Localized flood hazard classification & Categorical & Class & Normal, Warning, Danger, Severe & Deterministic BWDB mapping \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -290,32 +292,28 @@ To provide direct inspection of the underlying data format, Table~\ref{tab:sampl
 \begin{table}[htbp]\centering\scriptsize
 \caption{Representative Sample from Primary Long Panel (\texttt{pointwise\_hydromet\_7day\_long.csv}) at Mawa (\texttt{SW93.5L}).}
 \label{tab:sample_long}
-\begin{tabularx}{\linewidth}{l c c c c c c c c c}
-\toprule
-\textbf{Date} & \textbf{Station} & \textbf{WL (m)} & \textbf{WLD-1} & \textbf{WLD-7} & \textbf{Rain (mm)} & \textbf{Rain\_D1} & \textbf{Rain\_sum\_3d} & \textbf{Period} & \textbf{Risk\_Class} \\
-\midrule
-2015-02-16 & SW93.5L & 0.577 & 0.467 & 0.697 & 0.0 & 0.0 & 0.0 & DURING & Normal \\
-2015-02-17 & SW93.5L & 0.617 & 0.577 & 0.637 & 0.0 & 0.0 & 0.0 & DURING & Normal \\
-2015-02-18 & SW93.5L & 0.757 & 0.617 & 0.627 & 0.0 & 0.0 & 0.0 & DURING & Normal \\
-2015-02-19 & SW93.5L & 0.887 & 0.757 & 0.517 & 12.0 & 0.0 & 12.0 & DURING & Normal \\
-2015-02-20 & SW93.5L & 0.977 & 0.887 & 0.447 & 0.0 & 12.0 & 12.0 & DURING & Normal \\
-\bottomrule
+\begin{tabularx}{\linewidth}{|l|c|c|c|c|c|c|c|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|}
+\hline
+\rowcolor{wordheadbg} \textbf{Date} & \textbf{Station} & \textbf{WL (m)} & \textbf{WLD-1} & \textbf{WLD-7} & \textbf{Rain (mm)} & \textbf{Rain\_D1} & \textbf{Rain\_sum\_3d} & \textbf{Period} & \textbf{Risk\_Class} \\ \hline
+2015-02-16 & SW93.5L & 0.577 & 0.467 & 0.697 & 0.0 & 0.0 & 0.0 & DURING & Normal \\ \hline
+2015-02-17 & SW93.5L & 0.617 & 0.577 & 0.637 & 0.0 & 0.0 & 0.0 & DURING & Normal \\ \hline
+2015-02-18 & SW93.5L & 0.757 & 0.617 & 0.627 & 0.0 & 0.0 & 0.0 & DURING & Normal \\ \hline
+2015-02-19 & SW93.5L & 0.887 & 0.757 & 0.517 & 12.0 & 0.0 & 12.0 & DURING & Normal \\ \hline
+2015-02-20 & SW93.5L & 0.977 & 0.887 & 0.447 & 0.0 & 12.0 & 12.0 & DURING & Normal \\ \hline
 \end{tabularx}
 \end{table}
 
 \begin{table}[htbp]\centering\scriptsize
 \caption{Representative Sample from Wide ML Design Matrix (\texttt{wide\_SW93\_5L.csv}) at Mawa.}
 \label{tab:sample_wide}
-\begin{tabularx}{\linewidth}{l c c c c c c c c}
-\toprule
-\textbf{Date} & \textbf{WL (m)} & \textbf{WLD-1} & \textbf{WLD-7} & \textbf{$\Delta$\_WL\_1d (m)} & \textbf{Rain (mm)} & \textbf{Rain\_D1} & \textbf{Period} & \textbf{Risk\_Class} \\
-\midrule
-2016-03-30 & 1.007 & 1.047 & 0.997 & -0.040 & 14.0 & 2.5 & DURING & Normal \\
-2016-03-31 & 0.937 & 1.007 & 0.997 & -0.070 & 3.0 & 14.0 & DURING & Normal \\
-2016-04-01 & 0.867 & 0.937 & 0.987 & -0.070 & 31.5 & 3.0 & DURING & Normal \\
-2016-04-02 & 0.837 & 0.867 & 1.007 & -0.030 & 0.0 & 31.5 & DURING & Normal \\
-2016-04-03 & 0.887 & 0.837 & 1.017 & +0.050 & 12.5 & 0.0 & DURING & Normal \\
-\bottomrule
+\begin{tabularx}{\linewidth}{|l|c|c|c|c|c|c|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|}
+\hline
+\rowcolor{wordheadbg} \textbf{Date} & \textbf{WL (m)} & \textbf{WLD-1} & \textbf{WLD-7} & \textbf{$\Delta$\_WL\_1d (m)} & \textbf{Rain (mm)} & \textbf{Rain\_D1} & \textbf{Period} & \textbf{Risk\_Class} \\ \hline
+2016-03-30 & 1.007 & 1.047 & 0.997 & -0.040 & 14.0 & 2.5 & DURING & Normal \\ \hline
+2016-03-31 & 0.937 & 1.007 & 0.997 & -0.070 & 3.0 & 14.0 & DURING & Normal \\ \hline
+2016-04-01 & 0.867 & 0.937 & 0.987 & -0.070 & 31.5 & 3.0 & DURING & Normal \\ \hline
+2016-04-02 & 0.837 & 0.867 & 1.007 & -0.030 & 0.0 & 31.5 & DURING & Normal \\ \hline
+2016-04-03 & 0.887 & 0.837 & 1.017 & +0.050 & 12.5 & 0.0 & DURING & Normal \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -384,18 +382,16 @@ To provide direct inspection of the underlying data format, Table~\ref{tab:sampl
 \begin{table}[htbp]\centering\small
 \caption{Data Quality Dimensions and Validation Evidence (Matching CSE 4112 Template Table 8).}
 \label{tab:quality}
-\begin{tabularx}{\linewidth}{l X}
-\toprule
-\textbf{Quality Dimension} & \textbf{Evidence / Checks Performed} \\
-\midrule
-\textbf{Completeness} & 90,760 of 91,033 station-days (99.70\%) maintain unbroken 7-day stage and rainfall lag histories; gap inventory documented in \path{gap_inventory.csv}. \\
-\textbf{Consistency} & Stage values strictly bounded within physical bankfull ranges (0--25 mMSL); topology strictly directed downstream with monotone head loss. \\
-\textbf{Label quality} & Flood risk boundaries cross-verified against official BWDB danger-level circulars and historic monsoon flood reports~\cite{ffwc2024}; 100\% deterministic agreement. \\
-\textbf{Measurement quality} & Daily average $WL$ validated against 8,035 sub-daily 3-hourly readings at Mawa ($\text{MAD} = 0.0115\text{ m}, r = 0.99992$). \\
-\textbf{Integrity} & Deterministic checksums and provenance logging verify exact workbook row counts from raw import to final wide matrices. \\
-\textbf{Representativeness / bias} & Distributional shifts before vs after preprocessing are $\le 0.0078\text{ m}$; complete-case filtering introduces zero seasonal skew. \\
-\textbf{Reproducibility} & Entire benchmark suite automated through \texttt{build/} and \texttt{benchmarks/} scripts with fixed random seed 20260913. \\
-\bottomrule
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{4.3cm}|X|}
+\hline
+\rowcolor{wordheadbg} \textbf{Quality Dimension} & \textbf{Evidence / Checks Performed} \\ \hline
+\cellcolor{wordkeybg}Completeness & 90,760 of 91,033 station-days (99.70\%) maintain unbroken 7-day stage and rainfall lag histories; gap inventory documented in \path{gap_inventory.csv}. \\ \hline
+\cellcolor{wordkeybg}Consistency & Stage values strictly bounded within physical bankfull ranges (0--25 mMSL); topology strictly directed downstream with monotone head loss. \\ \hline
+\cellcolor{wordkeybg}Label quality & Flood risk boundaries cross-verified against official BWDB danger-level circulars and historic monsoon flood reports~\cite{ffwc2024}; 100\% deterministic agreement. \\ \hline
+\cellcolor{wordkeybg}Measurement quality & Daily average $WL$ validated against 8,035 sub-daily 3-hourly readings at Mawa ($\text{MAD} = 0.0115\text{ m}, r = 0.99992$). \\ \hline
+\cellcolor{wordkeybg}Integrity & Deterministic checksums and provenance logging verify exact workbook row counts from raw import to final wide matrices. \\ \hline
+\cellcolor{wordkeybg}Representativeness / bias & Distributional shifts before vs after preprocessing are $\le 0.0078\text{ m}$; complete-case filtering introduces zero seasonal skew. \\ \hline
+\cellcolor{wordkeybg}Reproducibility & Entire benchmark suite automated through \texttt{build/} and \texttt{benchmarks/} scripts with fixed random seed 20260913. \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -415,7 +411,7 @@ To provide direct inspection of the underlying data format, Table~\ref{tab:sampl
 \end{figure}
 
 \begin{figure}[htbp]\centering
-\includegraphics[width=0.88\linewidth]{fig_classbalance.pdf}
+\includegraphics[width=0.72\linewidth]{fig_classbalance.pdf}
 \caption{\textbf{Flood Risk Class Distribution Across Bridge Construction Epochs.} Proportions of Normal, Warning, Danger, and Severe risk categories across \textsc{Before}, \textsc{During}, and \textsc{After} bridge eras for all 5 target forecasting stations.}
 \label{fig:classbalance}
 \end{figure}
@@ -426,22 +422,19 @@ To establish the significance and unique value of the released Ganges--Padma dat
 \begin{table}[htbp]\centering\scriptsize
 \caption{Systematic Comparison with Existing Global and National Hydrological Datasets.}
 \label{tab:dataset_comparison}
-\begin{tabularx}{\linewidth}{l p{2.2cm} p{2.4cm} p{2.6cm} X}
-\toprule
-\textbf{Dataset} & \textbf{Spatial Domain} & \textbf{Coverage / Temporal} & \textbf{Coupled Variables} & \textbf{Key Distinctions \& Significance} \\
-\midrule
-\textbf{CAMELS-US}~\cite{addor2017camels} & 671 US Catchments & 1980--2014 (Daily) & Daily $Q$, lumped Daymet weather, static attributes & Headwater basins; no river-reach topology; no bridge infrastructure epochs. \\
-\textbf{LamaH-CE}~\cite{klingler2021lamah} & Central Europe (Danube) & 1981--2019 (Daily/Hourly) & Daily/hourly $Q$, ERA5-Land, geology, baseflow & Focus on alpine/temperate discharge; lacks tropical monsoonal delta dynamics. \\
-\textbf{Caravan}~\cite{kratzert2023caravan} & Global (6,830 basins) & 1981--2020 (Daily) & Daily $Q$, global ERA5-Land covariates & High scale but relies on global gridded products without ground-truth stage/tidal records. \\
-\textbf{FFWC Archive}~\cite{ffwc2024} & Bangladesh Gauges & Annual / Disconnected & Raw stage only, single-station studies & Unlinked tables, no multi-lag panels, no infrastructure epoch stratification. \\
-\midrule
-\textbf{This Dataset} & \textbf{Ganges--Padma Corridor (290.7~km)} & \textbf{2011--2025 (5,479 Days, 100\% continuous)} & \textbf{17 Stage gauges, 11 Rain, 5 Discharge, Evap, GW, Sed, Tidal} & \textbf{First analysis-ready 7-day multi-variable corridor panel with Padma Bridge 3-epoch stratification \& PI-STGNN benchmark.} \\
-\bottomrule
+\begin{tabularx}{\linewidth}{|l|p{2.3cm}|p{2.4cm}|p{2.6cm}|X|}
+\hline
+\rowcolor{wordheadbg} \textbf{Dataset} & \textbf{Spatial Domain} & \textbf{Coverage / Temporal} & \textbf{Coupled Variables} & \textbf{Key Distinctions \& Significance} \\ \hline
+\textbf{CAMELS-US}~\cite{addor2017camels} & 671 US Catchments & 1980--2014 (Daily) & Daily $Q$, lumped Daymet weather, static attributes & Headwater basins; no river-reach topology; no bridge infrastructure epochs. \\ \hline
+\textbf{LamaH-CE}~\cite{klingler2021lamah} & Central Europe (Danube) & 1981--2019 (Daily/Hourly) & Daily/hourly $Q$, ERA5-Land, geology, baseflow & Focus on alpine/temperate discharge; lacks tropical monsoonal delta dynamics. \\ \hline
+\textbf{Caravan}~\cite{kratzert2023caravan} & Global (6,830 basins) & 1981--2020 (Daily) & Daily $Q$, global ERA5-Land covariates & High scale but relies on global gridded products without ground-truth stage/tidal records. \\ \hline
+\textbf{FFWC Archive}~\cite{ffwc2024} & Bangladesh Gauges & Annual / Disconnected & Raw stage only, single-station studies & Unlinked tables, no multi-lag panels, no infrastructure epoch stratification. \\ \hline
+\rowcolor{wordkeybg} \textbf{This Dataset} & \textbf{Ganges--Padma Corridor (290.7~km)} & \textbf{2011--2025 (5,479 Days, 100\% continuous)} & \textbf{17 Stage gauges, 11 Rain, 5 Discharge, Evap, GW, Sed, Tidal} & \textbf{First analysis-ready 7-day multi-variable corridor panel with Padma Bridge 3-epoch stratification \& PI-STGNN benchmark.} \\ \hline
 \end{tabularx}
 \end{table}
 
 \textbf{Novelty and Significant Properties of the Dataset:}
-\begin{enumerate}[leftmargin=16pt,itemsep=2pt]
+\begin{enumerate}[leftmargin=16pt,itemsep=1pt,parsep=0pt]
   \item \textbf{Continuous Multi-Decadal Ground-Truth Panel:} Covers 15 uninterrupted years (5,479 calendar days) with 99.70\% complete-case preservation across 17 synchronized hydrometric stations along 290.7~km of the active Ganges--Padma river corridor.
   \item \textbf{Comprehensive Hydrometeorological Coupling:} Combines 7-day stage lags, 7-day multi-tier rainfall lags, 5 tributary discharge nodes, evaporation, groundwater, sediment, and sub-daily tidal dynamics in a single analysis-ready panel.
   \item \textbf{Padma Multipurpose Bridge Epoch Stratification:} Uniquely marks three ground-truth infrastructural regimes (\textsc{Before}, \textsc{During}, \textsc{After}), enabling hydrodynamic impact assessment and cross-epoch model transferability.
@@ -511,33 +504,29 @@ Automated reproduction is provided via \texttt{benchmarks/run\_all\_benchmarks.p
 \begin{table}[htbp]\centering\small
 \caption{Comprehensive Benchmark Model Evaluation (Averaged across 5 target stations: Goalundo, Baruria, Bhagyakul, Mawa, Sureswar).}
 \label{tab:benchmarks}
-\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X c c c c c c}
-\toprule
-\textbf{Model Architecture} & \textbf{RMSE (m)} & \textbf{MAE (m)} & \textbf{NSE} & \textbf{KGE} & \textbf{PI} & \textbf{Peak RMSE (m)} \\
-\midrule
-Naive Persistence ($y_{t-1}$) & 0.1028 & 0.0741 & 0.9953 & 0.9976 & 0.000 & 0.0752 \\
-Lumped Conceptual (HBV/GR4J) & 0.1017 & 0.0735 & 0.9954 & 0.9974 & $+$0.020 & 0.0757 \\
-Temporal Transformer & 0.0971 & 0.0706 & 0.9955 & 0.9895 & $+$0.102 & 0.0718 \\
-Spatial GCN (River Graph) & 0.0893 & 0.0623 & 0.9962 & 0.9937 & $+$0.243 & 0.0656 \\
-LSTM Sequence Model & 0.0874 & 0.0613 & 0.9965 & 0.9916 & $+$0.276 & 0.0658 \\
-XGBoost Regressor ($\Delta$) & 0.0746 & 0.0529 & 0.9972 & 0.9912 & $+$0.467 & 0.0594 \\
-LightGBM Regressor ($\Delta$) & 0.0711 & 0.0495 & 0.9974 & 0.9921 & $+$0.513 & 0.0587 \\
-\textbf{PI-STGNN (Proposed Custom)} & \textbf{0.0071} & \textbf{0.0046} & \textbf{0.99998} & \textbf{0.9983} & \textbf{$+$0.995} & \textbf{0.0073} \\
-\bottomrule
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}X|c|c|c|c|c|c|}
+\hline
+\rowcolor{wordheadbg} \textbf{Model Architecture} & \textbf{RMSE (m)} & \textbf{MAE (m)} & \textbf{NSE} & \textbf{KGE} & \textbf{PI} & \textbf{Peak RMSE (m)} \\ \hline
+Naive Persistence ($y_{t-1}$) & 0.1028 & 0.0741 & 0.9953 & 0.9976 & 0.000 & 0.0752 \\ \hline
+Lumped Conceptual (HBV/GR4J) & 0.1017 & 0.0735 & 0.9954 & 0.9974 & $+$0.020 & 0.0757 \\ \hline
+Temporal Transformer & 0.0971 & 0.0706 & 0.9955 & 0.9895 & $+$0.102 & 0.0718 \\ \hline
+Spatial GCN (River Graph) & 0.0893 & 0.0623 & 0.9962 & 0.9937 & $+$0.243 & 0.0656 \\ \hline
+LSTM Sequence Model & 0.0874 & 0.0613 & 0.9965 & 0.9916 & $+$0.276 & 0.0658 \\ \hline
+XGBoost Regressor ($\Delta$) & 0.0746 & 0.0529 & 0.9972 & 0.9912 & $+$0.467 & 0.0594 \\ \hline
+LightGBM Regressor ($\Delta$) & 0.0711 & 0.0495 & 0.9974 & 0.9921 & $+$0.513 & 0.0587 \\ \hline
+\rowcolor{wordkeybg} \textbf{PI-STGNN (Proposed Custom)} & \textbf{0.0071} & \textbf{0.0046} & \textbf{0.99998} & \textbf{0.9983} & \textbf{$+$0.995} & \textbf{0.0073} \\ \hline
 \end{tabularx}
 \end{table}
 
 \begin{table}[htbp]\centering\small
 \caption{Physics Loss Ablation Study on Out-of-Distribution Peak Flood Forecasts.}
 \label{tab:ablation}
-\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X c c c c}
-\toprule
-\textbf{Model Configuration} & \textbf{Loss Weights} & \textbf{Mean RMSE (m)} & \textbf{Peak RMSE (m)} & \textbf{Physical Violation Rate} \\
-\midrule
-\textbf{Full Physics PI-STGNN} & $\lambda_{\text{mass}}=0.15, \lambda_{\text{mom}}=0.10$ & \textbf{0.0071} & \textbf{0.0073} & \textbf{0.00\%} \\
-\textbf{Mass-Only STGNN} & $\lambda_{\text{mass}}=0.15, \lambda_{\text{mom}}=0.00$ & 0.0108 & 0.0132 & 0.00\% \\
-\textbf{Data-Only STGNN} & $\lambda_{\text{mass}}=0.00, \lambda_{\text{mom}}=0.00$ & 0.0125 & 0.0122 & 8.42\% \\
-\bottomrule
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}X|c|c|c|c|}
+\hline
+\rowcolor{wordheadbg} \textbf{Model Configuration} & \textbf{Loss Weights} & \textbf{Mean RMSE (m)} & \textbf{Peak RMSE (m)} & \textbf{Physical Violation Rate} \\ \hline
+\rowcolor{wordkeybg} \textbf{Full Physics PI-STGNN} & $\lambda_{\text{mass}}=0.15, \lambda_{\text{mom}}=0.10$ & \textbf{0.0071} & \textbf{0.0073} & \textbf{0.00\%} \\ \hline
+\textbf{Mass-Only STGNN} & $\lambda_{\text{mass}}=0.15, \lambda_{\text{mom}}=0.00$ & 0.0108 & 0.0132 & 0.00\% \\ \hline
+\textbf{Data-Only STGNN} & $\lambda_{\text{mass}}=0.00, \lambda_{\text{mom}}=0.00$ & 0.0125 & 0.0122 & 8.42\% \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -610,16 +599,14 @@ LightGBM Regressor ($\Delta$) & 0.0711 & 0.0495 & 0.9974 & 0.9921 & $+$0.513 & 0
 \begin{table}[htbp]\centering\small
 \caption{Ethics, Privacy, and Responsible Data Use Disclosures.}
 \label{tab:ethics}
-\begin{tabularx}{\linewidth}{l X}
-\toprule
-\textbf{Item} & \textbf{Disclosure Statement} \\
-\midrule
-\textbf{Human participants / consent} & Not applicable. Dataset comprises physical hydrological and meteorological observations only. \\
-\textbf{Privacy / de-identification} & Not applicable. No personally identifiable information (PII) or human subjects involved. \\
-\textbf{Web / social-media data} & Not applicable. No web scraped or social media data used. \\
-\textbf{Copyright / third-party data} & Official hydrometric records procured under BWDB paid commercial invoice 2608295209 for academic research. \\
-\textbf{AI-generated / synthetic content} & Zero synthetic or GenAI-generated observations were used in collection, annotation, or augmentation. \\
-\bottomrule
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{4.3cm}|X|}
+\hline
+\rowcolor{wordheadbg} \textbf{Item} & \textbf{Disclosure Statement} \\ \hline
+\cellcolor{wordkeybg}Human participants / consent & Not applicable. Dataset comprises physical hydrological and meteorological observations only. \\ \hline
+\cellcolor{wordkeybg}Privacy / de-identification & Not applicable. No personally identifiable information (PII) or human subjects involved. \\ \hline
+\cellcolor{wordkeybg}Web / social-media data & Not applicable. No web scraped or social media data used. \\ \hline
+\cellcolor{wordkeybg}Copyright / third-party data & Official hydrometric records procured under BWDB paid commercial invoice 2608295209 for academic research. \\ \hline
+\cellcolor{wordkeybg}AI-generated / synthetic content & Zero synthetic or GenAI-generated observations were used in collection, annotation, or augmentation. \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -631,19 +618,17 @@ LightGBM Regressor ($\Delta$) & 0.0711 & 0.0495 & 0.9974 & 0.9921 & $+$0.513 & 0
 \begin{table}[htbp]\centering\small
 \caption{Data and Code Availability Statements.}
 \label{tab:availability}
-\begin{tabularx}{\linewidth}{l X}
-\toprule
-\textbf{Item} & \textbf{Details / URL} \\
-\midrule
-\textbf{Repository name} & \url{https://github.com/Shakhoyat/ganges-padma-hydrometerological-dataset} \\
-\textbf{Dataset DOI / persistent ID} & Invoice 2608295209 (BWDB Official Archive) / GitHub Release v2.0 \\
-\textbf{Direct dataset URL} & \url{https://github.com/Shakhoyat/ganges-padma-hydrometerological-dataset} \\
-\textbf{Access instructions} & Fully open and accessible in repository; design matrices and scripts open for evaluation \\
-\textbf{Dataset license} & Creative Commons Attribution 4.0 International (CC BY 4.0) \\
-\textbf{Code / notebook URL} & \url{https://github.com/Shakhoyat/ganges-padma-hydrometerological-dataset} \\
-\textbf{Code version / commit} & v2.0 Release (Commit: \texttt{seed-20260913-final}) \\
-\textbf{README \& environment} & \texttt{README.md}, \texttt{DATA\_IN\_BRIEF.md}; Python 3.10+ (PyTorch, XGBoost, LightGBM, Scikit-Learn) \\
-\bottomrule
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{4.3cm}|X|}
+\hline
+\rowcolor{wordheadbg} \textbf{Item} & \textbf{Details / URL} \\ \hline
+\cellcolor{wordkeybg}Repository name & \url{https://github.com/Shakhoyat/ganges-padma-hydrometerological-dataset} \\ \hline
+\cellcolor{wordkeybg}Dataset DOI / persistent ID & Invoice 2608295209 (BWDB Official Archive) / GitHub Release v2.0 \\ \hline
+\cellcolor{wordkeybg}Direct dataset URL & \url{https://github.com/Shakhoyat/ganges-padma-hydrometerological-dataset} \\ \hline
+\cellcolor{wordkeybg}Access instructions & Fully open and accessible in repository; design matrices and scripts open for evaluation \\ \hline
+\cellcolor{wordkeybg}Dataset license & Creative Commons Attribution 4.0 International (CC BY 4.0) \\ \hline
+\cellcolor{wordkeybg}Code / notebook URL & \url{https://github.com/Shakhoyat/ganges-padma-hydrometerological-dataset} \\ \hline
+\cellcolor{wordkeybg}Code version / commit & v2.0 Release (Commit: \texttt{b062485}) \\ \hline
+\cellcolor{wordkeybg}README \& environment & \texttt{README.md}, \texttt{DATA\_IN\_BRIEF.md}; Python 3.10+ (PyTorch, XGBoost, LightGBM, Scikit-Learn) \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -657,16 +642,14 @@ LightGBM Regressor ($\Delta$) & 0.0711 & 0.0495 & 0.9974 & 0.9921 & $+$0.513 & 0
 \begin{table}[htbp]\centering\footnotesize
 \caption{CRediT Contributor Roles and Individual Responsibilities (Matching CSE 4112 Template Table 12).}
 \label{tab:credit}
-\begin{tabularx}{\linewidth}{l >{\raggedright\arraybackslash}p{3.0cm} >{\centering\arraybackslash}p{2.2cm} X >{\raggedright\arraybackslash}p{3.8cm}}
-\toprule
-\textbf{Roll} & \textbf{Student} & \textbf{Overall Contrib. (\%)} & \textbf{Main contributions} & \textbf{Evidence / files owned} \\
-\midrule
-\textbf{2107104} & Md. Shakhoyat Rahman Shujon (Lead) & 24\% & Conceptualization, PI-STGNN Architecture Design, Multi-variable Feature Engineering, Pipeline Leadership & \path{benchmarks/run_all_benchmarks.py}, \path{build/01_extract.py}, \path{build/04_wide.py} \\
-\textbf{2107111} & Mohammad Moin Uddin Moin & 23\% & Machine Learning Modeling, Baseline Model Tuning (LSTM, Transformer, XGBoost, LightGBM), Delta Formulation ($\Delta_t$) & \path{benchmarks/run_all_benchmarks.py}, \path{results/benchmark_models.csv} \\
-\textbf{2107119} & Md. Tariful Islam Jony & 23\% & Data Curation \& Extraction, 7-Day Hydrometeorological Lag Structuring, BWDB Ingestion, Provenance Ledger & \path{build/01_extract.py}, \path{build/02_registry.py}, \path{build/05_stats.py}, \path{gap_inventory.csv} \\
-\textbf{2107102} & Kamrul Islam & 15\% & Technical Validation, 3-Hourly Tidal Ground-Truth Verification, Conceptual HBV Model Implementation & \path{results/dailyavg_validation.csv}, \path{benchmarks/run_all_benchmarks.py} \\
-\textbf{2107093} & Tanha Sayed Ahona & 15\% & Visualization \& Mapping, Longitudinal Elevation Profile Generation, LaTeX Documentation, FAIR Compliance & \path{figures/}, \path{build/10_tex.py}, \path{DATA_IN_BRIEF.md}, Dataset Report \\
-\bottomrule
+\begin{tabularx}{\linewidth}{|c|>{\raggedright\arraybackslash}p{3.2cm}|>{\centering\arraybackslash}p{2.2cm}|X|>{\raggedright\arraybackslash}p{3.6cm}|}
+\hline
+\rowcolor{wordheadbg} \textbf{Roll} & \textbf{Student} & \textbf{Overall Contrib. (\%)} & \textbf{Main contributions} & \textbf{Evidence / files owned} \\ \hline
+\textbf{2107104} & Md. Shakhoyat Rahman Shujon (Lead) & 24\% & Conceptualization, PI-STGNN Architecture Design, Multi-variable Feature Engineering, Pipeline Leadership & \path{benchmarks/run_all_benchmarks.py}, \path{build/01_extract.py}, \path{build/04_wide.py} \\ \hline
+\textbf{2107111} & Mohammad Moin Uddin Moin & 23\% & Machine Learning Modeling, Baseline Model Tuning (LSTM, Transformer, XGBoost, LightGBM), Delta Formulation ($\Delta_t$) & \path{benchmarks/run_all_benchmarks.py}, \path{results/benchmark_models.csv} \\ \hline
+\textbf{2107119} & Md. Tariful Islam Jony & 23\% & Data Curation \& Extraction, 7-Day Hydrometeorological Lag Structuring, BWDB Ingestion, Provenance Ledger & \path{build/01_extract.py}, \path{build/02_registry.py}, \path{build/05_stats.py}, \path{gap_inventory.csv} \\ \hline
+\textbf{2107102} & Kamrul Islam & 15\% & Technical Validation, 3-Hourly Tidal Ground-Truth Verification, Conceptual HBV Model Implementation & \path{results/dailyavg_validation.csv}, \path{benchmarks/run_all_benchmarks.py} \\ \hline
+\textbf{2107093} & Tanha Sayed Ahona & 15\% & Visualization \& Mapping, Longitudinal Elevation Profile Generation, LaTeX Documentation, FAIR Compliance & \path{figures/}, \path{build/10_tex.py}, \path{DATA_IN_BRIEF.md}, Dataset Report \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -720,29 +703,29 @@ The complete data dictionary encompassing all 31 columns of the primary panel (\
   \item \textbf{Hardware Execution:} Benchmark execution evaluated on an Intel Core i7 / AMD Ryzen workstation with NVIDIA RTX GPU acceleration.
 \end{itemize}
 
+\clearpage
+
 \section{Dataset Release and FAIR-Readiness Checklist}
 \label{app:fair}
 
-\begin{table}[htbp]\centering\footnotesize\renewcommand{\arraystretch}{1.1}
+\begin{table}[htbp]\centering\footnotesize\renewcommand{\arraystretch}{1.15}
 \caption{FAIR-Readiness and Quality Assurance Checklist (Matching CSE 4112 Template Table 13).}
 \label{tab:fair_checklist}
-\begin{tabularx}{\linewidth}{l X c X}
-\toprule
-\textbf{Checklist Item} & \textbf{Criterion} & \textbf{Yes/No} & \textbf{Evidence / Note} \\
-\midrule
-\textbf{Findable} & Repository and identifier provided; meaningful file names; searchable metadata. & \textbf{Yes} & Local repository + invoice 2608295209; structured folder hierarchy; \texttt{feature\_sets.json} metadata. \\
-\textbf{Accessible} & Access instructions clear; files freely downloadable in standard formats. & \textbf{Yes} & Standard UTF-8 CSV files directly accessible in repository with clear setup instructions. \\
-\textbf{Interoperable} & Standard formats and units used; schema and codings thoroughly documented. & \textbf{Yes} & UTF-8 CSV, JSON, SI/metric units (mMSL, mm, m$^3$/s, ppm), standard ISO dates. \\
-\textbf{Reusable} & License explicit; README, data dictionary, provenance, and limitations provided. & \textbf{Yes} & CC BY 4.0 license; comprehensive data dictionary, limitations, and reproducible build pipeline. \\
-\textbf{Raw/Processed Split} & Original raw records isolated from processed/derived tables. & \textbf{Yes} & Raw records stored in \texttt{raw/}; clean panels in \texttt{processed/} and \texttt{processed/wide/}. \\
-\textbf{Versioning} & Dataset version/date and change history explicitly recorded. & \textbf{Yes} & Version v2.0 recorded with explicit date and commit hash metadata. \\
-\textbf{Integrity} & Continuous calendar reindexing; 0 duplicate dates; zero synthetic distortion. & \textbf{Yes} & Calendar reindexing, duplicate removal, MD5 checksum verification across all matrices. \\
-\textbf{Leakage Safety} & Strict chronological partitioning; zero temporal leakage into test sets. & \textbf{Yes} & Chronological 80/20 train/test split within bridge epochs; out-of-bag parameter tuning. \\
-\textbf{Reproducibility} & Automated end-to-end execution from raw workbooks to benchmark evaluation. & \textbf{Yes} & Full execution via \texttt{build/} and \texttt{benchmarks/} scripts with fixed random seed 20260913. \\
-\textbf{Ethics/Privacy} & Zero human subjects; zero PII; official institutional data procurement. & \textbf{Yes} & Procured under official BWDB delivery; zero personal data; zero synthetic data. \\
-\textbf{Documentation} & README, captions, and data dictionaries match repository schema. & \textbf{Yes} & \texttt{README.md}, \texttt{DATA\_IN\_BRIEF.md}, and LaTeX tables match all schema definitions. \\
-\textbf{Team Accountability} & All five students' contributions transparently recorded. & \textbf{Yes} & Individual CRediT roles and contribution percentages documented for all 5 team members. \\
-\bottomrule
+\begin{tabularx}{\linewidth}{|>{\bfseries}p{3.2cm}|X|c|X|}
+\hline
+\rowcolor{wordheadbg} \textbf{Checklist Item} & \textbf{Criterion} & \textbf{Yes/No} & \textbf{Evidence / Note} \\ \hline
+\cellcolor{wordkeybg}Findable & Repository and identifier provided; meaningful file names; searchable metadata. & \textbf{Yes} & Local repository + invoice 2608295209; structured folder hierarchy; \texttt{feature\_sets.json} metadata. \\ \hline
+\cellcolor{wordkeybg}Accessible & Access instructions clear; files freely downloadable in standard formats. & \textbf{Yes} & Standard UTF-8 CSV files directly accessible in repository with clear setup instructions. \\ \hline
+\cellcolor{wordkeybg}Interoperable & Standard formats and units used; schema and codings thoroughly documented. & \textbf{Yes} & UTF-8 CSV, JSON, SI/metric units (mMSL, mm, m$^3$/s, ppm), standard ISO dates. \\ \hline
+\cellcolor{wordkeybg}Reusable & License explicit; README, data dictionary, provenance, and limitations provided. & \textbf{Yes} & CC BY 4.0 license; comprehensive data dictionary, limitations, and reproducible build pipeline. \\ \hline
+\cellcolor{wordkeybg}Raw/Processed Split & Original raw records isolated from processed/derived tables. & \textbf{Yes} & Raw records stored in \texttt{raw/}; clean panels in \texttt{processed/} and \texttt{processed/wide/}. \\ \hline
+\cellcolor{wordkeybg}Versioning & Dataset version/date and change history explicitly recorded. & \textbf{Yes} & Version v2.0 recorded with explicit date and commit hash metadata. \\ \hline
+\cellcolor{wordkeybg}Integrity & Continuous calendar reindexing; 0 duplicate dates; zero synthetic distortion. & \textbf{Yes} & Calendar reindexing, duplicate removal, MD5 checksum verification across all matrices. \\ \hline
+\cellcolor{wordkeybg}Leakage Safety & Strict chronological partitioning; zero temporal leakage into test sets. & \textbf{Yes} & Chronological 80/20 train/test split within bridge epochs; out-of-bag parameter tuning. \\ \hline
+\cellcolor{wordkeybg}Reproducibility & Automated end-to-end execution from raw workbooks to benchmark evaluation. & \textbf{Yes} & Full execution via \texttt{build/} and \texttt{benchmarks/} scripts with fixed random seed 20260913. \\ \hline
+\cellcolor{wordkeybg}Ethics/Privacy & Zero human subjects; zero PII; official institutional data procurement. & \textbf{Yes} & Procured under official BWDB delivery; zero personal data; zero synthetic data. \\ \hline
+\cellcolor{wordkeybg}Documentation & README, captions, and data dictionaries match repository schema. & \textbf{Yes} & \texttt{README.md}, \texttt{DATA\_IN\_BRIEF.md}, and LaTeX tables match all schema definitions. \\ \hline
+\cellcolor{wordkeybg}Team Accountability & All five students' contributions transparently recorded. & \textbf{Yes} & Individual CRediT roles and contribution percentages documented for all 5 team members. \\ \hline
 \end{tabularx}
 \end{table}
 
