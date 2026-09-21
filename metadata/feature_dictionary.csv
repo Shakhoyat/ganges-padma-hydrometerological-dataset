@@ -1,0 +1,209 @@
+Column,Prior_Point_Id,Station_ID,Station_Name,Chainage_km,Quantity,Units
+P01_WL,1,SW88A,Panka,0.0,"daily stage, same day",mMSL
+P01_WLD-1,1,SW88A,Panka,0.0,"daily stage, t-1 d",mMSL
+P01_WLD-2,1,SW88A,Panka,0.0,"daily stage, t-2 d",mMSL
+P01_WLD-3,1,SW88A,Panka,0.0,"daily stage, t-3 d",mMSL
+P01_WLD-4,1,SW88A,Panka,0.0,"daily stage, t-4 d",mMSL
+P01_WLD-5,1,SW88A,Panka,0.0,"daily stage, t-5 d",mMSL
+P01_WLD-6,1,SW88A,Panka,0.0,"daily stage, t-6 d",mMSL
+P01_WLD-7,1,SW88A,Panka,0.0,"daily stage, t-7 d",mMSL
+P01_Rain,1,SW88A,Panka,0.0,"daily rainfall, same day",mm
+P01_Rain_D1,1,SW88A,Panka,0.0,"daily rainfall, t-1 d",mm
+P01_Rain_D2,1,SW88A,Panka,0.0,"daily rainfall, t-2 d",mm
+P01_Rain_D3,1,SW88A,Panka,0.0,"daily rainfall, t-3 d",mm
+P01_Rain_D4,1,SW88A,Panka,0.0,"daily rainfall, t-4 d",mm
+P01_Rain_D5,1,SW88A,Panka,0.0,"daily rainfall, t-5 d",mm
+P01_Rain_D6,1,SW88A,Panka,0.0,"daily rainfall, t-6 d",mm
+P01_Rain_D7,1,SW88A,Panka,0.0,"daily rainfall, t-7 d",mm
+P02_WL,2,SW88,Rajshahi,54.01,"daily stage, same day",mMSL
+P02_WLD-1,2,SW88,Rajshahi,54.01,"daily stage, t-1 d",mMSL
+P02_WLD-2,2,SW88,Rajshahi,54.01,"daily stage, t-2 d",mMSL
+P02_WLD-3,2,SW88,Rajshahi,54.01,"daily stage, t-3 d",mMSL
+P02_WLD-4,2,SW88,Rajshahi,54.01,"daily stage, t-4 d",mMSL
+P02_WLD-5,2,SW88,Rajshahi,54.01,"daily stage, t-5 d",mMSL
+P02_WLD-6,2,SW88,Rajshahi,54.01,"daily stage, t-6 d",mMSL
+P02_WLD-7,2,SW88,Rajshahi,54.01,"daily stage, t-7 d",mMSL
+P02_Rain,2,SW88,Rajshahi,54.01,"daily rainfall, same day",mm
+P02_Rain_D1,2,SW88,Rajshahi,54.01,"daily rainfall, t-1 d",mm
+P02_Rain_D2,2,SW88,Rajshahi,54.01,"daily rainfall, t-2 d",mm
+P02_Rain_D3,2,SW88,Rajshahi,54.01,"daily rainfall, t-3 d",mm
+P02_Rain_D4,2,SW88,Rajshahi,54.01,"daily rainfall, t-4 d",mm
+P02_Rain_D5,2,SW88,Rajshahi,54.01,"daily rainfall, t-5 d",mm
+P02_Rain_D6,2,SW88,Rajshahi,54.01,"daily rainfall, t-6 d",mm
+P02_Rain_D7,2,SW88,Rajshahi,54.01,"daily rainfall, t-7 d",mm
+P03_WL,3,SW89,Sardah,70.28,"daily stage, same day",mMSL
+P03_WLD-1,3,SW89,Sardah,70.28,"daily stage, t-1 d",mMSL
+P03_WLD-2,3,SW89,Sardah,70.28,"daily stage, t-2 d",mMSL
+P03_WLD-3,3,SW89,Sardah,70.28,"daily stage, t-3 d",mMSL
+P03_WLD-4,3,SW89,Sardah,70.28,"daily stage, t-4 d",mMSL
+P03_WLD-5,3,SW89,Sardah,70.28,"daily stage, t-5 d",mMSL
+P03_WLD-6,3,SW89,Sardah,70.28,"daily stage, t-6 d",mMSL
+P03_WLD-7,3,SW89,Sardah,70.28,"daily stage, t-7 d",mMSL
+P03_Rain,3,SW89,Sardah,70.28,"daily rainfall, same day",mm
+P03_Rain_D1,3,SW89,Sardah,70.28,"daily rainfall, t-1 d",mm
+P03_Rain_D2,3,SW89,Sardah,70.28,"daily rainfall, t-2 d",mm
+P03_Rain_D3,3,SW89,Sardah,70.28,"daily rainfall, t-3 d",mm
+P03_Rain_D4,3,SW89,Sardah,70.28,"daily rainfall, t-4 d",mm
+P03_Rain_D5,3,SW89,Sardah,70.28,"daily rainfall, t-5 d",mm
+P03_Rain_D6,3,SW89,Sardah,70.28,"daily rainfall, t-6 d",mm
+P03_Rain_D7,3,SW89,Sardah,70.28,"daily rainfall, t-7 d",mm
+P04_WL,4,SW90,Hardinge Bridge,110.92,"daily stage, same day",mMSL
+P04_WLD-1,4,SW90,Hardinge Bridge,110.92,"daily stage, t-1 d",mMSL
+P04_WLD-2,4,SW90,Hardinge Bridge,110.92,"daily stage, t-2 d",mMSL
+P04_WLD-3,4,SW90,Hardinge Bridge,110.92,"daily stage, t-3 d",mMSL
+P04_WLD-4,4,SW90,Hardinge Bridge,110.92,"daily stage, t-4 d",mMSL
+P04_WLD-5,4,SW90,Hardinge Bridge,110.92,"daily stage, t-5 d",mMSL
+P04_WLD-6,4,SW90,Hardinge Bridge,110.92,"daily stage, t-6 d",mMSL
+P04_WLD-7,4,SW90,Hardinge Bridge,110.92,"daily stage, t-7 d",mMSL
+P04_Rain,4,SW90,Hardinge Bridge,110.92,"daily rainfall, same day",mm
+P04_Rain_D1,4,SW90,Hardinge Bridge,110.92,"daily rainfall, t-1 d",mm
+P04_Rain_D2,4,SW90,Hardinge Bridge,110.92,"daily rainfall, t-2 d",mm
+P04_Rain_D3,4,SW90,Hardinge Bridge,110.92,"daily rainfall, t-3 d",mm
+P04_Rain_D4,4,SW90,Hardinge Bridge,110.92,"daily rainfall, t-4 d",mm
+P04_Rain_D5,4,SW90,Hardinge Bridge,110.92,"daily rainfall, t-5 d",mm
+P04_Rain_D6,4,SW90,Hardinge Bridge,110.92,"daily rainfall, t-6 d",mm
+P04_Rain_D7,4,SW90,Hardinge Bridge,110.92,"daily rainfall, t-7 d",mm
+P05_WL,5,SW91,Talbaria,124.86,"daily stage, same day",mMSL
+P05_WLD-1,5,SW91,Talbaria,124.86,"daily stage, t-1 d",mMSL
+P05_WLD-2,5,SW91,Talbaria,124.86,"daily stage, t-2 d",mMSL
+P05_WLD-3,5,SW91,Talbaria,124.86,"daily stage, t-3 d",mMSL
+P05_WLD-4,5,SW91,Talbaria,124.86,"daily stage, t-4 d",mMSL
+P05_WLD-5,5,SW91,Talbaria,124.86,"daily stage, t-5 d",mMSL
+P05_WLD-6,5,SW91,Talbaria,124.86,"daily stage, t-6 d",mMSL
+P05_WLD-7,5,SW91,Talbaria,124.86,"daily stage, t-7 d",mMSL
+P05_Rain,5,SW91,Talbaria,124.86,"daily rainfall, same day",mm
+P05_Rain_D1,5,SW91,Talbaria,124.86,"daily rainfall, t-1 d",mm
+P05_Rain_D2,5,SW91,Talbaria,124.86,"daily rainfall, t-2 d",mm
+P05_Rain_D3,5,SW91,Talbaria,124.86,"daily rainfall, t-3 d",mm
+P05_Rain_D4,5,SW91,Talbaria,124.86,"daily rainfall, t-4 d",mm
+P05_Rain_D5,5,SW91,Talbaria,124.86,"daily rainfall, t-5 d",mm
+P05_Rain_D6,5,SW91,Talbaria,124.86,"daily rainfall, t-6 d",mm
+P05_Rain_D7,5,SW91,Talbaria,124.86,"daily rainfall, t-7 d",mm
+P06_WL,6,SW91.1,Sengram,154.22,"daily stage, same day",mMSL
+P06_WLD-1,6,SW91.1,Sengram,154.22,"daily stage, t-1 d",mMSL
+P06_WLD-2,6,SW91.1,Sengram,154.22,"daily stage, t-2 d",mMSL
+P06_WLD-3,6,SW91.1,Sengram,154.22,"daily stage, t-3 d",mMSL
+P06_WLD-4,6,SW91.1,Sengram,154.22,"daily stage, t-4 d",mMSL
+P06_WLD-5,6,SW91.1,Sengram,154.22,"daily stage, t-5 d",mMSL
+P06_WLD-6,6,SW91.1,Sengram,154.22,"daily stage, t-6 d",mMSL
+P06_WLD-7,6,SW91.1,Sengram,154.22,"daily stage, t-7 d",mMSL
+P06_Rain,6,SW91.1,Sengram,154.22,"daily rainfall, same day",mm
+P06_Rain_D1,6,SW91.1,Sengram,154.22,"daily rainfall, t-1 d",mm
+P06_Rain_D2,6,SW91.1,Sengram,154.22,"daily rainfall, t-2 d",mm
+P06_Rain_D3,6,SW91.1,Sengram,154.22,"daily rainfall, t-3 d",mm
+P06_Rain_D4,6,SW91.1,Sengram,154.22,"daily rainfall, t-4 d",mm
+P06_Rain_D5,6,SW91.1,Sengram,154.22,"daily rainfall, t-5 d",mm
+P06_Rain_D6,6,SW91.1,Sengram,154.22,"daily rainfall, t-6 d",mm
+P06_Rain_D7,6,SW91.1,Sengram,154.22,"daily rainfall, t-7 d",mm
+P07_WL,7,SW91.2,Mohendrapur,178.68,"daily stage, same day",mMSL
+P07_WLD-1,7,SW91.2,Mohendrapur,178.68,"daily stage, t-1 d",mMSL
+P07_WLD-2,7,SW91.2,Mohendrapur,178.68,"daily stage, t-2 d",mMSL
+P07_WLD-3,7,SW91.2,Mohendrapur,178.68,"daily stage, t-3 d",mMSL
+P07_WLD-4,7,SW91.2,Mohendrapur,178.68,"daily stage, t-4 d",mMSL
+P07_WLD-5,7,SW91.2,Mohendrapur,178.68,"daily stage, t-5 d",mMSL
+P07_WLD-6,7,SW91.2,Mohendrapur,178.68,"daily stage, t-6 d",mMSL
+P07_WLD-7,7,SW91.2,Mohendrapur,178.68,"daily stage, t-7 d",mMSL
+P07_Rain,7,SW91.2,Mohendrapur,178.68,"daily rainfall, same day",mm
+P07_Rain_D1,7,SW91.2,Mohendrapur,178.68,"daily rainfall, t-1 d",mm
+P07_Rain_D2,7,SW91.2,Mohendrapur,178.68,"daily rainfall, t-2 d",mm
+P07_Rain_D3,7,SW91.2,Mohendrapur,178.68,"daily rainfall, t-3 d",mm
+P07_Rain_D4,7,SW91.2,Mohendrapur,178.68,"daily rainfall, t-4 d",mm
+P07_Rain_D5,7,SW91.2,Mohendrapur,178.68,"daily rainfall, t-5 d",mm
+P07_Rain_D6,7,SW91.2,Mohendrapur,178.68,"daily rainfall, t-6 d",mm
+P07_Rain_D7,7,SW91.2,Mohendrapur,178.68,"daily rainfall, t-7 d",mm
+P08_WL,8,SW46.9L,Bahadurabad_Transit,,"daily stage, same day",mMSL
+P08_WLD-1,8,SW46.9L,Bahadurabad_Transit,,"daily stage, t-1 d",mMSL
+P08_WLD-2,8,SW46.9L,Bahadurabad_Transit,,"daily stage, t-2 d",mMSL
+P08_WLD-3,8,SW46.9L,Bahadurabad_Transit,,"daily stage, t-3 d",mMSL
+P08_WLD-4,8,SW46.9L,Bahadurabad_Transit,,"daily stage, t-4 d",mMSL
+P08_WLD-5,8,SW46.9L,Bahadurabad_Transit,,"daily stage, t-5 d",mMSL
+P08_WLD-6,8,SW46.9L,Bahadurabad_Transit,,"daily stage, t-6 d",mMSL
+P08_WLD-7,8,SW46.9L,Bahadurabad_Transit,,"daily stage, t-7 d",mMSL
+P08_Rain,8,SW46.9L,Bahadurabad_Transit,,"daily rainfall, same day",mm
+P08_Rain_D1,8,SW46.9L,Bahadurabad_Transit,,"daily rainfall, t-1 d",mm
+P08_Rain_D2,8,SW46.9L,Bahadurabad_Transit,,"daily rainfall, t-2 d",mm
+P08_Rain_D3,8,SW46.9L,Bahadurabad_Transit,,"daily rainfall, t-3 d",mm
+P08_Rain_D4,8,SW46.9L,Bahadurabad_Transit,,"daily rainfall, t-4 d",mm
+P08_Rain_D5,8,SW46.9L,Bahadurabad_Transit,,"daily rainfall, t-5 d",mm
+P08_Rain_D6,8,SW46.9L,Bahadurabad_Transit,,"daily rainfall, t-6 d",mm
+P08_Rain_D7,8,SW46.9L,Bahadurabad_Transit,,"daily rainfall, t-7 d",mm
+P09_WL,9,SW50.6,Aricha,,"daily stage, same day",mMSL
+P09_WLD-1,9,SW50.6,Aricha,,"daily stage, t-1 d",mMSL
+P09_WLD-2,9,SW50.6,Aricha,,"daily stage, t-2 d",mMSL
+P09_WLD-3,9,SW50.6,Aricha,,"daily stage, t-3 d",mMSL
+P09_WLD-4,9,SW50.6,Aricha,,"daily stage, t-4 d",mMSL
+P09_WLD-5,9,SW50.6,Aricha,,"daily stage, t-5 d",mMSL
+P09_WLD-6,9,SW50.6,Aricha,,"daily stage, t-6 d",mMSL
+P09_WLD-7,9,SW50.6,Aricha,,"daily stage, t-7 d",mMSL
+P09_Rain,9,SW50.6,Aricha,,"daily rainfall, same day",mm
+P09_Rain_D1,9,SW50.6,Aricha,,"daily rainfall, t-1 d",mm
+P09_Rain_D2,9,SW50.6,Aricha,,"daily rainfall, t-2 d",mm
+P09_Rain_D3,9,SW50.6,Aricha,,"daily rainfall, t-3 d",mm
+P09_Rain_D4,9,SW50.6,Aricha,,"daily rainfall, t-4 d",mm
+P09_Rain_D5,9,SW50.6,Aricha,,"daily rainfall, t-5 d",mm
+P09_Rain_D6,9,SW50.6,Aricha,,"daily rainfall, t-6 d",mm
+P09_Rain_D7,9,SW50.6,Aricha,,"daily rainfall, t-7 d",mm
+P10_WL,10,SW91.9R,Goalundo Transi,199.43,"daily stage, same day",mMSL
+P10_WLD-1,10,SW91.9R,Goalundo Transi,199.43,"daily stage, t-1 d",mMSL
+P10_WLD-2,10,SW91.9R,Goalundo Transi,199.43,"daily stage, t-2 d",mMSL
+P10_WLD-3,10,SW91.9R,Goalundo Transi,199.43,"daily stage, t-3 d",mMSL
+P10_WLD-4,10,SW91.9R,Goalundo Transi,199.43,"daily stage, t-4 d",mMSL
+P10_WLD-5,10,SW91.9R,Goalundo Transi,199.43,"daily stage, t-5 d",mMSL
+P10_WLD-6,10,SW91.9R,Goalundo Transi,199.43,"daily stage, t-6 d",mMSL
+P10_WLD-7,10,SW91.9R,Goalundo Transi,199.43,"daily stage, t-7 d",mMSL
+P10_Rain,10,SW91.9R,Goalundo Transi,199.43,"daily rainfall, same day",mm
+P10_Rain_D1,10,SW91.9R,Goalundo Transi,199.43,"daily rainfall, t-1 d",mm
+P10_Rain_D2,10,SW91.9R,Goalundo Transi,199.43,"daily rainfall, t-2 d",mm
+P10_Rain_D3,10,SW91.9R,Goalundo Transi,199.43,"daily rainfall, t-3 d",mm
+P10_Rain_D4,10,SW91.9R,Goalundo Transi,199.43,"daily rainfall, t-4 d",mm
+P10_Rain_D5,10,SW91.9R,Goalundo Transi,199.43,"daily rainfall, t-5 d",mm
+P10_Rain_D6,10,SW91.9R,Goalundo Transi,199.43,"daily rainfall, t-6 d",mm
+P10_Rain_D7,10,SW91.9R,Goalundo Transi,199.43,"daily rainfall, t-7 d",mm
+P11_WL,11,SW91.9L,Baruria Transit,203.44,"daily stage, same day",mMSL
+P11_WLD-1,11,SW91.9L,Baruria Transit,203.44,"daily stage, t-1 d",mMSL
+P11_WLD-2,11,SW91.9L,Baruria Transit,203.44,"daily stage, t-2 d",mMSL
+P11_WLD-3,11,SW91.9L,Baruria Transit,203.44,"daily stage, t-3 d",mMSL
+P11_WLD-4,11,SW91.9L,Baruria Transit,203.44,"daily stage, t-4 d",mMSL
+P11_WLD-5,11,SW91.9L,Baruria Transit,203.44,"daily stage, t-5 d",mMSL
+P11_WLD-6,11,SW91.9L,Baruria Transit,203.44,"daily stage, t-6 d",mMSL
+P11_WLD-7,11,SW91.9L,Baruria Transit,203.44,"daily stage, t-7 d",mMSL
+P11_Rain,11,SW91.9L,Baruria Transit,203.44,"daily rainfall, same day",mm
+P11_Rain_D1,11,SW91.9L,Baruria Transit,203.44,"daily rainfall, t-1 d",mm
+P11_Rain_D2,11,SW91.9L,Baruria Transit,203.44,"daily rainfall, t-2 d",mm
+P11_Rain_D3,11,SW91.9L,Baruria Transit,203.44,"daily rainfall, t-3 d",mm
+P11_Rain_D4,11,SW91.9L,Baruria Transit,203.44,"daily rainfall, t-4 d",mm
+P11_Rain_D5,11,SW91.9L,Baruria Transit,203.44,"daily rainfall, t-5 d",mm
+P11_Rain_D6,11,SW91.9L,Baruria Transit,203.44,"daily rainfall, t-6 d",mm
+P11_Rain_D7,11,SW91.9L,Baruria Transit,203.44,"daily rainfall, t-7 d",mm
+P12_WL,12,SW93.4L,Bhagyakul,254.96,"daily stage, same day",mMSL
+P12_WLD-1,12,SW93.4L,Bhagyakul,254.96,"daily stage, t-1 d",mMSL
+P12_WLD-2,12,SW93.4L,Bhagyakul,254.96,"daily stage, t-2 d",mMSL
+P12_WLD-3,12,SW93.4L,Bhagyakul,254.96,"daily stage, t-3 d",mMSL
+P12_WLD-4,12,SW93.4L,Bhagyakul,254.96,"daily stage, t-4 d",mMSL
+P12_WLD-5,12,SW93.4L,Bhagyakul,254.96,"daily stage, t-5 d",mMSL
+P12_WLD-6,12,SW93.4L,Bhagyakul,254.96,"daily stage, t-6 d",mMSL
+P12_WLD-7,12,SW93.4L,Bhagyakul,254.96,"daily stage, t-7 d",mMSL
+P12_Rain,12,SW93.4L,Bhagyakul,254.96,"daily rainfall, same day",mm
+P12_Rain_D1,12,SW93.4L,Bhagyakul,254.96,"daily rainfall, t-1 d",mm
+P12_Rain_D2,12,SW93.4L,Bhagyakul,254.96,"daily rainfall, t-2 d",mm
+P12_Rain_D3,12,SW93.4L,Bhagyakul,254.96,"daily rainfall, t-3 d",mm
+P12_Rain_D4,12,SW93.4L,Bhagyakul,254.96,"daily rainfall, t-4 d",mm
+P12_Rain_D5,12,SW93.4L,Bhagyakul,254.96,"daily rainfall, t-5 d",mm
+P12_Rain_D6,12,SW93.4L,Bhagyakul,254.96,"daily rainfall, t-6 d",mm
+P12_Rain_D7,12,SW93.4L,Bhagyakul,254.96,"daily rainfall, t-7 d",mm
+P13_WL,13,SW93.5L,Mawa,259.93,"daily stage, same day",mMSL
+P13_WLD-1,13,SW93.5L,Mawa,259.93,"daily stage, t-1 d",mMSL
+P13_WLD-2,13,SW93.5L,Mawa,259.93,"daily stage, t-2 d",mMSL
+P13_WLD-3,13,SW93.5L,Mawa,259.93,"daily stage, t-3 d",mMSL
+P13_WLD-4,13,SW93.5L,Mawa,259.93,"daily stage, t-4 d",mMSL
+P13_WLD-5,13,SW93.5L,Mawa,259.93,"daily stage, t-5 d",mMSL
+P13_WLD-6,13,SW93.5L,Mawa,259.93,"daily stage, t-6 d",mMSL
+P13_WLD-7,13,SW93.5L,Mawa,259.93,"daily stage, t-7 d",mMSL
+P13_Rain,13,SW93.5L,Mawa,259.93,"daily rainfall, same day",mm
+P13_Rain_D1,13,SW93.5L,Mawa,259.93,"daily rainfall, t-1 d",mm
+P13_Rain_D2,13,SW93.5L,Mawa,259.93,"daily rainfall, t-2 d",mm
+P13_Rain_D3,13,SW93.5L,Mawa,259.93,"daily rainfall, t-3 d",mm
+P13_Rain_D4,13,SW93.5L,Mawa,259.93,"daily rainfall, t-4 d",mm
+P13_Rain_D5,13,SW93.5L,Mawa,259.93,"daily rainfall, t-5 d",mm
+P13_Rain_D6,13,SW93.5L,Mawa,259.93,"daily rainfall, t-6 d",mm
+P13_Rain_D7,13,SW93.5L,Mawa,259.93,"daily rainfall, t-7 d",mm
