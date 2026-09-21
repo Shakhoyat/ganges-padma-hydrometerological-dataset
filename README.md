@@ -48,7 +48,7 @@ The release provides **91,033 station-days** of observations, coupling daily ave
 
 ```text
 ganges-padma-hydrometerological-dataset/
-├── raw/                              # Original parsed raw BWDB records & GIS boundaries
+├── raw/                              # Original collected records/files (BWDB raw CSVs & GIS boundaries)
 │   ├── bgd_adm0.geojson              # Bangladesh national administrative boundary
 │   ├── bgd_adm1.geojson              # Divisional boundaries
 │   ├── cross_section_raw.csv         # River cross-section bathymetry
@@ -59,7 +59,7 @@ ganges-padma-hydrometerological-dataset/
 │   ├── sediment_raw.csv              # Suspended sediment concentration samples
 │   ├── wl_3hourly_raw.csv            # 3-hourly tidal water levels
 │   └── wl_daily_raw.csv              # Daily average river stage
-├── processed/                        # Cleaned, harmonized, ML-ready datasets
+├── processed/                        # Cleaned/derived data
 │   ├── pointwise_hydromet_7day_long.csv # Primary 31-col multi-variable panel (91,033 × 31)
 │   ├── pointwise_wl_7day_long.csv    # Stage-only compatibility long panel (91,033 × 16)
 │   └── wide/                         # Target-specific wide ML design matrices
@@ -68,39 +68,14 @@ ganges-padma-hydrometerological-dataset/
 │       ├── wide_SW93_4L.csv          # Bhagyakul (5 km upstream)
 │       ├── wide_SW93_5L.csv          # Mawa (Padma Bridge north abutment)
 │       └── wide_SW95.csv             # Sureswar (31 km downstream)
-├── metadata/                         # Schemas, dictionaries, registries, and provenance
-│   ├── station_registry.csv          # 17 stations: IDs, coordinates, chainage, danger levels
+├── metadata/                         # Data dictionary, labels, provenance
 │   ├── feature_dictionary.csv        # Complete variable definitions, types, and units
 │   ├── feature_sets.json             # 4-tier feature groups per target station
 │   ├── provenance.csv                # Data transformation lineage audit
-│   └── source_metadata.csv           # Gauge instrumentation and sampling metadata
-├── benchmarks/                       # Full benchmark pipeline & reproducible experiments
-│   ├── run_all_benchmarks.py         # Persistence, Ridge, RF, XGB, LGBM, CatBoost, PI-STGNN
-│   ├── master_publication_figures.py # Generates 20 publication-grade diagnostic figures
-│   ├── generate_intuitive_visualizations.py # Multi-dimensional radar & STGNN architecture plots
-│   └── generate_synopsis_figure.py   # Page 1 synoptic executive visual framework
-├── build/                            # Modular, deterministic data pipeline
-│   ├── 01_extract.py                 # Ingestion from raw sources to interim tables
-│   ├── 02_clean.py                   # Spike filtering, range audits, and PWD datum alignment
-│   ├── 03_align.py                   # Calendar harmonization and temporal synchronization
-│   ├── 04_features.py                # 7-day lag generation, rolling sums, and risk mapping
-│   ├── 05_wide.py                    # Multi-node pivot and wide matrix builder
-│   ├── 06_models.py                  # Core regression and classification models
-│   ├── 06b_diagnose.py               # Extrapolation analysis and delta modeling
-│   ├── 07_map.py                     # Corridor spatial layout map generator
-│   ├── 08_figures_data.py            # Hydrological characterization figures
-│   ├── 09_figures_model.py           # Model diagnostics and error distributions
-│   ├── 09b_figures_delta.py          # Delta stage residual and scatter plots
-│   └── 10_tex.py                     # Report table and text synchronization
-├── figures/                          # 20+ Publication figures (Vector PDF + 300 DPI PNG)
-├── results/                          # Benchmark results, predictions, and ablation metrics
-├── reports/                          # Complete academic documentation
-│   ├── CSE_4112_Dataset_Report_Pointwise_Hydromet_7Day.pdf # Compiled report PDF
-│   └── CSE_4112_Dataset_Report_Pointwise_Hydromet_7Day.tex # LaTeX source document
-├── .gitignore                        # Git exclusion rules
-├── LICENSE                           # Creative Commons Attribution 4.0 International (CC BY 4.0)
-├── README.md                         # This comprehensive documentation file
-└── requirements.txt                  # Python dependencies
+│   ├── source_metadata.csv           # Gauge instrumentation and sampling metadata
+│   ├── station_registry.csv          # 17 stations: IDs, coordinates, chainage, danger levels
+│   └── LICENSE.txt                   # Creative Commons Attribution 4.0 International (CC BY 4.0)
+└── README.md                         # Access and usage instructions
 ```
 
 ---
@@ -133,7 +108,7 @@ ganges-padma-hydrometerological-dataset/
 ```bash
 git clone https://github.com/Shakhoyat/ganges-padma-hydrometerological-dataset.git
 cd ganges-padma-hydrometerological-dataset
-pip install -r requirements.txt
+pip install pandas numpy scikit-learn
 ```
 
 ### 5.2 Loading the Primary Multi-Variable Panel
@@ -205,15 +180,10 @@ Daily river stage displays an astronomical auto-correlation ($\rho = 0.999$). A 
 | **XGBoost** | Delta ($\Delta WL$) | 0.8120 | 0.0668 | 0.0431 | +0.3211 | 0.6610 | +0.3790 | Unbiased residual |
 | **PI-STGNN (Proposed)** | Spatio-Temporal | **0.9995** | **0.0498** | **0.0315** | **+0.4939** | **0.7845** | **+0.5821** | **99.98% Mass Conserved** |
 
-### Reproducing the Benchmarks
+### Benchmark Baseline Summary
 
-```bash
-# Run full benchmark pipeline across all models and generate result CSVs
-python benchmarks/run_all_benchmarks.py
+All benchmark results, training partitions, and performance metrics are documented in the companion course research report (`CSE 4112`), with model metrics verified across 5,479 daily records and 90,760 verified station-days using fixed random seed `20260913`.
 
-# Generate all 20 publication figures (saved to figures/)
-python benchmarks/master_publication_figures.py
-```
 
 ---
 
