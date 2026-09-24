@@ -1,0 +1,18 @@
+Id,Station_ID,Station_Name,Danger_Level_mMSL,Danger_Level_Source
+1,SW88A,Panka,21.63,ffwc_roster+fitted_offset
+2,SW88,Rajshahi,17.57,ffwc_roster+fitted_offset
+3,SW89,Sardah,16.55,profile_regression(SW88+SW90)
+4,SW90,Hardinge Bridge,13.03,ffwc_roster+fitted_offset
+5,SW91,Talbaria,13.05,ffwc_roster+fitted_offset
+6,SW91.1,Sengram,10.34,profile_regression(SW91+SW91.9R)
+7,SW91.2,Mohendrapur,9.07,profile_regression(SW91+SW91.9R)
+8,SW46.9L,Bahadurabad_Transit,19.05,ffwc_roster+fitted_offset
+9,SW50.6,Aricha,8.95,ffwc_roster+fitted_offset
+10,SW91.9R,Goalundo Transi,7.499999999999999,ffwc_roster+fitted_offset
+11,SW91.9L,Baruria Transit,7.6,profile_regression(SW91.9R+SW93.4L)
+12,SW93.4L,Bhagyakul,5.85,ffwc_roster+fitted_offset
+13,SW93.5L,Mawa,5.74,ffwc_roster+fitted_offset
+14,SW94,Tarpasa,5.36,profile_regression(SW93.5L+SW95)
+15,SW95,Sureswar,3.46,ffwc_roster+fitted_offset
+16,SW273,Bhairab Bazar,5.87,ffwc_roster+fitted_offset
+17,SW277,Chandpur,3.93,ffwc_roster+fitted_offset

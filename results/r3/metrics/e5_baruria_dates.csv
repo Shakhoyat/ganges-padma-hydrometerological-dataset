@@ -1,0 +1,4 @@
+target,span,train_start,test_start,test_end,peak_in_test,n_rows
+Baruria,S6,2017-03-04,2017-08-02,2017-09-02,True,182
+Baruria,S12,2016-09-01,2017-06-02,2017-09-02,True,366
+Baruria,S36,2014-09-02,2016-09-01,2017-09-02,True,1052

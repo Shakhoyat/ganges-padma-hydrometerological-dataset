@@ -1,0 +1,5 @@
+features,flagged,known,known_caught,isolated,isolated_caught
+Own change,87,15,13,9,7
++ next-day change,91,15,3,9,0
++ neighbour residual,91,15,4,9,1
+Neighbour residual only,88,15,6,9,6

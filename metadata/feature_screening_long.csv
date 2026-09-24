@@ -1,0 +1,12 @@
+task,set,n_features,test_rows,ridge,lightgbm,accuracy
+regression,base,11,18623,0.5103,0.4594,
+regression,+Rainfall_mm,12,18623,0.5096,0.4537,
+regression,+Rain_3dSum,12,18623,0.5084,0.4476,
+regression,+WL_Range_D-1,12,18623,0.5105,0.4689,
+regression,+season,13,18623,0.5231,0.4482,
+regression,+inflow_q_D-1,13,18623,0.5135,0.3235,
+regression,+evap_D-1,12,18623,0.5093,0.4276,
+regression,released,16,18623,0.5217,0.4574,
+classification,base,11,18623,,0.6339,0.6344
+classification,released,16,18623,,0.6461,0.6487
+classification,trend persistence,2,18623,,0.6671,0.6644

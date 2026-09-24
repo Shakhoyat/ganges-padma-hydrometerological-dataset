@@ -49,3 +49,9 @@ ENV/
 # Operating System Files
 .DS_Store
 Thumbs.db
+
+# Experiment scratch runs and large intermediate files (not part of the release)
+results/r3_*/
+results/r3/arff/
+results/r3/wide_bhagyakul_k10.csv
+.impeccable/

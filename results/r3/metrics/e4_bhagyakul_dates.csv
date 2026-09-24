@@ -1,0 +1,4 @@
+target,span,train_start,test_start,test_end,peak_in_test,n_rows
+Bhagyakul,S6,2020-02-11,2020-07-11,2020-08-11,True,182
+Bhagyakul,S12,2019-08-11,2020-05-11,2020-08-11,True,358
+Bhagyakul,S36,2017-08-11,2019-08-11,2020-08-11,True,1088

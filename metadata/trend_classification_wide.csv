@@ -1,0 +1,16 @@
+target_id,test_rows,set,model,macro_f1,accuracy
+11,1096,same class as yesterday,rule,0.6802,0.6761
+11,1096,own lags,logistic,0.6140,0.6122
+11,1096,own lags,lightgbm,0.5865,0.5867
+11,1096,release layout,logistic,0.7719,0.7710
+11,1096,release layout,lightgbm,0.6317,0.6350
+12,1096,same class as yesterday,rule,0.6397,0.6451
+12,1096,own lags,logistic,0.5944,0.6223
+12,1096,own lags,lightgbm,0.5517,0.5712
+12,1096,release layout,logistic,0.7363,0.7372
+12,1096,release layout,lightgbm,0.6287,0.6305
+15,1088,same class as yesterday,rule,0.5966,0.6158
+15,1088,own lags,logistic,0.5899,0.6232
+15,1088,own lags,lightgbm,0.5145,0.5322
+15,1088,release layout,logistic,0.6576,0.7132
+15,1088,release layout,lightgbm,0.5920,0.6131

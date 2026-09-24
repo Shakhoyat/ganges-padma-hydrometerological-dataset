@@ -1,0 +1,3 @@
+Station_ID,Days_Compared,Mean_Abs_Diff_m,P95_Abs_Diff_m,Max_Abs_Diff_m,Pearson_r
+SW93.5L,4018,0.0059,0.0143,0.084,0.99999
+SW95,4017,0.0115,0.028,0.138,0.99992

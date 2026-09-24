@@ -1,0 +1,3 @@
+label,windows,balanced_accuracy,chance
+Tidal vs non-tidal,3013,0.8357499712594965,0.5
+River (4 classes),3013,0.3976582229307367,0.25

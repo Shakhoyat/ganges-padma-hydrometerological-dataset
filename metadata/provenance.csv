@@ -1,51 +1,51 @@
-File,Station_ID,Category,Rows_Read,Rows_Kept
-Cross_Section_Cross_Section_(River_Morphology)__Data_RMG12_2608295209.xlsx,RMG12,Cross,4515,4514
-Cross_Section_Cross_Section_(River_Morphology)__Data_RMP2_2608295209.xlsx,RMP2,Cross,8140,8139
-Cross_Section_Cross_Section_(River_Morphology)__Data_RMP3_2608295209.xlsx,RMP3,Cross,12351,12350
-Cross_Section_Cross_Section_(River_Morphology)__Data_RMP4_2608295209.xlsx,RMP4,Cross,8430,8429
-Discharge_MDD_(Mean_Daily_Discharge)_SW273_2608295209.xlsx,SW273,Discharge,2613,2611
-Discharge_MDD_(Mean_Daily_Discharge)_SW46.9L_2608295209.xlsx,SW46.9L,Discharge,4842,4840
-Discharge_MDD_(Mean_Daily_Discharge)_SW90_2608295209.xlsx,SW90,Discharge,5116,5114
-Discharge_MDD_(Mean_Daily_Discharge)_SW91.9L_2608295209.xlsx,SW91.9L,Discharge,5078,5076
-Discharge_MDD_(Mean_Daily_Discharge)_SW93.5L_2608295209.xlsx,SW93.5L,Discharge,2593,2591
-Evaporation_Evaporation_CL406_2608295209.xlsx,CL406,Evaporation,5473,5471
-Evaporation_Evaporation_Select Station Name_2608295209.xlsx,Select Station Name,Evaporation,2,0
-Ground_Water_Ground_Water_Level_(Weekly)_GT2947007_2608295209.xlsx,GT2947007,Ground,573,572
-Ground_Water_Ground_Water_Level_(Weekly)_GT8276015_2608295209.xlsx,GT8276015,Ground,501,500
-Ground_Water_Ground_Water_Level_(Weekly)_GT8669006_2608295209.xlsx,GT8669006,Ground,560,559
-Rainfall_Daily_Rainfall_CL15_2608295209.xlsx,CL15,Rainfall,5449,5448
-Rainfall_Daily_Rainfall_CL19_2608295209.xlsx,CL19,Rainfall,5480,5479
-Rainfall_Daily_Rainfall_CL205_2608295209.xlsx,CL205,Rainfall,5480,5479
-Rainfall_Daily_Rainfall_CL20_2608295209.xlsx,CL20,Rainfall,5480,5479
-Rainfall_Daily_Rainfall_CL215_2608295209.xlsx,CL215,Rainfall,5479,5478
-Rainfall_Daily_Rainfall_CL30_2608295209.xlsx,CL30,Rainfall,5387,5386
-Rainfall_Daily_Rainfall_CL354_2608295209.xlsx,CL354,Rainfall,5419,5418
-Rainfall_Daily_Rainfall_CL402_2608295209.xlsx,CL402,Rainfall,5479,5478
-Rainfall_Daily_Rainfall_CL406_2608295209.xlsx,CL406,Rainfall,5480,5479
-Rainfall_Daily_Rainfall_CL413_2608295209.xlsx,CL413,Rainfall,5480,5479
-Rainfall_Daily_Rainfall_CL414_2608295209.xlsx,CL414,Rainfall,5418,5417
-Sediment_Weekly_fortnightly_monthly_SW90_2608295209.xlsx,SW90,Sediment,192,191
-Sediment_Weekly_fortnightly_monthly_SW91.9L_2608295209.xlsx,SW91.9L,Sediment,492,491
-Sediment_Weekly_fortnightly_monthly_SW93.5L_2608295209.xlsx,SW93.5L,Sediment,439,438
-Water_Level_3_Hourly_SW93.5L_2608295209.xlsx,SW93.5L,Water,28060,28059
-Water_Level_3_Hourly_SW95_2608295209.xlsx,SW95,Water,27979,27978
-Water_Level_Annual_High-Low_(Non-Tidal)_SW90_2608295209.xlsx,SW90,Water,21,0
-Water_Level_Annual_High-Low_(Non-Tidal)_SW91.9L_2608295209.xlsx,SW91.9L,Water,21,0
-Water_Level_Annual_High-Low_(Tidal)__SW93.5L_2608295209.xlsx,SW93.5L,Water,21,0
-Water_Level_Daily_High-Low_(Non-Tidal)_SW46.9L_2608295209.xlsx,SW46.9L,Water,5206,5205
-Water_Level_Daily_High-Low_(Non-Tidal)_SW50.6_2608295209.xlsx,SW50.6,Water,5449,5448
-Water_Level_Daily_High-Low_(Non-Tidal)_SW88_2608295209.xlsx,SW88,Water,5479,5478
-Water_Level_Daily_High-Low_(Non-Tidal)_SW88A_2608295209.xlsx,SW88A,Water,5479,5478
-Water_Level_Daily_High-Low_(Non-Tidal)_SW89_2608295209.xlsx,SW89,Water,5237,5236
-Water_Level_Daily_High-Low_(Non-Tidal)_SW90_2608295209.xlsx,SW90,Water,5480,5479
-Water_Level_Daily_High-Low_(Non-Tidal)_SW91.1_2608295209.xlsx,SW91.1,Water,5479,5478
-Water_Level_Daily_High-Low_(Non-Tidal)_SW91.2_2608295209.xlsx,SW91.2,Water,5449,5448
-Water_Level_Daily_High-Low_(Non-Tidal)_SW91.9L_2608295209.xlsx,SW91.9L,Water,5449,5448
-Water_Level_Daily_High-Low_(Non-Tidal)_SW91.9R_2608295209.xlsx,SW91.9R,Water,5480,5479
-Water_Level_Daily_High-Low_(Non-Tidal)_SW91_2608295209.xlsx,SW91,Water,5448,5447
-Water_Level_Daily_High-Low_(Tidal)_SW273_2608295209.xlsx,SW273,Water,5449,5448
-Water_Level_Daily_High-Low_(Tidal)_SW277_2608295209.xlsx,SW277,Water,5449,5448
-Water_Level_Daily_High-Low_(Tidal)_SW93.4L_2608295209.xlsx,SW93.4L,Water,5480,5479
-Water_Level_Daily_High-Low_(Tidal)_SW93.5L_2608295209.xlsx,SW93.5L,Water,5473,5472
-Water_Level_Daily_High-Low_(Tidal)_SW94_2608295209.xlsx,SW94,Water,4085,4084
-Water_Level_Daily_High-Low_(Tidal)_SW95_2608295209.xlsx,SW95,Water,5479,5478
+File,Station_ID,Rows_In_Workbook,Rows_Used,Duplicate_Dates_Dropped,Used_For
+Cross_Section_Cross_Section_(River_Morphology)__Data_RMG12_2608295209.xlsx,RMG12,4515,0,0,"not used: bed surveys, not a daily time series"
+Cross_Section_Cross_Section_(River_Morphology)__Data_RMP2_2608295209.xlsx,RMP2,8140,0,0,"not used: bed surveys, not a daily time series"
+Cross_Section_Cross_Section_(River_Morphology)__Data_RMP3_2608295209.xlsx,RMP3,12351,0,0,"not used: bed surveys, not a daily time series"
+Cross_Section_Cross_Section_(River_Morphology)__Data_RMP4_2608295209.xlsx,RMP4,8430,0,0,"not used: bed surveys, not a daily time series"
+Discharge_MDD_(Mean_Daily_Discharge)_SW273_2608295209.xlsx,SW273,2613,0,0,"not used: rated from same-day stage (r(WL, log Q) 0.98-0.99 at non-tidal stations); 5 of 17 stations; ends 2024; lagged inflow Q lowered pooled test skill"
+Discharge_MDD_(Mean_Daily_Discharge)_SW46.9L_2608295209.xlsx,SW46.9L,4842,0,0,"not used: rated from same-day stage (r(WL, log Q) 0.98-0.99 at non-tidal stations); 5 of 17 stations; ends 2024; lagged inflow Q lowered pooled test skill"
+Discharge_MDD_(Mean_Daily_Discharge)_SW90_2608295209.xlsx,SW90,5116,0,0,"not used: rated from same-day stage (r(WL, log Q) 0.98-0.99 at non-tidal stations); 5 of 17 stations; ends 2024; lagged inflow Q lowered pooled test skill"
+Discharge_MDD_(Mean_Daily_Discharge)_SW91.9L_2608295209.xlsx,SW91.9L,5078,0,0,"not used: rated from same-day stage (r(WL, log Q) 0.98-0.99 at non-tidal stations); 5 of 17 stations; ends 2024; lagged inflow Q lowered pooled test skill"
+Discharge_MDD_(Mean_Daily_Discharge)_SW93.5L_2608295209.xlsx,SW93.5L,2593,0,0,"not used: rated from same-day stage (r(WL, log Q) 0.98-0.99 at non-tidal stations); 5 of 17 stations; ends 2024; lagged inflow Q lowered pooled test skill"
+Evaporation_Evaporation_CL406_2608295209.xlsx,CL406,5473,0,0,not used: one station for the whole corridor; impossible negative values; lagged evaporation lowered pooled test skill
+Evaporation_Evaporation_Select Station Name_2608295209.xlsx,Select Station Name,2,0,0,not used: one station for the whole corridor; impossible negative values; lagged evaporation lowered pooled test skill
+Ground_Water_Ground_Water_Level_(Weekly)_GT2947007_2608295209.xlsx,GT2947007,573,0,0,not used: weekly readings from 3 wells up to 180 km from the gauges
+Ground_Water_Ground_Water_Level_(Weekly)_GT8276015_2608295209.xlsx,GT8276015,501,0,0,not used: weekly readings from 3 wells up to 180 km from the gauges
+Ground_Water_Ground_Water_Level_(Weekly)_GT8669006_2608295209.xlsx,GT8669006,560,0,0,not used: weekly readings from 3 wells up to 180 km from the gauges
+Rainfall_Daily_Rainfall_CL15_2608295209.xlsx,CL15,5449,5448,0,"Rainfall_Level, Rainfall_mm, Rain_3dSum (via nearest-gauge assignment)"
+Rainfall_Daily_Rainfall_CL19_2608295209.xlsx,CL19,5480,5479,0,"Rainfall_Level, Rainfall_mm, Rain_3dSum (via nearest-gauge assignment)"
+Rainfall_Daily_Rainfall_CL205_2608295209.xlsx,CL205,5480,5479,0,"Rainfall_Level, Rainfall_mm, Rain_3dSum (via nearest-gauge assignment)"
+Rainfall_Daily_Rainfall_CL20_2608295209.xlsx,CL20,5480,0,0,not used: not the nearest rain gauge of any station
+Rainfall_Daily_Rainfall_CL215_2608295209.xlsx,CL215,5479,5478,0,"Rainfall_Level, Rainfall_mm, Rain_3dSum (via nearest-gauge assignment)"
+Rainfall_Daily_Rainfall_CL30_2608295209.xlsx,CL30,5387,5386,0,"Rainfall_Level, Rainfall_mm, Rain_3dSum (via nearest-gauge assignment)"
+Rainfall_Daily_Rainfall_CL354_2608295209.xlsx,CL354,5419,5418,0,"Rainfall_Level, Rainfall_mm, Rain_3dSum (via nearest-gauge assignment)"
+Rainfall_Daily_Rainfall_CL402_2608295209.xlsx,CL402,5479,5478,0,"Rainfall_Level, Rainfall_mm, Rain_3dSum (via nearest-gauge assignment)"
+Rainfall_Daily_Rainfall_CL406_2608295209.xlsx,CL406,5480,0,0,not used: not the nearest rain gauge of any station
+Rainfall_Daily_Rainfall_CL413_2608295209.xlsx,CL413,5480,5479,0,"Rainfall_Level, Rainfall_mm, Rain_3dSum (via nearest-gauge assignment)"
+Rainfall_Daily_Rainfall_CL414_2608295209.xlsx,CL414,5418,0,0,not used: not the nearest rain gauge of any station
+Sediment_Weekly_fortnightly_monthly_SW90_2608295209.xlsx,SW90,192,0,0,not used: weekly-to-monthly samples at 3 stations
+Sediment_Weekly_fortnightly_monthly_SW91.9L_2608295209.xlsx,SW91.9L,492,0,0,not used: weekly-to-monthly samples at 3 stations
+Sediment_Weekly_fortnightly_monthly_SW93.5L_2608295209.xlsx,SW93.5L,439,0,0,not used: weekly-to-monthly samples at 3 stations
+Water_Level_3_Hourly_SW93.5L_2608295209.xlsx,SW93.5L,28060,20263,0,validation only: checks the daily average WL (validation_daily_vs_3hourly.csv)
+Water_Level_3_Hourly_SW95_2608295209.xlsx,SW95,27979,20246,0,validation only: checks the daily average WL (validation_daily_vs_3hourly.csv)
+Water_Level_Annual_High-Low_(Non-Tidal)_SW90_2608295209.xlsx,SW90,21,0,0,"not used: one annual max/min per year, no daily information"
+Water_Level_Annual_High-Low_(Non-Tidal)_SW91.9L_2608295209.xlsx,SW91.9L,21,0,0,"not used: one annual max/min per year, no daily information"
+Water_Level_Annual_High-Low_(Tidal)__SW93.5L_2608295209.xlsx,SW93.5L,21,0,0,"not used: one annual max/min per year, no daily information"
+Water_Level_Daily_High-Low_(Non-Tidal)_SW46.9L_2608295209.xlsx,SW46.9L,5206,5205,0,"WL, WLD-1..WLD-7, WL_Trend (average); WL_Range_D-1 (max - min)"
+Water_Level_Daily_High-Low_(Non-Tidal)_SW50.6_2608295209.xlsx,SW50.6,5449,5448,0,"WL, WLD-1..WLD-7, WL_Trend (average); WL_Range_D-1 (max - min)"
+Water_Level_Daily_High-Low_(Non-Tidal)_SW88_2608295209.xlsx,SW88,5479,5478,0,"WL, WLD-1..WLD-7, WL_Trend (average); WL_Range_D-1 (max - min)"
+Water_Level_Daily_High-Low_(Non-Tidal)_SW88A_2608295209.xlsx,SW88A,5479,5478,0,"WL, WLD-1..WLD-7, WL_Trend (average); WL_Range_D-1 (max - min)"
+Water_Level_Daily_High-Low_(Non-Tidal)_SW89_2608295209.xlsx,SW89,5237,5236,0,"WL, WLD-1..WLD-7, WL_Trend (average); WL_Range_D-1 (max - min)"
+Water_Level_Daily_High-Low_(Non-Tidal)_SW90_2608295209.xlsx,SW90,5480,5479,0,"WL, WLD-1..WLD-7, WL_Trend (average); WL_Range_D-1 (max - min)"
+Water_Level_Daily_High-Low_(Non-Tidal)_SW91.1_2608295209.xlsx,SW91.1,5479,5478,0,"WL, WLD-1..WLD-7, WL_Trend (average); WL_Range_D-1 (max - min)"
+Water_Level_Daily_High-Low_(Non-Tidal)_SW91.2_2608295209.xlsx,SW91.2,5449,5448,0,"WL, WLD-1..WLD-7, WL_Trend (average); WL_Range_D-1 (max - min)"
+Water_Level_Daily_High-Low_(Non-Tidal)_SW91.9L_2608295209.xlsx,SW91.9L,5449,5448,0,"WL, WLD-1..WLD-7, WL_Trend (average); WL_Range_D-1 (max - min)"
+Water_Level_Daily_High-Low_(Non-Tidal)_SW91.9R_2608295209.xlsx,SW91.9R,5480,5479,0,"WL, WLD-1..WLD-7, WL_Trend (average); WL_Range_D-1 (max - min)"
+Water_Level_Daily_High-Low_(Non-Tidal)_SW91_2608295209.xlsx,SW91,5448,5447,0,"WL, WLD-1..WLD-7, WL_Trend (average); WL_Range_D-1 (max - min)"
+Water_Level_Daily_High-Low_(Tidal)_SW273_2608295209.xlsx,SW273,5449,5448,0,"WL, WLD-1..WLD-7, WL_Trend (average); WL_Range_D-1 (max - min)"
+Water_Level_Daily_High-Low_(Tidal)_SW277_2608295209.xlsx,SW277,5449,5448,0,"WL, WLD-1..WLD-7, WL_Trend (average); WL_Range_D-1 (max - min)"
+Water_Level_Daily_High-Low_(Tidal)_SW93.4L_2608295209.xlsx,SW93.4L,5480,5479,0,"WL, WLD-1..WLD-7, WL_Trend (average); WL_Range_D-1 (max - min)"
+Water_Level_Daily_High-Low_(Tidal)_SW93.5L_2608295209.xlsx,SW93.5L,5473,5472,0,"WL, WLD-1..WLD-7, WL_Trend (average); WL_Range_D-1 (max - min)"
+Water_Level_Daily_High-Low_(Tidal)_SW94_2608295209.xlsx,SW94,4085,4084,0,"WL, WLD-1..WLD-7, WL_Trend (average); WL_Range_D-1 (max - min)"
+Water_Level_Daily_High-Low_(Tidal)_SW95_2608295209.xlsx,SW95,5479,5478,0,"WL, WLD-1..WLD-7, WL_Trend (average); WL_Range_D-1 (max - min)"

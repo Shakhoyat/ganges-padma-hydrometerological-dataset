@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below and cite the Bangladesh Water Development Board (BWDB) as the original data source."
+type: dataset
+title: "A 15-Year Point-wise Water Level and Rainfall Dataset with 7-Day Lags along the Ganges-Padma River Corridor, Bangladesh (2011-2025)"
+version: "3.1"
+date-released: "2026-09-24"
+license: CC-BY-4.0
+repository-code: "https://github.com/Shakhoyat/ganges-padma-hydrometerological-dataset"
+url: "https://github.com/Shakhoyat/ganges-padma-hydrometerological-dataset"
+authors:
+  - family-names: Shujon
+    given-names: Md. Shakhoyat Rahman
+    affiliation: "Department of CSE, Khulna University of Engineering & Technology"
+  - family-names: Moin
+    given-names: Mohammad Moin Uddin
+    affiliation: "Department of CSE, Khulna University of Engineering & Technology"
+  - family-names: Jony
+    given-names: Md. Tariful Islam
+    affiliation: "Department of CSE, Khulna University of Engineering & Technology"
+  - family-names: Islam
+    given-names: Kamrul
+    affiliation: "Department of CSE, Khulna University of Engineering & Technology"
+  - family-names: Ahona
+    given-names: Tanha Sayed
+    affiliation: "Department of CSE, Khulna University of Engineering & Technology"
+keywords:
+  - river stage
+  - water level
+  - flood forecasting
+  - Padma Bridge
+  - Bangladesh
+  - machine learning
+  - time series

@@ -1,0 +1,1877 @@
+{
+  "seeds": [
+    20260913,
+    20260914,
+    20260915
+  ],
+  "device": "cuda",
+  "smoke": false,
+  "torch": "2.10.0+cu128",
+  "input_sha256": {
+    "long": "93b8bf058dfbb64155dbc721ded7ac384928c04fbf75cb807a00734db1e38f72",
+    "Baruria": "9a5df3d7bb68c465b2257259c651342afb7502617cb99244c157795b5884796d",
+    "Bhagyakul": "4ae2256bfa9eea86536dd39b06dd2711b245e5a3e5b9b6762a63a7927142d057",
+    "Sureswar": "374f9d0ed8437b43c10432347eae354b3e079635a937f7855d0f14f89f9bd2f8"
+  },
+  "gpu_name": "Tesla T4",
+  "e0_runtime_s": 20.9,
+  "custom_variant": "stgnn_nophys",
+  "custom_label": "RS-GNN (river-sweep graph network)",
+  "e1_runtime_s": 1717.8,
+  "e2_runtime_s": 1016.4,
+  "e3_runtime_s": 89.8,
+  "e4_runtime_s": 155.5,
+  "e5_runtime_s": 209.0,
+  "total_runtime_s": 3127.8,
+  "results": {
+    "e0": {
+      "alpha": 0.1,
+      "sklearn_rmse_delta": 0.03777139892178275,
+      "weka": {
+        "rmse": 0.08393450319337045
+      }
+    },
+    "e1": {
+      "custom_variant": "stgnn_nophys",
+      "custom_label": "RS-GNN (river-sweep graph network)",
+      "validation_pi_by_variant": {
+        "pistgnn": 0.8431622044870135,
+        "stgnn_nophys": 0.8567313698912753
+      },
+      "per_target": {
+        "Baruria": {
+          "ridge": {
+            "alpha": 0.1,
+            "val_rmse_by_alpha": {
+              "0.01": 0.031111123401999445,
+              "0.1": 0.030494494485298146,
+              "1.0": 0.03302449173159393,
+              "10.0": 0.043671795709782,
+              "100.0": 0.06806840954586534
+            }
+          },
+          "tgcn": {
+            "graph": {
+              "nodes": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                16,
+                17,
+                11
+              ],
+              "n_nodes": 13,
+              "target": 11,
+              "boundary_nodes": [
+                16,
+                17
+              ],
+              "physics_parent": 10,
+              "edges": [
+                {
+                  "from": 1,
+                  "to": 2,
+                  "kind": "downstream",
+                  "km": 54.01,
+                  "basis": "chainage",
+                  "d_feature": 0.5401
+                },
+                {
+                  "from": 2,
+                  "to": 3,
+                  "kind": "downstream",
+                  "km": 16.27,
+                  "basis": "chainage",
+                  "d_feature": 0.1627
+                },
+                {
+                  "from": 3,
+                  "to": 4,
+                  "kind": "downstream",
+                  "km": 40.64,
+                  "basis": "chainage",
+                  "d_feature": 0.4064
+                },
+                {
+                  "from": 4,
+                  "to": 5,
+                  "kind": "downstream",
+                  "km": 13.94,
+                  "basis": "chainage",
+                  "d_feature": 0.1394
+                },
+                {
+                  "from": 5,
+                  "to": 6,
+                  "kind": "downstream",
+                  "km": 29.36,
+                  "basis": "chainage",
+                  "d_feature": 0.2936
+                },
+                {
+                  "from": 6,
+                  "to": 7,
+                  "kind": "downstream",
+                  "km": 24.46,
+                  "basis": "chainage",
+                  "d_feature": 0.2446
+                },
+                {
+                  "from": 8,
+                  "to": 9,
+                  "kind": "downstream",
+                  "km": 143.92,
+                  "basis": "haversine",
+                  "d_feature": 1.4392
+                },
+                {
+                  "from": 7,
+                  "to": 10,
+                  "kind": "downstream",
+                  "km": 20.75,
+                  "basis": "chainage",
+                  "d_feature": 0.2075
+                },
+                {
+                  "from": 9,
+                  "to": 10,
+                  "kind": "downstream",
+                  "km": 7.649,
+                  "basis": "haversine",
+                  "d_feature": 0.07649
+                },
+                {
+                  "from": 16,
+                  "to": 17,
+                  "kind": "downstream",
+                  "km": 97.395,
+                  "basis": "haversine",
+                  "d_feature": 0.97395
+                },
+                {
+                  "from": 10,
+                  "to": 11,
+                  "kind": "downstream",
+                  "km": 4.01,
+                  "basis": "chainage",
+                  "d_feature": 0.0401
+                },
+                {
+                  "from": 17,
+                  "to": 11,
+                  "kind": "backwater",
+                  "km": 104.835,
+                  "basis": "haversine",
+                  "d_feature": 1.04835
+                }
+              ]
+            },
+            "fits": {
+              "20260913": {
+                "best_epoch": 21,
+                "epochs_run": 51,
+                "best_val_rmse_m": 0.08888218170283817,
+                "runtime_s": 11.2
+              },
+              "20260914": {
+                "best_epoch": 38,
+                "epochs_run": 68,
+                "best_val_rmse_m": 0.08858516354853195,
+                "runtime_s": 13.6
+              },
+              "20260915": {
+                "best_epoch": 11,
+                "epochs_run": 41,
+                "best_val_rmse_m": 0.08691206958076571,
+                "runtime_s": 8.3
+              }
+            }
+          },
+          "lstm": {
+            "20260913": {
+              "best_epoch": 104,
+              "epochs_run": 134
+            },
+            "20260914": {
+              "best_epoch": 95,
+              "epochs_run": 125
+            },
+            "20260915": {
+              "best_epoch": 155,
+              "epochs_run": 185
+            }
+          },
+          "gnn": {
+            "graph": {
+              "nodes": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                16,
+                17,
+                11
+              ],
+              "n_nodes": 13,
+              "target": 11,
+              "boundary_nodes": [
+                16,
+                17
+              ],
+              "physics_parent": 10,
+              "edges": [
+                {
+                  "from": 1,
+                  "to": 2,
+                  "kind": "downstream",
+                  "km": 54.01,
+                  "basis": "chainage",
+                  "d_feature": 0.5401
+                },
+                {
+                  "from": 2,
+                  "to": 3,
+                  "kind": "downstream",
+                  "km": 16.27,
+                  "basis": "chainage",
+                  "d_feature": 0.1627
+                },
+                {
+                  "from": 3,
+                  "to": 4,
+                  "kind": "downstream",
+                  "km": 40.64,
+                  "basis": "chainage",
+                  "d_feature": 0.4064
+                },
+                {
+                  "from": 4,
+                  "to": 5,
+                  "kind": "downstream",
+                  "km": 13.94,
+                  "basis": "chainage",
+                  "d_feature": 0.1394
+                },
+                {
+                  "from": 5,
+                  "to": 6,
+                  "kind": "downstream",
+                  "km": 29.36,
+                  "basis": "chainage",
+                  "d_feature": 0.2936
+                },
+                {
+                  "from": 6,
+                  "to": 7,
+                  "kind": "downstream",
+                  "km": 24.46,
+                  "basis": "chainage",
+                  "d_feature": 0.2446
+                },
+                {
+                  "from": 8,
+                  "to": 9,
+                  "kind": "downstream",
+                  "km": 143.92,
+                  "basis": "haversine",
+                  "d_feature": 1.4392
+                },
+                {
+                  "from": 7,
+                  "to": 10,
+                  "kind": "downstream",
+                  "km": 20.75,
+                  "basis": "chainage",
+                  "d_feature": 0.2075
+                },
+                {
+                  "from": 9,
+                  "to": 10,
+                  "kind": "downstream",
+                  "km": 7.649,
+                  "basis": "haversine",
+                  "d_feature": 0.07649
+                },
+                {
+                  "from": 16,
+                  "to": 17,
+                  "kind": "downstream",
+                  "km": 97.395,
+                  "basis": "haversine",
+                  "d_feature": 0.97395
+                },
+                {
+                  "from": 10,
+                  "to": 11,
+                  "kind": "downstream",
+                  "km": 4.01,
+                  "basis": "chainage",
+                  "d_feature": 0.0401
+                },
+                {
+                  "from": 17,
+                  "to": 11,
+                  "kind": "backwater",
+                  "km": 104.835,
+                  "basis": "haversine",
+                  "d_feature": 1.04835
+                }
+              ]
+            },
+            "checks": {
+              "n_nodes": 13,
+              "sweep_order": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                16,
+                17,
+                11
+              ],
+              "input_shape_per_sample": [
+                13,
+                8,
+                2
+              ],
+              "gru_state_shape_per_sample": [
+                13,
+                32
+              ],
+              "sweep_state_shape_per_sample": [
+                13,
+                32
+              ],
+              "target_t_slot_zero_all_rows": true,
+              "upstream_nodes_reaching_target": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                16,
+                17
+              ],
+              "nodes_changed_by_target": [],
+              "batch_loss": {
+                "total": 0.38579127192497253,
+                "mse": 0.38563272356987,
+                "phys": 0.001585586229339242
+              },
+              "rating_grad_abs_sum": {
+                "alpha": 0.0008855516789481044,
+                "beta": 0.0007886117091402411,
+                "h0": 0.001814976567402482
+              }
+            },
+            "stage_mean": {
+              "1": 14.972949743434953,
+              "2": 11.11323611530335,
+              "3": 10.551170766676726,
+              "4": 7.432990869302746,
+              "5": 7.091975550860248,
+              "6": 5.494224268035014,
+              "7": 5.144558557198914,
+              "8": 15.028033051614852,
+              "9": 4.64480086024751,
+              "10": 4.4373370057349835,
+              "16": 2.1185876094174465,
+              "17": 1.6236469966797462,
+              "11": 4.506630589452805
+            },
+            "stage_std": {
+              "1": 3.173290194832402,
+              "2": 3.107786402613229,
+              "3": 3.02102544624711,
+              "4": 3.0021333181963303,
+              "5": 2.8524236068908295,
+              "6": 2.536039386247601,
+              "7": 2.4923272268810677,
+              "8": 2.4968201865940958,
+              "9": 2.3121128023217836,
+              "10": 2.2223180321637175,
+              "16": 1.428311471896798,
+              "17": 0.9927184046938965,
+              "11": 2.180841635486048
+            },
+            "delta_mean": -0.0012858436462420777,
+            "delta_std": 0.0873103521187575,
+            "fits": {
+              "pistgnn/20260913": {
+                "lambda": 0.1,
+                "best_epoch": 125,
+                "epochs_run": 155,
+                "best_val_rmse_m": 0.032269223303592304,
+                "diverged": false,
+                "rating_curves_u_s": {
+                  "a": [
+                    1.036300778388977,
+                    1.0331345796585083
+                  ],
+                  "b": [
+                    2.2734811305999756,
+                    2.326871871948242
+                  ],
+                  "h0": [
+                    -0.5096451044082642,
+                    -0.48468977212905884
+                  ]
+                },
+                "runtime_s": 100.9
+              },
+              "pistgnn/20260914": {
+                "lambda": 0.1,
+                "best_epoch": 120,
+                "epochs_run": 150,
+                "best_val_rmse_m": 0.032796116819242,
+                "diverged": false,
+                "rating_curves_u_s": {
+                  "a": [
+                    1.0209976434707642,
+                    1.0204370021820068
+                  ],
+                  "b": [
+                    2.2434840202331543,
+                    2.2919158935546875
+                  ],
+                  "h0": [
+                    -0.49601078033447266,
+                    -0.46888846158981323
+                  ]
+                },
+                "runtime_s": 96.2
+              },
+              "pistgnn/20260915": {
+                "lambda": 0.1,
+                "best_epoch": 71,
+                "epochs_run": 101,
+                "best_val_rmse_m": 0.03222992688310071,
+                "diverged": false,
+                "rating_curves_u_s": {
+                  "a": [
+                    0.8692739605903625,
+                    0.8698108196258545
+                  ],
+                  "b": [
+                    1.9948146343231201,
+                    2.030853748321533
+                  ],
+                  "h0": [
+                    -0.27344614267349243,
+                    -0.2635199725627899
+                  ]
+                },
+                "runtime_s": 68.2
+              },
+              "stgnn_nophys/20260913": {
+                "lambda": 0.0,
+                "best_epoch": 131,
+                "epochs_run": 161,
+                "best_val_rmse_m": 0.030425094161770982,
+                "diverged": false,
+                "rating_curves_u_s": {
+                  "a": [
+                    0.6931471824645996,
+                    0.6931471824645996
+                  ],
+                  "b": [
+                    1.6931471824645996,
+                    1.6931471824645996
+                  ],
+                  "h0": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "runtime_s": 98.4
+              },
+              "stgnn_nophys/20260914": {
+                "lambda": 0.0,
+                "best_epoch": 114,
+                "epochs_run": 144,
+                "best_val_rmse_m": 0.031229542129069744,
+                "diverged": false,
+                "rating_curves_u_s": {
+                  "a": [
+                    0.6931471824645996,
+                    0.6931471824645996
+                  ],
+                  "b": [
+                    1.6931471824645996,
+                    1.6931471824645996
+                  ],
+                  "h0": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "runtime_s": 88.8
+              },
+              "stgnn_nophys/20260915": {
+                "lambda": 0.0,
+                "best_epoch": 90,
+                "epochs_run": 120,
+                "best_val_rmse_m": 0.029969521849730063,
+                "diverged": false,
+                "rating_curves_u_s": {
+                  "a": [
+                    0.6931471824645996,
+                    0.6931471824645996
+                  ],
+                  "b": [
+                    1.6931471824645996,
+                    1.6931471824645996
+                  ],
+                  "h0": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "runtime_s": 74.2
+              }
+            },
+            "n_parameters": {
+              "total": 6119,
+              "predictive": 6113,
+              "rating_curves": 6
+            },
+            "runtime_s": 527.2
+          },
+          "ablation": {
+            "n_rows": 4707,
+            "counts": {
+              "train": 3283,
+              "val": 328,
+              "test": 1096
+            },
+            "A": {
+              "ridge_alpha": 0.01,
+              "lgbm_best_iteration": 968
+            },
+            "B": {
+              "ridge_alpha": 0.01,
+              "lgbm_best_iteration": 1346
+            },
+            "C": {
+              "ridge_alpha": 0.1,
+              "lgbm_best_iteration": 1062
+            },
+            "D": {
+              "ridge_alpha": 0.1,
+              "lgbm_best_iteration": 1103
+            },
+            "E": {
+              "ridge_alpha": 0.01,
+              "lgbm_best_iteration": 751
+            },
+            "F": {
+              "ridge_alpha": 0.1,
+              "lgbm_best_iteration": 1804
+            },
+            "G": {
+              "ridge_alpha": 0.01,
+              "lgbm_best_iteration": 737
+            }
+          },
+          "counts": {
+            "train": 3313,
+            "val": 328,
+            "test": 1096
+          },
+          "n_predictors": 103
+        },
+        "Bhagyakul": {
+          "ridge": {
+            "alpha": 0.1,
+            "val_rmse_by_alpha": {
+              "0.01": 0.035664965271303674,
+              "0.1": 0.03562197205843689,
+              "1.0": 0.03741661071650147,
+              "10.0": 0.045324114214384134,
+              "100.0": 0.061704959307921636
+            }
+          },
+          "tgcn": {
+            "graph": {
+              "nodes": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                16,
+                17,
+                12
+              ],
+              "n_nodes": 14,
+              "target": 12,
+              "boundary_nodes": [
+                16,
+                17
+              ],
+              "physics_parent": 11,
+              "edges": [
+                {
+                  "from": 1,
+                  "to": 2,
+                  "kind": "downstream",
+                  "km": 54.01,
+                  "basis": "chainage",
+                  "d_feature": 0.5401
+                },
+                {
+                  "from": 2,
+                  "to": 3,
+                  "kind": "downstream",
+                  "km": 16.27,
+                  "basis": "chainage",
+                  "d_feature": 0.1627
+                },
+                {
+                  "from": 3,
+                  "to": 4,
+                  "kind": "downstream",
+                  "km": 40.64,
+                  "basis": "chainage",
+                  "d_feature": 0.4064
+                },
+                {
+                  "from": 4,
+                  "to": 5,
+                  "kind": "downstream",
+                  "km": 13.94,
+                  "basis": "chainage",
+                  "d_feature": 0.1394
+                },
+                {
+                  "from": 5,
+                  "to": 6,
+                  "kind": "downstream",
+                  "km": 29.36,
+                  "basis": "chainage",
+                  "d_feature": 0.2936
+                },
+                {
+                  "from": 6,
+                  "to": 7,
+                  "kind": "downstream",
+                  "km": 24.46,
+                  "basis": "chainage",
+                  "d_feature": 0.2446
+                },
+                {
+                  "from": 8,
+                  "to": 9,
+                  "kind": "downstream",
+                  "km": 143.92,
+                  "basis": "haversine",
+                  "d_feature": 1.4392
+                },
+                {
+                  "from": 7,
+                  "to": 10,
+                  "kind": "downstream",
+                  "km": 20.75,
+                  "basis": "chainage",
+                  "d_feature": 0.2075
+                },
+                {
+                  "from": 9,
+                  "to": 10,
+                  "kind": "downstream",
+                  "km": 7.649,
+                  "basis": "haversine",
+                  "d_feature": 0.07649
+                },
+                {
+                  "from": 10,
+                  "to": 11,
+                  "kind": "downstream",
+                  "km": 4.01,
+                  "basis": "chainage",
+                  "d_feature": 0.0401
+                },
+                {
+                  "from": 16,
+                  "to": 17,
+                  "kind": "downstream",
+                  "km": 97.395,
+                  "basis": "haversine",
+                  "d_feature": 0.97395
+                },
+                {
+                  "from": 11,
+                  "to": 12,
+                  "kind": "downstream",
+                  "km": 51.52,
+                  "basis": "chainage",
+                  "d_feature": 0.5152
+                },
+                {
+                  "from": 17,
+                  "to": 12,
+                  "kind": "backwater",
+                  "km": 53.329,
+                  "basis": "haversine",
+                  "d_feature": 0.53329
+                }
+              ]
+            },
+            "fits": {
+              "20260913": {
+                "best_epoch": 17,
+                "epochs_run": 47,
+                "best_val_rmse_m": 0.061680025910045795,
+                "runtime_s": 9.5
+              },
+              "20260914": {
+                "best_epoch": 14,
+                "epochs_run": 44,
+                "best_val_rmse_m": 0.06236871114351724,
+                "runtime_s": 8.8
+              },
+              "20260915": {
+                "best_epoch": 10,
+                "epochs_run": 40,
+                "best_val_rmse_m": 0.06147523347587879,
+                "runtime_s": 8.1
+              }
+            }
+          },
+          "lstm": {
+            "20260913": {
+              "best_epoch": 79,
+              "epochs_run": 109
+            },
+            "20260914": {
+              "best_epoch": 77,
+              "epochs_run": 107
+            },
+            "20260915": {
+              "best_epoch": 74,
+              "epochs_run": 104
+            }
+          },
+          "gnn": {
+            "graph": {
+              "nodes": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                16,
+                17,
+                12
+              ],
+              "n_nodes": 14,
+              "target": 12,
+              "boundary_nodes": [
+                16,
+                17
+              ],
+              "physics_parent": 11,
+              "edges": [
+                {
+                  "from": 1,
+                  "to": 2,
+                  "kind": "downstream",
+                  "km": 54.01,
+                  "basis": "chainage",
+                  "d_feature": 0.5401
+                },
+                {
+                  "from": 2,
+                  "to": 3,
+                  "kind": "downstream",
+                  "km": 16.27,
+                  "basis": "chainage",
+                  "d_feature": 0.1627
+                },
+                {
+                  "from": 3,
+                  "to": 4,
+                  "kind": "downstream",
+                  "km": 40.64,
+                  "basis": "chainage",
+                  "d_feature": 0.4064
+                },
+                {
+                  "from": 4,
+                  "to": 5,
+                  "kind": "downstream",
+                  "km": 13.94,
+                  "basis": "chainage",
+                  "d_feature": 0.1394
+                },
+                {
+                  "from": 5,
+                  "to": 6,
+                  "kind": "downstream",
+                  "km": 29.36,
+                  "basis": "chainage",
+                  "d_feature": 0.2936
+                },
+                {
+                  "from": 6,
+                  "to": 7,
+                  "kind": "downstream",
+                  "km": 24.46,
+                  "basis": "chainage",
+                  "d_feature": 0.2446
+                },
+                {
+                  "from": 8,
+                  "to": 9,
+                  "kind": "downstream",
+                  "km": 143.92,
+                  "basis": "haversine",
+                  "d_feature": 1.4392
+                },
+                {
+                  "from": 7,
+                  "to": 10,
+                  "kind": "downstream",
+                  "km": 20.75,
+                  "basis": "chainage",
+                  "d_feature": 0.2075
+                },
+                {
+                  "from": 9,
+                  "to": 10,
+                  "kind": "downstream",
+                  "km": 7.649,
+                  "basis": "haversine",
+                  "d_feature": 0.07649
+                },
+                {
+                  "from": 10,
+                  "to": 11,
+                  "kind": "downstream",
+                  "km": 4.01,
+                  "basis": "chainage",
+                  "d_feature": 0.0401
+                },
+                {
+                  "from": 16,
+                  "to": 17,
+                  "kind": "downstream",
+                  "km": 97.395,
+                  "basis": "haversine",
+                  "d_feature": 0.97395
+                },
+                {
+                  "from": 11,
+                  "to": 12,
+                  "kind": "downstream",
+                  "km": 51.52,
+                  "basis": "chainage",
+                  "d_feature": 0.5152
+                },
+                {
+                  "from": 17,
+                  "to": 12,
+                  "kind": "backwater",
+                  "km": 53.329,
+                  "basis": "haversine",
+                  "d_feature": 0.53329
+                }
+              ]
+            },
+            "checks": {
+              "n_nodes": 14,
+              "sweep_order": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                16,
+                17,
+                12
+              ],
+              "input_shape_per_sample": [
+                14,
+                8,
+                2
+              ],
+              "gru_state_shape_per_sample": [
+                14,
+                32
+              ],
+              "sweep_state_shape_per_sample": [
+                14,
+                32
+              ],
+              "target_t_slot_zero_all_rows": true,
+              "upstream_nodes_reaching_target": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                16,
+                17
+              ],
+              "nodes_changed_by_target": [],
+              "batch_loss": {
+                "total": 1.16698157787323,
+                "mse": 1.1652274131774902,
+                "phys": 0.017541976645588875
+              },
+              "rating_grad_abs_sum": {
+                "alpha": 0.0029858965426683426,
+                "beta": 0.002643069252371788,
+                "h0": 0.00611196830868721
+              }
+            },
+            "stage_mean": {
+              "1": 14.972949743434953,
+              "2": 11.11323611530335,
+              "3": 10.551170766676726,
+              "4": 7.432990869302746,
+              "5": 7.091975550860248,
+              "6": 5.494224268035014,
+              "7": 5.144558557198914,
+              "8": 15.028033051614852,
+              "9": 4.64480086024751,
+              "10": 4.4373370057349835,
+              "11": 4.505949667974645,
+              "16": 2.1185876094174465,
+              "17": 1.6236469966797462,
+              "12": 2.7441438489069037
+            },
+            "stage_std": {
+              "1": 3.173290194832402,
+              "2": 3.107786402613229,
+              "3": 3.02102544624711,
+              "4": 3.0021333181963303,
+              "5": 2.8524236068908295,
+              "6": 2.536039386247601,
+              "7": 2.4923272268810677,
+              "8": 2.4968201865940958,
+              "9": 2.3121128023217836,
+              "10": 2.2223180321637175,
+              "11": 2.1806498491496007,
+              "16": 1.428311471896798,
+              "17": 0.9927184046938965,
+              "12": 1.6369173359444955
+            },
+            "delta_mean": -0.0012164201629942654,
+            "delta_std": 0.0855210725876838,
+            "fits": {
+              "pistgnn/20260913": {
+                "lambda": 0.1,
+                "best_epoch": 120,
+                "epochs_run": 150,
+                "best_val_rmse_m": 0.03536807018465295,
+                "diverged": false,
+                "rating_curves_u_s": {
+                  "a": [
+                    0.8766979575157166,
+                    0.8662562370300293
+                  ],
+                  "b": [
+                    2.1985018253326416,
+                    1.965293049812317
+                  ],
+                  "h0": [
+                    -0.1998203545808792,
+                    -0.29813504219055176
+                  ]
+                },
+                "runtime_s": 105.5
+              },
+              "pistgnn/20260914": {
+                "lambda": 0.1,
+                "best_epoch": 95,
+                "epochs_run": 125,
+                "best_val_rmse_m": 0.036093488061553686,
+                "diverged": false,
+                "rating_curves_u_s": {
+                  "a": [
+                    0.8481826782226562,
+                    0.8413602709770203
+                  ],
+                  "b": [
+                    2.1332530975341797,
+                    1.9054265022277832
+                  ],
+                  "h0": [
+                    -0.1618831902742386,
+                    -0.2627585232257843
+                  ]
+                },
+                "runtime_s": 87.9
+              },
+              "pistgnn/20260915": {
+                "lambda": 0.1,
+                "best_epoch": 85,
+                "epochs_run": 115,
+                "best_val_rmse_m": 0.035001368285272734,
+                "diverged": false,
+                "rating_curves_u_s": {
+                  "a": [
+                    0.8352131843566895,
+                    0.8284062147140503
+                  ],
+                  "b": [
+                    2.1022074222564697,
+                    1.8805298805236816
+                  ],
+                  "h0": [
+                    -0.15146906673908234,
+                    -0.24624253809452057
+                  ]
+                },
+                "runtime_s": 80.7
+              },
+              "stgnn_nophys/20260913": {
+                "lambda": 0.0,
+                "best_epoch": 110,
+                "epochs_run": 140,
+                "best_val_rmse_m": 0.03490828447471919,
+                "diverged": false,
+                "rating_curves_u_s": {
+                  "a": [
+                    0.6931471824645996,
+                    0.6931471824645996
+                  ],
+                  "b": [
+                    1.6931471824645996,
+                    1.6931471824645996
+                  ],
+                  "h0": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "runtime_s": 92.5
+              },
+              "stgnn_nophys/20260914": {
+                "lambda": 0.0,
+                "best_epoch": 79,
+                "epochs_run": 109,
+                "best_val_rmse_m": 0.034644324403188466,
+                "diverged": false,
+                "rating_curves_u_s": {
+                  "a": [
+                    0.6931471824645996,
+                    0.6931471824645996
+                  ],
+                  "b": [
+                    1.6931471824645996,
+                    1.6931471824645996
+                  ],
+                  "h0": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "runtime_s": 71.6
+              },
+              "stgnn_nophys/20260915": {
+                "lambda": 0.0,
+                "best_epoch": 71,
+                "epochs_run": 101,
+                "best_val_rmse_m": 0.03481239433934862,
+                "diverged": false,
+                "rating_curves_u_s": {
+                  "a": [
+                    0.6931471824645996,
+                    0.6931471824645996
+                  ],
+                  "b": [
+                    1.6931471824645996,
+                    1.6931471824645996
+                  ],
+                  "h0": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "runtime_s": 66.8
+              }
+            },
+            "n_parameters": {
+              "total": 6119,
+              "predictive": 6113,
+              "rating_curves": 6
+            },
+            "runtime_s": 505.2
+          },
+          "ablation": {
+            "n_rows": 4736,
+            "counts": {
+              "train": 3312,
+              "val": 328,
+              "test": 1096
+            },
+            "A": {
+              "ridge_alpha": 0.01,
+              "lgbm_best_iteration": 617
+            },
+            "B": {
+              "ridge_alpha": 0.01,
+              "lgbm_best_iteration": 964
+            },
+            "C": {
+              "ridge_alpha": 0.01,
+              "lgbm_best_iteration": 553
+            },
+            "D": {
+              "ridge_alpha": 0.01,
+              "lgbm_best_iteration": 962
+            },
+            "E": {
+              "ridge_alpha": 0.1,
+              "lgbm_best_iteration": 292
+            },
+            "F": {
+              "ridge_alpha": 0.1,
+              "lgbm_best_iteration": 664
+            },
+            "G": {
+              "ridge_alpha": 0.1,
+              "lgbm_best_iteration": 245
+            }
+          },
+          "counts": {
+            "train": 3313,
+            "val": 328,
+            "test": 1096
+          },
+          "n_predictors": 111
+        },
+        "Sureswar": {
+          "ridge": {
+            "alpha": 0.01,
+            "val_rmse_by_alpha": {
+              "0.01": 0.048276130883367206,
+              "0.1": 0.048356913537615495,
+              "1.0": 0.05059067447233334,
+              "10.0": 0.05821455630244001,
+              "100.0": 0.07162274659715885
+            }
+          },
+          "tgcn": {
+            "graph": {
+              "nodes": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                16,
+                17,
+                15
+              ],
+              "n_nodes": 16,
+              "target": 15,
+              "boundary_nodes": [
+                16,
+                17
+              ],
+              "physics_parent": 13,
+              "edges": [
+                {
+                  "from": 1,
+                  "to": 2,
+                  "kind": "downstream",
+                  "km": 54.01,
+                  "basis": "chainage",
+                  "d_feature": 0.5401
+                },
+                {
+                  "from": 2,
+                  "to": 3,
+                  "kind": "downstream",
+                  "km": 16.27,
+                  "basis": "chainage",
+                  "d_feature": 0.1627
+                },
+                {
+                  "from": 3,
+                  "to": 4,
+                  "kind": "downstream",
+                  "km": 40.64,
+                  "basis": "chainage",
+                  "d_feature": 0.4064
+                },
+                {
+                  "from": 4,
+                  "to": 5,
+                  "kind": "downstream",
+                  "km": 13.94,
+                  "basis": "chainage",
+                  "d_feature": 0.1394
+                },
+                {
+                  "from": 5,
+                  "to": 6,
+                  "kind": "downstream",
+                  "km": 29.36,
+                  "basis": "chainage",
+                  "d_feature": 0.2936
+                },
+                {
+                  "from": 6,
+                  "to": 7,
+                  "kind": "downstream",
+                  "km": 24.46,
+                  "basis": "chainage",
+                  "d_feature": 0.2446
+                },
+                {
+                  "from": 8,
+                  "to": 9,
+                  "kind": "downstream",
+                  "km": 143.92,
+                  "basis": "haversine",
+                  "d_feature": 1.4392
+                },
+                {
+                  "from": 7,
+                  "to": 10,
+                  "kind": "downstream",
+                  "km": 20.75,
+                  "basis": "chainage",
+                  "d_feature": 0.2075
+                },
+                {
+                  "from": 9,
+                  "to": 10,
+                  "kind": "downstream",
+                  "km": 7.649,
+                  "basis": "haversine",
+                  "d_feature": 0.07649
+                },
+                {
+                  "from": 10,
+                  "to": 11,
+                  "kind": "downstream",
+                  "km": 4.01,
+                  "basis": "chainage",
+                  "d_feature": 0.0401
+                },
+                {
+                  "from": 11,
+                  "to": 12,
+                  "kind": "downstream",
+                  "km": 51.52,
+                  "basis": "chainage",
+                  "d_feature": 0.5152
+                },
+                {
+                  "from": 12,
+                  "to": 13,
+                  "kind": "downstream",
+                  "km": 4.97,
+                  "basis": "chainage",
+                  "d_feature": 0.0497
+                },
+                {
+                  "from": 16,
+                  "to": 17,
+                  "kind": "downstream",
+                  "km": 97.395,
+                  "basis": "haversine",
+                  "d_feature": 0.97395
+                },
+                {
+                  "from": 13,
+                  "to": 15,
+                  "kind": "downstream",
+                  "km": 30.73,
+                  "basis": "chainage",
+                  "d_feature": 0.3073
+                },
+                {
+                  "from": 17,
+                  "to": 15,
+                  "kind": "backwater",
+                  "km": 19.537,
+                  "basis": "haversine",
+                  "d_feature": 0.19537
+                }
+              ]
+            },
+            "fits": {
+              "20260913": {
+                "best_epoch": 9,
+                "epochs_run": 39,
+                "best_val_rmse_m": 0.06979915529422727,
+                "runtime_s": 8.0
+              },
+              "20260914": {
+                "best_epoch": 7,
+                "epochs_run": 37,
+                "best_val_rmse_m": 0.07108473331487991,
+                "runtime_s": 7.6
+              },
+              "20260915": {
+                "best_epoch": 8,
+                "epochs_run": 38,
+                "best_val_rmse_m": 0.07058550288582843,
+                "runtime_s": 7.9
+              }
+            }
+          },
+          "lstm": {
+            "20260913": {
+              "best_epoch": 60,
+              "epochs_run": 90
+            },
+            "20260914": {
+              "best_epoch": 63,
+              "epochs_run": 93
+            },
+            "20260915": {
+              "best_epoch": 54,
+              "epochs_run": 84
+            }
+          },
+          "gnn": {
+            "graph": {
+              "nodes": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                16,
+                17,
+                15
+              ],
+              "n_nodes": 16,
+              "target": 15,
+              "boundary_nodes": [
+                16,
+                17
+              ],
+              "physics_parent": 13,
+              "edges": [
+                {
+                  "from": 1,
+                  "to": 2,
+                  "kind": "downstream",
+                  "km": 54.01,
+                  "basis": "chainage",
+                  "d_feature": 0.5401
+                },
+                {
+                  "from": 2,
+                  "to": 3,
+                  "kind": "downstream",
+                  "km": 16.27,
+                  "basis": "chainage",
+                  "d_feature": 0.1627
+                },
+                {
+                  "from": 3,
+                  "to": 4,
+                  "kind": "downstream",
+                  "km": 40.64,
+                  "basis": "chainage",
+                  "d_feature": 0.4064
+                },
+                {
+                  "from": 4,
+                  "to": 5,
+                  "kind": "downstream",
+                  "km": 13.94,
+                  "basis": "chainage",
+                  "d_feature": 0.1394
+                },
+                {
+                  "from": 5,
+                  "to": 6,
+                  "kind": "downstream",
+                  "km": 29.36,
+                  "basis": "chainage",
+                  "d_feature": 0.2936
+                },
+                {
+                  "from": 6,
+                  "to": 7,
+                  "kind": "downstream",
+                  "km": 24.46,
+                  "basis": "chainage",
+                  "d_feature": 0.2446
+                },
+                {
+                  "from": 8,
+                  "to": 9,
+                  "kind": "downstream",
+                  "km": 143.92,
+                  "basis": "haversine",
+                  "d_feature": 1.4392
+                },
+                {
+                  "from": 7,
+                  "to": 10,
+                  "kind": "downstream",
+                  "km": 20.75,
+                  "basis": "chainage",
+                  "d_feature": 0.2075
+                },
+                {
+                  "from": 9,
+                  "to": 10,
+                  "kind": "downstream",
+                  "km": 7.649,
+                  "basis": "haversine",
+                  "d_feature": 0.07649
+                },
+                {
+                  "from": 10,
+                  "to": 11,
+                  "kind": "downstream",
+                  "km": 4.01,
+                  "basis": "chainage",
+                  "d_feature": 0.0401
+                },
+                {
+                  "from": 11,
+                  "to": 12,
+                  "kind": "downstream",
+                  "km": 51.52,
+                  "basis": "chainage",
+                  "d_feature": 0.5152
+                },
+                {
+                  "from": 12,
+                  "to": 13,
+                  "kind": "downstream",
+                  "km": 4.97,
+                  "basis": "chainage",
+                  "d_feature": 0.0497
+                },
+                {
+                  "from": 16,
+                  "to": 17,
+                  "kind": "downstream",
+                  "km": 97.395,
+                  "basis": "haversine",
+                  "d_feature": 0.97395
+                },
+                {
+                  "from": 13,
+                  "to": 15,
+                  "kind": "downstream",
+                  "km": 30.73,
+                  "basis": "chainage",
+                  "d_feature": 0.3073
+                },
+                {
+                  "from": 17,
+                  "to": 15,
+                  "kind": "backwater",
+                  "km": 19.537,
+                  "basis": "haversine",
+                  "d_feature": 0.19537
+                }
+              ]
+            },
+            "checks": {
+              "n_nodes": 16,
+              "sweep_order": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                16,
+                17,
+                15
+              ],
+              "input_shape_per_sample": [
+                16,
+                8,
+                2
+              ],
+              "gru_state_shape_per_sample": [
+                16,
+                32
+              ],
+              "sweep_state_shape_per_sample": [
+                16,
+                32
+              ],
+              "target_t_slot_zero_all_rows": true,
+              "upstream_nodes_reaching_target": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                16,
+                17
+              ],
+              "nodes_changed_by_target": [],
+              "batch_loss": {
+                "total": 1.4377955198287964,
+                "mse": 1.4374958276748657,
+                "phys": 0.0029966807924211025
+              },
+              "rating_grad_abs_sum": {
+                "alpha": 0.0012652697041630745,
+                "beta": 0.001094931154511869,
+                "h0": 0.002578502520918846
+              }
+            },
+            "stage_mean": {
+              "1": 14.96139360412246,
+              "2": 11.101689906032133,
+              "3": 10.53969687784177,
+              "4": 7.4224155046983915,
+              "5": 7.082015762352228,
+              "6": 5.488441194301304,
+              "7": 5.137502273416188,
+              "8": 15.022029933313124,
+              "9": 4.6380977568960295,
+              "10": 4.431550090936647,
+              "11": 4.500196271597454,
+              "12": 2.738651485298575,
+              "13": 2.6088763261594425,
+              "16": 2.113059033040315,
+              "17": 1.6205816156411033,
+              "15": 1.4195318927813623
+            },
+            "stage_std": {
+              "1": 3.1748713789828216,
+              "2": 3.1091475484375293,
+              "3": 3.0221472985767233,
+              "4": 3.0039716707065796,
+              "5": 2.854095789411776,
+              "6": 2.539787640556088,
+              "7": 2.4951984501777225,
+              "8": 2.50030715888419,
+              "9": 2.31464148403114,
+              "10": 2.2251738089554656,
+              "11": 2.183399773392375,
+              "12": 1.6384034800413807,
+              "13": 1.5611499063744982,
+              "16": 1.4285720890813058,
+              "17": 0.9934674315722294,
+              "15": 1.1872514148783138
+            },
+            "delta_mean": -0.0008335859351318581,
+            "delta_std": 0.09116770957790502,
+            "fits": {
+              "pistgnn/20260913": {
+                "lambda": 0.1,
+                "best_epoch": 28,
+                "epochs_run": 58,
+                "best_val_rmse_m": 0.04774333197801831,
+                "diverged": false,
+                "rating_curves_u_s": {
+                  "a": [
+                    0.7109825015068054,
+                    0.7164629697799683
+                  ],
+                  "b": [
+                    1.700303316116333,
+                    1.6995177268981934
+                  ],
+                  "h0": [
+                    -0.0448792390525341,
+                    -0.05926501005887985
+                  ]
+                },
+                "runtime_s": 45.1
+              },
+              "pistgnn/20260914": {
+                "lambda": 0.1,
+                "best_epoch": 50,
+                "epochs_run": 80,
+                "best_val_rmse_m": 0.04610432929254426,
+                "diverged": false,
+                "rating_curves_u_s": {
+                  "a": [
+                    0.7518375515937805,
+                    0.7571151852607727
+                  ],
+                  "b": [
+                    1.7242212295532227,
+                    1.7334420680999756
+                  ],
+                  "h0": [
+                    -0.1239294484257698,
+                    -0.13784968852996826
+                  ]
+                },
+                "runtime_s": 61.4
+              },
+              "pistgnn/20260915": {
+                "lambda": 0.1,
+                "best_epoch": 62,
+                "epochs_run": 92,
+                "best_val_rmse_m": 0.04549092230992875,
+                "diverged": false,
+                "rating_curves_u_s": {
+                  "a": [
+                    0.7688561081886292,
+                    0.7705886960029602
+                  ],
+                  "b": [
+                    1.7317790985107422,
+                    1.745509386062622
+                  ],
+                  "h0": [
+                    -0.16031862795352936,
+                    -0.16511572897434235
+                  ]
+                },
+                "runtime_s": 71.4
+              },
+              "stgnn_nophys/20260913": {
+                "lambda": 0.0,
+                "best_epoch": 41,
+                "epochs_run": 71,
+                "best_val_rmse_m": 0.04349140982118035,
+                "diverged": false,
+                "rating_curves_u_s": {
+                  "a": [
+                    0.6931471824645996,
+                    0.6931471824645996
+                  ],
+                  "b": [
+                    1.6931471824645996,
+                    1.6931471824645996
+                  ],
+                  "h0": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "runtime_s": 52.3
+              },
+              "stgnn_nophys/20260914": {
+                "lambda": 0.0,
+                "best_epoch": 71,
+                "epochs_run": 101,
+                "best_val_rmse_m": 0.04412790464935267,
+                "diverged": false,
+                "rating_curves_u_s": {
+                  "a": [
+                    0.6931471824645996,
+                    0.6931471824645996
+                  ],
+                  "b": [
+                    1.6931471824645996,
+                    1.6931471824645996
+                  ],
+                  "h0": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "runtime_s": 73.5
+              },
+              "stgnn_nophys/20260915": {
+                "lambda": 0.0,
+                "best_epoch": 62,
+                "epochs_run": 92,
+                "best_val_rmse_m": 0.04433536818965479,
+                "diverged": false,
+                "rating_curves_u_s": {
+                  "a": [
+                    0.6931471824645996,
+                    0.6931471824645996
+                  ],
+                  "b": [
+                    1.6931471824645996,
+                    1.6931471824645996
+                  ],
+                  "h0": [
+                    0.0,
+                    0.0
+                  ]
+                },
+                "runtime_s": 67.5
+              }
+            },
+            "n_parameters": {
+              "total": 6119,
+              "predictive": 6113,
+              "rating_curves": 6
+            },
+            "runtime_s": 371.4
+          },
+          "ablation": {
+            "n_rows": 4715,
+            "counts": {
+              "train": 3299,
+              "val": 328,
+              "test": 1088
+            },
+            "A": {
+              "ridge_alpha": 0.01,
+              "lgbm_best_iteration": 250
+            },
+            "B": {
+              "ridge_alpha": 0.01,
+              "lgbm_best_iteration": 421
+            },
+            "C": {
+              "ridge_alpha": 0.01,
+              "lgbm_best_iteration": 82
+            },
+            "D": {
+              "ridge_alpha": 0.01,
+              "lgbm_best_iteration": 55
+            },
+            "E": {
+              "ridge_alpha": 0.1,
+              "lgbm_best_iteration": 25
+            },
+            "F": {
+              "ridge_alpha": 0.01,
+              "lgbm_best_iteration": 150
+            },
+            "G": {
+              "ridge_alpha": 0.01,
+              "lgbm_best_iteration": 44
+            }
+          },
+          "counts": {
+            "train": 3299,
+            "val": 328,
+            "test": 1088
+          },
+          "n_predictors": 127
+        }
+      }
+    },
+    "e2": {
+      "n_common_test_days": 1096,
+      "chosen_k": 7
+    },
+    "e3": {
+      "celerity_km_per_day": 133.49101865204796,
+      "n_events": 35,
+      "n_farakka_verified": 0,
+      "arrival_lags": [
+        {
+          "target_id": 11,
+          "n_events": 35,
+          "median_lag": 2.0,
+          "iqr_lo": 1.0,
+          "iqr_hi": 4.5
+        },
+        {
+          "target_id": 12,
+          "n_events": 35,
+          "median_lag": 4.0,
+          "iqr_lo": 2.0,
+          "iqr_hi": 6.0
+        },
+        {
+          "target_id": 15,
+          "n_events": 35,
+          "median_lag": 5.0,
+          "iqr_lo": 3.0,
+          "iqr_hi": 7.0
+        }
+      ]
+    },
+    "e4": {
+      "peak_date": "2020-07-27",
+      "peak_stage_m": 6.35
+    },
+    "e5": {
+      "targets": [
+        "Baruria",
+        "Sureswar"
+      ]
+    }
+  },
+  "e3_note": "e3 outputs in this folder were regenerated locally after the Kaggle run, fixing a cross-year lag-shift bug and adding the season block-bootstrap CI and the Farakka case study; e3_runtime_s below is from that local rerun (90s CPU), not the original Kaggle e3 (which used the buggy code).",
+  "e2_sample_table_note": "metrics/e2_sample_table.csv was regenerated by a targeted follow-up Kaggle run (validation-r3 v3) after the original run (v1) shipped a sample table with no per-model predictions; e2_lagdepth.csv and e2_delta_vs_k7.csv are unchanged (diff-verified identical) and still come from run v1.",
+  "e2_sample_table_runtime_s": 871.7,
+  "e4e5_preds_note": "preds/e4_spans.csv and preds/e5_spans.csv were added by a targeted follow-up Kaggle run (validation-r3 v4) that saves per-day predictions for F-spans; metrics/e4_spans.csv and metrics/e5_spans.csv are diff-verified identical (max abs PI diff 0.0, fully deterministic) to the original run v1 and are unchanged.",
+  "e4e5_preds_runtime_s": 344.3,
+  "e1_ablation_gnn_note": "metrics/e1_ablation_gnn.csv added by a targeted follow-up Kaggle run: T-GCN and RS-GNN test PI at feature set C (brief, upstream only, no boundary gauges), the one other feature set with a clean graph topology. Set F is E1 main-run number (unchanged, not rerun).",
+  "e2_predictions_note": "preds/e2_lagdepth.csv added by the same run: full test-period predictions at k=3/7/10 for all four models (previously only a 2-day sample existed)."
+}

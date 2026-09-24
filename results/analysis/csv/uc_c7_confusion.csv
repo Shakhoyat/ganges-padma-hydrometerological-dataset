@@ -1,0 +1,10 @@
+,Before,During,After,features
+Before,575,561,250,Flow and season only
+During,861,1170,738,Flow and season only
+After,231,439,584,Flow and season only
+Before,744,640,2,+ reach water-surface drops
+During,688,1743,338,+ reach water-surface drops
+After,0,223,1031,+ reach water-surface drops
+Before,833,550,3,Reach drops only
+During,709,1744,316,Reach drops only
+After,2,201,1051,Reach drops only

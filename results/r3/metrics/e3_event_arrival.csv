@@ -1,0 +1,4 @@
+target_id,n_events,median_lag,iqr_lo,iqr_hi
+11,35,2.0,1.0,4.5
+12,35,4.0,2.0,6.0
+15,35,5.0,3.0,7.0

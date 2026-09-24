@@ -1,0 +1,10 @@
+# Dataset build and analysis (versions used for the report)
+pandas==2.3.3
+numpy==2.2.6
+openpyxl==3.1.5
+scipy==1.16.3
+scikit-learn==1.8.0
+matplotlib==3.10.8
+# Neural baselines (code/train_baselines.py, code/validation_r3.py); optional for the rest
+# torch==2.10
+# lightgbm

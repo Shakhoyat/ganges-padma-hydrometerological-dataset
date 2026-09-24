@@ -1,237 +1,240 @@
-# Multi-Variable Hydrometeorological and Point-Wise Water Level Dataset with 7-Day Lags along the Ganges–Padma River Corridor (2011–2025)
+# A 15-Year Point-wise Water Level and Rainfall Dataset with 7-Day Lags along the Ganges–Padma River Corridor, Bangladesh (2011–2025)
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Python: 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
-[![PyTorch: 2.0+](https://img.shields.io/badge/PyTorch-2.0%2B-ee4c2c.svg)](https://pytorch.org/)
-[![Status: Verified & Open](https://img.shields.io/badge/Status-Verified_%26_Open-success.svg)](#)
-[![DOI / Official Archive](https://img.shields.io/badge/BWDB_Archive-Invoice_2608295209-blueviolet.svg)](#)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![Version](https://img.shields.io/badge/version-v3.1-green.svg)](CHANGELOG.md)
+
+Dataset release for the **CSE 4112: Machine Learning Laboratory Dataset Report**, Department of Computer Science and Engineering, Khulna University of Engineering & Technology (KUET). The README follows the structure of the course's dataset-report template.
 
 ---
 
-## 1. Overview & Dataset Abstract
+## 1. Dataset article information
 
-This repository contains the curated, benchmarked, 15-year multi-variable hydrometeorological dataset along the Ganges–Padma River Corridor in Bangladesh spanning calendar years **2011 to 2025** (January 1, 2011 – December 31, 2025). The corridor covers **290.7 km** across **17 synchronized hydrometric stations** operated by the Bangladesh Water Development Board (BWDB). 
-
-The release provides **91,033 station-days** of observations, coupling daily average river water levels with **7-day stage lags**, **daily precipitation with 7-day rainfall lags**, **tributary discharge**, **sub-daily tidal ranges**, **pan evaporation**, **groundwater depths**, and **suspended sediment concentrations**. Uniquely, the observation timeline encompasses three distinct hydrodynamic eras surrounding the construction and opening of the **Padma Multipurpose Bridge** (2014–2022), enabling machine learning models to be evaluated across genuine anthropogenic river training and geomorphic regime shifts.
-
-### Key Highlights
-- **Spatial Coverage**: 17 hydrometric gauging stations spanning 290.7 river km from Pankha (Ganges entrance) through the Padma confluence to Chandpur (Lower Meghna).
-- **Temporal Span**: 15 complete calendar years (5,479 consecutive days per station; 91,033 total station-days).
-- **Temporal Regimes**:
-  - `BEFORE` (2011-01-01 to 2014-11-25): Natural corridor baseline.
-  - `DURING` (2014-11-26 to 2022-06-25): Active construction and heavy river training work.
-  - `AFTER` (2022-06-26 to 2025-12-31): Operational mega-bridge structure.
-- **Physical Benchmarking**: Naive persistence ($R^2 = 0.998$, $SS_\kappa = 0$) baseline framework establishing true machine learning value ($PI > 0$, $SS_\kappa > 0$).
-- **Physics-Informed STGNN**: Complete Spatio-Temporal Graph Neural Network pipeline enforcing mass-conservation penalty ($\mathcal{L}_{\text{mass}}$) and reach-monotonicity constraints ($\mathcal{L}_{\text{mono}}$).
-
----
-
-## 2. Dataset Specifications Table
-
-*Conforming strictly to the CSE 4112 / Data in Brief specifications standard.*
-
-| Specification | Details |
+| Item | Details |
 |---|---|
-| **Subject** | Hydrology, Water Resources Engineering, Machine Learning |
-| **Specific subject area** | Multi-variable hydrometeorological forecasting, point-wise water level modeling, flood early warning, hydrodynamic regime shift analysis |
-| **Type of data** | Tables (CSV), Geospatial boundaries (GeoJSON), Metadata (JSON/CSV), Figures (PDF/PNG), Code (Python), Report (PDF/LaTeX) |
-| **How data were acquired** | Certified hydrometric gauge registries, acoustic Doppler current profilers, automatic tipping bucket rain gauges, pan evaporimeters, piezometers, and 3-hourly tidal monitors maintained by BWDB |
-| **Data format** | Raw (tidy CSVs), Processed (long panel, wide target ML design matrices), Metadata (registry, schemas) |
-| **Parameters for collection** | Daily water level (m MSL), 7 antecedent daily stage lags, daily precipitation (mm), 7 antecedent rainfall lags, 3-day and 7-day moving rainfall totals, tributary discharge ($m^3/s$), pan evaporation (mm), groundwater depth (m), sediment (ppm), 3-hourly tidal range (m) |
-| **Description of data collection** | Raw hydrometric archives compiled under BWDB paid commercial invoice `2608295209`, quality-controlled for non-physical spikes, harmonized to Public Works Datum (PWD), and aligned to strict 24-hour UTC+6 cycles |
-| **Data source location** | Ganges–Padma River Corridor, Bangladesh (Latitude: 23.23°N – 24.63°N, Longitude: 88.08°E – 90.64°E) |
-| **Data accessibility** | Fully open under Creative Commons Attribution 4.0 International (CC BY 4.0). Repository: [GitHub](https://github.com/Shakhoyat/ganges-padma-hydrometerological-dataset) |
+| Dataset title | A 15-Year Point-wise Water Level and Rainfall Dataset with 7-Day Lags along the Ganges–Padma River Corridor, Bangladesh (2011–2025) |
+| Group and students | Group B2(03): Md. Shakhoyat Rahman Shujon (2107104), Mohammad Moin Uddin Moin (2107111), Md. Tariful Islam Jony (2107119), Kamrul Islam (2107102), Tanha Sayed Ahona (2107093) |
+| Affiliation | Department of CSE, KUET, Khulna-9203, Bangladesh |
+| Corresponding student | Md. Shakhoyat Rahman Shujon (2107104), shujon2107104@stud.kuet.ac.bd |
+| Supervisor | Prof. Dr. Muhammad Aminul Haque Akhand, Department of CSE, KUET |
+| Keywords | river stage; time-lagged features; upstream gauges; Padma Bridge; flood early warning; chronological split |
+| Dataset version | v3.1 (September 2026); history in [`CHANGELOG.md`](CHANGELOG.md) |
+| Repository | https://github.com/Shakhoyat/ganges-padma-hydrometerological-dataset |
+| License | CC BY 4.0 for processed files and code; original records © BWDB ([`LICENSE`](LICENSE)) |
+| Source | Bangladesh Water Development Board (BWDB), Processing & Flood Forecasting Circle, Dhaka; invoice 2608295209; Memo No. KUET/CSE/26/262 |
 
----
+## 2. Abstract
 
-## 3. Repository Directory Structure
+Flood warnings in Bangladesh are issued as daily water levels (stage) at gauging stations, yet historical stage records are distributed as separate spreadsheets that are not ready for machine learning (ML). This dataset compiles 50 workbooks purchased from BWDB into an ML-ready benchmark for 17 gauging stations on the Ganges, Padma, Jamuna and Meghna rivers, covering every day from 1 January 2011 to 31 December 2025. The long panel (91,033 station-days) contains the daily average stage, its seven daily lags, a four-class rainfall level, eight leakage-free covariates and a three-class rise/fall label. Three wide matrices (4,715–4,737 rows, 103–127 predictors) pair each target gauge around the Padma Multipurpose Bridge with the lagged stage of every upstream gauge and of two Meghna boundary gauges. No value was interpolated or synthesised; all lags were verified automatically, and the daily averages agree with independent 3-hourly readings to within 0.006–0.012 m. The unmodified raw workbooks, including discharge, suspended-sediment and river cross-section surveys, are released with the processed files, and a single script regenerates the release.
+
+## 3. Dataset specifications
+
+| Item | Information |
+|---|---|
+| Subject / domain | Environment; water resources engineering; machine learning for hydrology |
+| Specific subject area | Daily river-stage prediction and bridge-reach change along the Ganges–Padma corridor |
+| Type of data | Tabular time series. Raw: 50 BWDB workbooks. Processed: one long panel and three wide ML matrices |
+| File formats | Raw: XLSX (as delivered). Processed and metadata: CSV (UTF-8). Code: Python |
+| Unit of observation | One station-day (long panel); one target-station day with all upstream predictors (wide matrices) |
+| Data source location | Ganges–Padma, Jamuna and Meghna rivers, Bangladesh; 23.23–25.13°N, 88.11–90.99°E |
+| Collection period | 2011-01-01 to 2025-12-31 (5,479 days) |
+| Dataset size | Long panel 91,033 × 20 (10.3 MB); wide matrices 4,737 × 106, 4,737 × 114, 4,715 × 130 |
+| Targets / labels | Regression: daily average water level `WL` (mMSL). Classification: `WL_Trend` (falling / steady / rising), a fixed rule on `WL`; no manual labels |
+| Accessibility | Public repository; plain CSV; no login |
+
+## 4. Value of the data
+
+* **ML-ready:** the long panel and wide matrices follow the course brief's Table 1 and Table 2 layouts; every column has a documented role, and chronological splits with a persistence benchmark are provided.
+* **Network-ordered:** station Ids follow the river (for every connection u → v, Id(u) < Id(v)), so upstream predictors and flood-wave travel times over 291 km are unambiguous.
+* **Spans a major structure:** gauges and bed surveys on both sides of the Padma Bridge cover the periods before, during and after construction.
+* **Reusers:** BWDB's Flood Forecasting and Warning Centre, the Bridges Division, hydrology and ML researchers, and instructors.
+
+## 5. Repository / folder structure
 
 ```text
 ganges-padma-hydrometerological-dataset/
-├── raw/                                           # Original collected BWDB paid records (50 Excel workbooks, Invoice 2608295209)
-│   ├── Water_Level_Daily_High-Low_*.xlsx          # 17 daily water level stations (11 non-tidal + 6 tidal)
-│   ├── Water_Level_3_Hourly_*.xlsx                # 2 sub-daily tidal stations (Mawa SW93.5L, Sureswar SW95)
-│   ├── Water_Level_Annual_High-Low_*.xlsx         # 3 long-term annual extrema records
-│   ├── Rainfall_Daily_Rainfall_*.xlsx             # 11 co-located daily rainfall stations
-│   ├── Discharge_MDD_(Mean_Daily_Discharge)_*.xlsx # 5 major tributary inflow stations
-│   ├── Evaporation_Evaporation_*.xlsx             # 2 pan evaporation monitoring stations
-│   ├── Ground_Water_Ground_Water_Level_*.xlsx     # 3 weekly groundwater monitoring wells
-│   ├── Sediment_Weekly_fortnightly_monthly_*.xlsx # 3 suspended sediment concentration records
-│   └── Cross_Section_Cross_Section_*.xlsx         # 4 river morphological cross-section surveys
-├── processed/                                     # Cleaned/derived analysis-ready datasets
-│   ├── ganges_padma_hydromet_dataset_2011_2025.csv # [PRIMARY/FINAL] Complete 30-col multi-variable panel (91,033 × 30)
-│   ├── ganges_padma_stage_only_subset_2011_2025.csv # [AUXILIARY/ABLATION] Univariate stage-only panel (91,033 × 14)
-│   └── wide/                                      # Target-specific wide ML design matrices (Station & Location named)
-│       ├── wide_sw91_9r_goalundo_transit.csv      # Goalundo Transit (60 km upstream, Ganges/Jamuna confluence)
-│       ├── wide_sw91_9l_baruria_transit.csv       # Baruria Transit (56 km upstream of Padma Bridge)
-│       ├── wide_sw93_4l_bhagyakul.csv             # Bhagyakul (5 km upstream)
-│       ├── wide_sw93_5l_mawa_padma_bridge.csv     # Mawa (Padma Bridge north abutment - primary forecast target)
-│       └── wide_sw95_sureswar.csv                 # Sureswar (31 km downstream)
-├── metadata/                         # Data dictionary, labels, provenance
-│   ├── feature_dictionary.csv        # Complete variable definitions, types, and units
-│   ├── feature_sets.json             # 4-tier feature groups per target station
-│   ├── provenance.csv                # Data transformation lineage audit
-│   ├── source_metadata.csv           # Gauge instrumentation and sampling metadata
-│   ├── station_registry.csv          # 17 stations: IDs, coordinates, chainage, danger levels
-│   └── LICENSE.txt                   # Creative Commons Attribution 4.0 International (CC BY 4.0)
-└── README.md                         # Access and usage instructions
+├── raw/                    50 original BWDB .xlsx workbooks, unmodified                  [raw]
+├── processed/                                                                            [processed]
+│   ├── ganges_padma_hydromet_dataset_2011_2025.csv   long panel, 91,033 × 20 (brief's Table 1 + features)
+│   └── wide/                                         one ML design matrix per target (brief's Table 2)
+│       ├── wide_sw91_9l_baruria_transit.csv          Baruria,   56 km upstream of the bridge (4,737 × 106)
+│       ├── wide_sw93_4l_bhagyakul.csv                Bhagyakul,  5 km upstream of the bridge (4,737 × 114)
+│       └── wide_sw95_sureswar.csv                    Sureswar,  31 km downstream of the bridge (4,715 × 130)
+├── metadata/                                                                             [metadata]
+│   ├── feature_dictionary.csv          data dictionary: role, meaning, type, unit, missing-value rule
+│   ├── station_registry.csv            Id → BWDB station, coordinates, chainage, rain gauge, coverage
+│   ├── danger_levels.csv               BWDB/FFWC danger levels (external reference; not a model input)
+│   ├── provenance.csv                  every raw workbook: rows read, rows used, purpose
+│   ├── source_metadata.csv             header block of each workbook as delivered
+│   ├── validation_daily_vs_3hourly.csv daily average checked against 3-hourly readings
+│   ├── feature_screening*.csv          candidate-feature screens (why each column is or is not released)
+│   ├── trend_classification_wide.csv   WL_Trend classification on the wide matrices
+│   ├── checksums_sha256.csv            SHA-256 of every processed file
+│   └── LICENSE.txt                     CC BY 4.0
+├── code/
+│   ├── build_dataset.py                raw/ → processed/ + metadata/ (deterministic, ~40 s)
+│   ├── screen_features.py              feature screening → metadata/feature_screening*.csv
+│   ├── train_baselines.py              baseline models (persistence, Ridge, LightGBM, LSTM, RS-GNN)
+│   ├── validation_r3.py                report benchmark (Problem 2) on Kaggle 2× T4 or CPU
+│   └── analysis/                       report Section 10, Problems 1 and 3–18 (run_all.py)
+├── results/
+│   ├── r3/                             benchmark metrics, tables, predictions, run manifest
+│   └── analysis/                       Section 10 outputs: csv/, tables/, figures/
+├── README.md  CHANGELOG.md  CITATION.cff  LICENSE  requirements.txt
 ```
 
----
+## 6. Data acquisition, materials and methods
 
-## 4. Primary Data Dictionary
+* **Source and sampling:** daily water levels were requested for all 13 main-stem gauges from Panka to Sureswar, two Jamuna and two Meghna boundary gauges, and nearby rain gauges, 2011–2025. No station or day was sampled out.
+* **Collection setting:** records compiled by BWDB's Processing & Flood Forecasting Circle (72 Green Road, Dhaka-1205), which approved a 90% fee waiver on the group's academic request (Memo No. KUET/CSE/26/262, 18 August 2026); delivered against invoice 2608295209 (31 August 2026). Stations lie in 11 districts from Chapainawabganj to Chandpur; Ids 12–17 are tidal.
+* **Instruments and software:** BWDB reports stage in mMSL as daily maximum, minimum and average (3-hourly at Mawa and Sureswar) and rainfall as daily totals; instrument models are not stated in the source. Python 3.12, pandas 2.3.3, openpyxl ([`requirements.txt`](requirements.txt)).
+* **Annotation:** none manual. `WL_Trend` is a fixed rule on `WL − WLD-1` (falling < −0.03 m, rising > +0.03 m); the ±0.03 m band exceeds the 95th-percentile disagreement between daily and 3-hourly means (0.014–0.028 m). Classes: 34.9 / 37.6 / 27.5%.
+* **Provenance and versioning:** raw files are never modified; `provenance.csv` and `source_metadata.csv` document every workbook; versions are listed in [`CHANGELOG.md`](CHANGELOG.md).
 
-| Variable / Field | Meaning | Type | Unit / Range | Allowed Values / Coding | Missing-Value Rule |
-|---|---|---|---|---|---|
-| `Id` | Corridor station index mapped to official BWDB stations | Integer | [1–17] | 1 to 17 (order: Pankha SW88A to Sureswar SW95) | Mandatory primary key |
-| `Date` | Observation calendar date | Date | YYYY-MM-DD | 2011-01-01 to 2025-12-31 | Complete sequence |
-| `WL` | Daily average water level | Float | m MSL [0.00, 25.00] | Continuous numeric | Retained as NaN; flagged |
-| `WLD-1` .. `WLD-7`| 1 to 7 antecedent stage lags | Float | m MSL [0.00, 25.00] | Continuous numeric | Complete-case window rule |
-| `Rain` | Daily accumulated precipitation | Float | mm [0.0, 450.0] | Non-negative numeric | 0.0 if gauge confirmed dry |
-| `Rain_D1` .. `D7` | 1 to 7 antecedent rainfall lags | Float | mm [0.0, 450.0] | Non-negative numeric | Complete-case window rule |
-| `Rain_sum_3d` | 3-day cumulative rainfall total | Float | mm [0.0, 1000.0] | Non-negative numeric | Rolling sum |
-| `Rain_sum_7d` | 7-day cumulative rainfall total | Float | mm [0.0, 2000.0] | Non-negative numeric | Rolling sum |
-| `Rainfall_Level` | 4-tier precipitation class | Ordinal | Integer [0–3] | 0: None, 1: Light, 2: Mod, 3: Heavy | 0 if missing |
-| `Discharge_m3s` | Mean daily tributary discharge | Float | $m^3/s$ [500, 140,000] | Continuous numeric | Available at 5 nodes |
-| `Tidal_Range_m` | Sub-daily tidal fluctuation | Float | m [0.00, 4.50] | Non-negative numeric | Monitored downstream |
-| `Period` | Bridge construction regime | Categorical | String | `BEFORE`, `DURING`, `AFTER` | Exact calendar mapping |
-| `Risk_Class` | Flood danger classification | Categorical | String | `Normal`, `Warning`, `Danger`, `Severe`| BWDB threshold mapping |
-| `Window_Complete`| 7-day lag validity indicator | Boolean | True / False | Binary flag | Excludes boundary seams |
+## 7. Data records and data dictionary
 
----
+### 7.1 Long panel (`processed/ganges_padma_hydromet_dataset_2011_2025.csv`)
 
-## 5. Quickstart: How to Load and Use the Data
+One row per station-day with a reported daily average. The first 11 columns are the brief's Table 1; the next 8 are leakage-free features; the last is a classification label. The full dictionary is [`metadata/feature_dictionary.csv`](metadata/feature_dictionary.csv).
 
-### 5.1 Installation
+| Column | Role | Meaning | Unit / coding | Missing-value rule |
+|---|---|---|---|---|
+| `Id` | key | Corridor point 1–17 (`station_registry.csv`) | 1–17 | never missing |
+| `Date` | key | Observation date | YYYY-MM-DD | never missing |
+| `WL` | **regression target** | Daily average water level | mMSL | row omitted if not observed |
+| `WLD-1` … `WLD-7` | feature | WL 1…7 **calendar days** earlier, same station | mMSL | blank if that day was not observed; never interpolated |
+| `Rainfall_Level` | feature | Rain class at the nearest rain gauge (BMD scale) | 0 < 1 mm; 1: 1–10; 2: >10–22; 3: > 22 mm | blank if no gauge record (498 rows) |
+| `Rainfall_mm` | feature | Daily rain total at the same gauge | mm | as above |
+| `Rain_3dSum` | feature | Rain summed over `Date−2 … Date` | mm | blank unless all 3 days recorded (588 rows) |
+| `WL_Range_D-1` | feature | Previous day's maximum − minimum WL (tidal range) | m | blank if `Date−1` not observed (39 rows) |
+| `DOY_sin`, `DOY_cos` | feature | Seasonal phase, sin/cos(2π·doy/365.25) | −1…1 | never missing |
+| `Latitude`, `Longitude` | feature (static) | Gauge coordinates | decimal degrees | never missing |
+| `Tidal` | feature (static) | BWDB station type | 1 tidal (Ids 12–17), 0 non-tidal | never missing |
+| `WL_Trend` | **classification target** | Day-on-day change as a class; **never an input for WL** | 0 falling, 1 steady, 2 rising | blank if `WLD-1` blank (39 rows) |
 
-```bash
-git clone https://github.com/Shakhoyat/ganges-padma-hydrometerological-dataset.git
-cd ganges-padma-hydrometerological-dataset
-pip install pandas numpy scikit-learn
+### 7.2 Wide ML matrices (`processed/wide/`)
+
+```
+Id, Date, WL (target), WLD-1..WLD-7,
+P01_WL, P01_WLD-1..P01_WLD-7, ..., P<k>_WL, P<k>_WLD-1..P<k>_WLD-7     upstream points (brief's layout)
+B16_WL, B16_WLD-1..B16_WLD-7, B17_WL, B17_WLD-1..B17_WLD-7              Meghna boundary gauges
 ```
 
-### 5.2 Loading the Primary Multi-Variable Panel
+| Target | Id | Position | Upstream points | Boundary | Rows | Predictors |
+|---|---|---|---|---|---|---|
+| Baruria Transit (SW91.9L) | 11 | 56 km upstream of the bridge | 1–10 | 16, 17 | 4,737 | 103 |
+| Bhagyakul (SW93.4L) | 12 | 5 km upstream of the bridge | 1–11 | 16, 17 | 4,737 | 111 |
+| Sureswar (SW95) | 15 | 31 km downstream of the bridge | 1–13 (not 14) | 16, 17 | 4,715 | 127 |
+
+Complete rows only. Tarpasa (Id 14) is not a predictor (1,369-day gap). The Meghna boundary gauges raise Ridge's test persistence index from 0.78 to 0.85 at Bhagyakul.
+
+### 7.3 Composition
+
+91,033 of 93,143 possible station-days (97.7%); 99.70% have all seven lags. Coverage exceeds 99.4% at 14 stations; exceptions: Tarpasa 74.5%, Bahadurabad 95.0%, Sardah 95.6%. Derived four-class flood-risk label (relative to `danger_levels.csv`): 88.6% Normal, 9.5% Warning, 1.9% Danger or Severe.
+
+## 8. Preprocessing, curation and leakage control
+
+* **Cleaning:** header rows located, footers dropped, dates parsed. `build_dataset.py` stops on any failure of: unique `(Id, Date)`; WL within −2…30 mMSL; `MIN ≤ AVERAGE ≤ MAX`; valid rain classes; `Rain_3dSum ≥` that day's rain; `WL_Trend` consistent with `WL − WLD-1`; every `WLD-k` equal to the WL observed k days earlier; Ids increasing downstream; wide files without blanks.
+* **Missing data:** stations are reindexed to the full calendar; gaps stay blank and are never interpolated.
+* **Outliers:** values kept as reported; 15 station-days (0.02%) change by more than 1 m in a day.
+* **Feature selection:** a candidate is released only if measured, free of same-day target stage, nearly complete, and not harmful to test skill (`metadata/feature_screening*.csv`). Rejected: same-day max/min (leak `WL`), discharge (rated from same-day stage; ends 2024), evaporation (single station, negative values), groundwater and sediment (weekly/monthly).
+* **Augmentation / de-identification:** none; no personal data.
+* **Leakage control:** split by date, never at random (lag-1 autocorrelation ≈ 0.99): train 2011–2021, validation 2022, test 2023–2025. Lags look backward only. `WL_Trend` is never an input for `WL`. Same-day upstream columns (`P<id>_WL`, `B<id>_WL`) make the wide layout a nowcast; drop them for 1-day-ahead forecasting.
+
+## 9. Technical validation and data quality
+
+| Dimension | Evidence |
+|---|---|
+| Completeness | 97.7% of station-days; 99.70% with all 7 lags |
+| Consistency | Automated schema, range and lag-identity checks (above) |
+| Measurement quality | Daily average vs mean of 3-hourly readings: Mawa 0.006 m (r = 0.99999, 4,018 days), Sureswar 0.012 m (r = 0.99992, 4,017 days) |
+| Integrity | Raw files unmodified; SHA-256 of every processed file in `metadata/checksums_sha256.csv` |
+| Reproducibility | `python code/build_dataset.py` rebuilds the release byte-identically |
+
+## 10. ML use demonstration (summary of the report's Section 10)
+
+Stage-nowcast benchmark, test 2023–2025 (`code/validation_r3.py`; RMSE in cm, persistence index PI in brackets; PI = 1 − SSE_model / SSE_persistence):
+
+| Target | Persistence | Ridge | T-GCN | LSTM | RS-GNN (custom) |
+|---|:---:|:---:|:---:|:---:|:---:|
+| Baruria | 9.9 | 2.8 (0.92) | 7.1 (0.48) | 3.5 (0.87) | 2.8 (0.92) |
+| Bhagyakul | 9.8 | 3.8 (0.85) | 5.8 (0.65) | 4.3 (0.81) | 3.5 (0.87) |
+| Sureswar | 10.5 | 5.7 (0.70) | 8.6 (0.33) | 6.6 (0.60) | 5.7 (0.71) |
+
+The report demonstrates 18 problems (regression, classification, clustering); all are reproducible with `python code/analysis/run_all.py` (outputs in `results/analysis/`). Selected findings:
+
+* **Surge travel time:** a change at Panka reaches Baruria after ~1 day, Bhagyakul after 1–2 days and Sureswar after ~3 days (celerity 133.5 km/day); the 35 largest surges arrive after a median 2, 4 and 5 days.
+* **Flood-risk warning:** 7 days ahead, a random forest detects 93% of Baruria's warning days (CSI 0.81 vs 0.74 for persistence).
+* **Padma Bridge:** no backwater rise at flood flow; the scour pool on the bridge line filled (thalweg −30.9 → −9.7 mMSL) and the dry-season channel area shrank by 31–49% around the bridge, but not at the Ganges control; 7 km downstream the deepest channel now runs along the Lohajang bank; the dry-season tidal range at Mawa grew from 33 to 54 cm.
+* **Model transfer:** a Sureswar model trained before construction scores PI −0.10 after opening; forecast models must be recalibrated after in-channel works.
+
+## 11. Usage notes
 
 ```python
 import pandas as pd
 
-# Load the PRIMARY final dataset (30 variables, 91,033 station-days)
-df_long = pd.read_csv("processed/ganges_padma_hydromet_dataset_2011_2025.csv", parse_dates=["Date"])
+long = pd.read_csv("processed/ganges_padma_hydromet_dataset_2011_2025.csv", parse_dates=["Date"],
+                   dtype={"Rainfall_Level": "Int64", "WL_Trend": "Int64"})
+features = long.columns.drop(["Id", "Date", "WL", "WL_Trend"])      # 16 features
+y_reg, y_clf = long["WL"], long["WL_Trend"]
 
-# Filter to complete lag windows (90,760 verified station-days)
-df_clean = df_long[df_long["Window_Complete"] == True]
-
-print(f"Total valid observations: {len(df_clean):,}")
-print(df_clean[["Id", "Date", "WL", "WLD-1", "Rain", "Period", "Risk_Class"]].head())
+wide = pd.read_csv("processed/wide/wide_sw93_4l_bhagyakul.csv", parse_dates=["Date"])
+X, y = wide.drop(columns=["Id", "Date", "WL"]), wide["WL"]
+train = wide.Date < "2022-01-01"                                     # chronological, never random
+valid = (wide.Date >= "2022-01-01") & (wide.Date < "2023-01-01")
+test = wide.Date >= "2023-01-01"
 ```
 
-### 5.3 Loading Wide Matrices & Target Modeling (Mawa / Padma Bridge)
+* Report the persistence index alongside RMSE; for `WL_Trend`, compare with "same class as yesterday".
+* Bridge periods: before 2011-01-01 to 2014-11-25; during 2014-11-26 to 2022-06-25; after 2022-06-26 to 2025-12-31.
+* **Inappropriate uses:** R²/NSE without a persistence comparison; random k-fold cross-validation; treating `Rainfall_Level` at Bahadurabad or Bhairab Bazar as local rain.
 
-```python
-import pandas as pd
-import json
+## 12. Limitations and known biases
 
-# 1. Load wide feature matrix for Mawa (SW93.5L) at Padma Bridge
-df_mawa = pd.read_csv("processed/wide/wide_sw93_5l_mawa_padma_bridge.csv", parse_dates=["Date"])
+17 gauges on one river system; Tarpasa has a 1,369-day gap. Rainfall comes from the nearest of eight gauges (up to 130 km away) and explains little of the stage, which is driven by upstream inflow. Daily averages smooth the tidal cycle at Ids 12–17. Danger levels are reference values (FFWC roster with fitted offsets), and Danger/Severe days are rare (1.9%). Bridge analyses rest on 3.5 post-opening years with mild floods, annual cross-section surveys and a sediment series with a probable sampling change in 2015; they are descriptive, not causal. The discharge workbooks' own stage column changes datum by 0.71 m at Mawa in 2022; use the released `WL` instead.
 
-# 2. Load 4-tier feature set configuration
-with open("metadata/feature_sets.json", "r") as f:
-    feature_sets = json.load(f)["SW93.5L"]
+## 13. Ethics, privacy and responsible use
 
-# Available tiers: 'stage_only', 'hydromet', 'full_multivariate', 'forecast_safe'
-features = feature_sets["hydromet"]
+No human participants or personal data. The original records are © BWDB, obtained for academic use under invoice 2608295209 with a 90% fee waiver; the processed data are shared for non-commercial research and teaching with attribution to BWDB and will be withdrawn at BWDB's request. No generative-AI or synthetic data were used in collection, labelling or augmentation.
 
-X = df_mawa[features]
-y_stage = df_mawa["WL"]                    # Direct water level target
-y_delta = df_mawa["Delta_WL_1d"]           # 1-day stage change target (Recommended)
-y_risk  = df_mawa["Risk_Class"]            # 4-tier flood risk category
+## 14. Data and code availability
 
-# 3. Chronological Train / Validation / Test Split (Strict leakage control)
-train_mask = (df_mawa["Date"] < "2023-01-01")
-test_mask  = (df_mawa["Date"] >= "2023-01-01")
+| Item | Details |
+|---|---|
+| Repository | GitHub, https://github.com/Shakhoyat/ganges-padma-hydrometerological-dataset |
+| DOI | not yet minted (a Zenodo DOI can be minted from a GitHub release) |
+| Access | public; clone or download the CSV files |
+| License | CC BY 4.0 ([`LICENSE`](LICENSE)); cite BWDB as the original source |
+| Code | `code/` (dataset build, screening, baselines) and `code/analysis/` (report Section 10) |
+| Version | v3.1, see [`CHANGELOG.md`](CHANGELOG.md) |
+| Environment | [`requirements.txt`](requirements.txt); Python ≥ 3.10; seed 20260913 |
 
-X_train, y_train = X[train_mask], y_delta[train_mask]
-X_test,  y_test  = X[test_mask],  y_delta[test_mask]
+## 15. Student contributions (CRediT)
 
-print(f"Training samples: {len(X_train)} | Test samples: {len(X_test)} | Features: {len(features)}")
-```
+| Roll | Student | % | Main contributions |
+|---|---|:---:|---|
+| 2107104 | Md. Shakhoyat Rahman Shujon (lead) | 24 | Conceptualization, data acquisition from BWDB, methodology, project administration, writing |
+| 2107111 | Mohammad Moin Uddin Moin | 23 | Software, ML baselines (Ridge, T-GCN, LSTM, RS-GNN), Kaggle training |
+| 2107119 | Md. Tariful Islam Jony | 23 | Data curation, extraction, 7-day lag structure, provenance |
+| 2107102 | Kamrul Islam | 15 | Validation: 3-hourly check, quality checks, target-station analysis |
+| 2107093 | Tanha Sayed Ahona | 15 | Visualization, documentation, FAIR review |
 
----
+## 16. Acknowledgements
 
-## 6. Machine Learning Benchmarks & Baseline Results
+We thank our supervisor, Prof. Dr. Muhammad Aminul Haque Akhand (Department of CSE, KUET), for guidance and for writing the fee-waiver application; Prof. Dr. K. A. Mahmud (Head, Department of CSE, KUET) for endorsing it; the course teachers of CSE 4112, including Nabil Faiyaz Sadi; and the Processing & Flood Forecasting Circle, BWDB, for approving the waiver and supplying the data. No external funding was received; the authors declare no competing interests.
 
-### The Critical Persistence Rule
-Daily river stage displays an astronomical auto-correlation ($\rho = 0.999$). A trivial naive persistence model ($\hat{y}_t = y_{t-1}$) yields $R^2 = 0.998$ on raw stage. Reporting raw stage metrics without comparing to persistence constitutes scientific negligence. All benchmarks in this repository evaluate:
-1. **Persistence Index ($PI$)**: Normalized improvement over persistence. Positive values ($PI > 0$) prove true machine learning skill.
-2. **Cohen's Kappa Skill Score ($SS_\kappa$)**: Evaluates flood risk classification skill above persistence.
-3. **Change Modeling ($\Delta WL$)**: Predicting daily stage delta $\Delta = y_t - y_{t-1}$ rather than raw level, completely eliminating artificial auto-regressive ceilings.
+## 17. Citation
 
-### Test Set Benchmark Evaluation (Mawa Target Node: `SW93.5L`)
-
-| Model | Target Mode | $R^2$ | RMSE (m) | MAE (m) | Persistence Index ($PI$) | Risk $F_1$ Macro | $SS_\kappa$ | Conservation Audit |
-|---|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Naive Persistence** | Stage ($y_{t-1}$) | 0.9980 | 0.0984 | 0.0652 | 0.0000 | 0.4721 | 0.0000 | Passive (Unchecked) |
-| **Ridge Regression** | Stage ($y_t$) | 0.9984 | 0.0881 | 0.0592 | +0.1047 | 0.5412 | +0.1840 | Violates bounds |
-| **Random Forest** | Stage ($y_t$) | 0.9989 | 0.0743 | 0.0487 | +0.2449 | 0.6234 | +0.3120 | Bounded by training |
-| **XGBoost** | Stage ($y_t$) | 0.9991 | 0.0672 | 0.0435 | +0.3171 | 0.6582 | +0.3754 | Prone to overshoot |
-| **CatBoost** | Stage ($y_t$) | 0.9992 | 0.0641 | 0.0418 | +0.3486 | 0.6720 | +0.3980 | Smooth |
-| **LightGBM** | Stage ($y_t$) | 0.9991 | 0.0664 | 0.0429 | +0.3252 | 0.6651 | +0.3845 | Fast |
-| **XGBoost** | Delta ($\Delta WL$) | 0.8120 | 0.0668 | 0.0431 | +0.3211 | 0.6610 | +0.3790 | Unbiased residual |
-| **PI-STGNN (Proposed)** | Spatio-Temporal | **0.9995** | **0.0498** | **0.0315** | **+0.4939** | **0.7845** | **+0.5821** | **99.98% Mass Conserved** |
-
-### Benchmark Baseline Summary
-
-All benchmark results, training partitions, and performance metrics are documented in the companion course research report (`CSE 4112`), with model metrics verified across 5,479 daily records and 90,760 verified station-days using fixed random seed `20260913`.
-
-
----
-
-## 7. CRediT Contributor Roles & Team Responsibilities
-
-This dataset, pipeline, benchmark evaluation, and documentation were created by the following five-member team for **CSE 4112**:
-
-| Student Name | Roll | Contribution (%) | Primary Responsibilities (CRediT) |
-|---|:---:|:---:|---|
-| **Md. Shakhoyat Rahman Shujon** *(Lead)* | 2107104 | **24%** | Conceptualization, Lead Data Curation, Spatio-Temporal Graph Architecture, Pipeline Engineering, LaTeX & Documentation |
-| **Mohammad Moin Uddin Moin** | 2107111 | **23%** | Machine Learning Benchmarking, XGBoost/CatBoost Optimization, Cross-Validation Design, Persistence Index Framework |
-| **Md. Tariful Islam Jony** | 2107119 | **23%** | Hydrometeorological Feature Engineering, 7-Day Lag Formulation, Quality Dimension Auditing, Data Cleaning |
-| **Kamrul Islam** | 2107102 | **15%** | Data Verification, Missing Value Imputation Auditing, Station Registry Geocoding, Descriptive Statistics |
-| **Tanha Sayed Ahona** | 2107093 | **15%** | Visualizations & Cartography, Figure Generation, Ethical & FAIR Compliance Review, Data Dictionary Auditing |
-
----
-
-## 8. Ethics, FAIR Readiness & License
-
-### Ethical Compliance & Privacy
-The dataset contains solely abiotic, physical hydrometeorological observations collected in public river corridors. No human subjects, personal data, or private spatial properties are included. Public infrastructure nodes (Padma Bridge) are documented using publicly accessible geographic and hydrometric station coordinates.
-
-### FAIR Principles Compliance
-- **Findable**: Documented with rich schemas, persistent file identifiers, standard column naming, and explicit metadata files (`station_registry.csv`, `feature_dictionary.csv`, `feature_sets.json`).
-- **Accessible**: Openly hosted on GitHub with no authentication barriers or paywalls.
-- **Interoperable**: Formatted in RFC 4180 compliant CSV, GeoJSON standard EPSG:4326, and open JSON.
-- **Reusable**: Released under the unrestricted **Creative Commons Attribution 4.0 International (CC BY 4.0)** license with full provenance logs and build recipes.
-
----
-
-## 9. Citation
-
-If you use this dataset, benchmark framework, or code in your research, please cite:
+See [`CITATION.cff`](CITATION.cff), or:
 
 ```bibtex
 @dataset{shujon2026gangespadma,
   author    = {Md. Shakhoyat Rahman Shujon and Mohammad Moin Uddin Moin and Md. Tariful Islam Jony and Kamrul Islam and Tanha Sayed Ahona},
-  title     = {Multi-Variable Hydrometeorological and Point-Wise Water Level Dataset with 7-Day Lags along the Ganges--Padma River Corridor (2011--2025)},
+  title     = {A 15-Year Point-wise Water Level and Rainfall Dataset with 7-Day Lags along the Ganges--Padma River Corridor, Bangladesh (2011--2025)},
   year      = {2026},
-  publisher = {GitHub / Bangladesh Water Development Board Archive},
+  version   = {3.1},
+  publisher = {GitHub},
   url       = {https://github.com/Shakhoyat/ganges-padma-hydrometerological-dataset},
-  note      = {Course CSE 4112 Dataset Article, Department of Computer Science and Engineering, Khulna University of Engineering \& Technology (KUET)}
+  note      = {CSE 4112 Dataset Report, Department of CSE, Khulna University of Engineering \& Technology (KUET). Source data: Bangladesh Water Development Board}
 }
 ```
-
----
-
-## 10. Contact & Support
-
-For questions, issues, or collaborative research involving the Ganges–Padma hydrometeorological corridor:
-- **Lead Author**: Md. Shakhoyat Rahman Shujon (`shakoyatsujon@gmail.com` / GitHub: [@Shakhoyat](https://github.com/Shakhoyat))
-- **Affiliation**: Department of Computer Science and Engineering, Khulna University of Engineering & Technology (KUET), Khulna-9203, Bangladesh.
